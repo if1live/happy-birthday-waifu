@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
+  #get 'welcome/index'
+  root 'welcome#index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  root 'character#index'
+  #root 'character#index'
 
   get 'characters/:slug' => 'character#detail'
   get 'characters/date/:month/:day' => 'character#date'
