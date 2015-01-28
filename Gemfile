@@ -40,6 +40,8 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 # bootstrap
 gem 'bootstrap-sass'
 
+gem 'font-awesome-rails'
+
 gem 'simple_form'
 
 # auth

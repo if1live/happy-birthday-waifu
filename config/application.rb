@@ -22,5 +22,10 @@ module HappyBirthdayWaifu
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # https://github.com/rails/web-console/issues/90
+    # This will whitelist all IPv4 and IPv6 addresses. Please, only
+    # run tests with that configuration, its a huge security hole.
+    config.web_console.whitelisted_ips = %w( 0.0.0.0/0 ::/0 )
   end
 end

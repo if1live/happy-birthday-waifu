@@ -18,8 +18,21 @@
       <nav>
         <ul class="nav nav-pills pull-right">
           <li role="presentation" class="active"><a href="#">Home</a></li>
-          <li role="presentation"><a href="#">About</a></li>
-          <li role="presentation"><a href="#">Login</a></li>
+          <!--<li role="presentation"><a href="#">About</a></li>-->
+
+          <li role="presentation">
+		  <% if user_signed_in? %>
+			<%= link_to destroy_user_session_path, method: :delete,
+			data: { confirm: "로그아웃하시겠습니까?" }  do%>
+			  <i class='fa fa-twitter'></i> <%= current_user.name %> | Logout
+			<% end %>
+		  <% else %>
+			<%= link_to user_omniauth_authorize_path(:twitter) do %>
+			  <i class='fa fa-twitter'></i> Login
+			<% end %>
+		  <% end %>
+		  </li>
+
         </ul>
       </nav>
       <h3 class="text-muted">Happy Birthday Waifu</h3>
@@ -28,8 +41,19 @@
   </div>
 
   <div class="container">
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+	<!-- flash begin -->
+	<% if notice %>
+	<div class="alert alert-success alert-dismissible" role="alert">
+	  <%= notice %>
+	</div>
+	<% end %>
+
+	<% if alert %>
+	<div class="alert alert-danger alert-dismissible" role="alert">
+	  <%= alert %>
+	</div>
+	<% end %>
+	<!-- flash end -->
 
 	<%= yield %>
   </div>
