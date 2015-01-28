@@ -1,0 +1,16 @@
+language: ruby
+
+rvm:
+  - 2.1
+
+gemfile:
+  - Gemfile
+
+install:
+  - bundle install
+
+script:
+  - bundle exec rake
+
+notifications:
+  email: false
