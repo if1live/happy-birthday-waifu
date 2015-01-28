@@ -53,4 +53,14 @@ class Character < ActiveRecord::Base
     next_day = next_birthday today
     next_day.mjd - today.mjd
   end
+
+  def d_day
+    today = Date.today
+    remain = remain_days today
+    if remain == 0
+      "D-Day"
+    else
+      "D-#{remain}"
+    end
+  end
 end

@@ -15,3 +15,14 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// base template
+// http://getbootstrap.com/examples/jumbotron-narrow/
+
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  line-height: 40px;
+}
+
+

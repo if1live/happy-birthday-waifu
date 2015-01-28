@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
   <title>HappyBirthdayWaifu</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- header -->
+  <div class="container">
+	<div class="header">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="active"><a href="#">Home</a></li>
+          <li role="presentation"><a href="#">About</a></li>
+          <li role="presentation"><a href="#">Login</a></li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">Happy Birthday Waifu</h3>
+    </div>
+	<hr/>
+  </div>
 
-<%= yield %>
+  <div class="container">
+	<%= yield %>
+  </div>
 
+  <!-- footer -->
+  <div class="container">
+	<hr/>
+	<footer class="footer">
+      <p>&copy;
+		<a href="https://twitter.com/if1live">@if1live</a>
+		| <a href="https://github.com/if1live/happy-birthday-waifu">Repo</a>
+		2015</p>
+    </footer>
+  </div>
+
+  <!-- lazy js loading -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
