@@ -1,4 +1,6 @@
 language: ruby
+sudo: false
+cache: bundler
 
 rvm:
   - 2.1
@@ -6,11 +8,19 @@ rvm:
 gemfile:
   - Gemfile
 
+before_install:
+  - gem install bundler
+
 install:
   - bundle install
 
+before_script:
+  - bundle update
+
+# https://github.com/codeclimate/ruby-test-reporter/issues/34
+# key 보안 조까
 script:
-  - bundle exec rake
+  - CODECLIMATE_REPO_TOKEN=76fd6954925d5bfa7b57dd28bb1275bb9fcfe1998fa91d1e239d07025f7f4efa bundle exec rake
 
 notifications:
   email: false
