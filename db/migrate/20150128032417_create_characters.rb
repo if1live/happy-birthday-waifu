@@ -19,5 +19,8 @@ class CreateCharacters < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :characters, :slug, unique: true
+    add_index :characters, :date
   end
 end

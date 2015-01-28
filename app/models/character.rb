@@ -3,15 +3,21 @@
 require 'date'
 
 class Character < ActiveRecord::Base
+  include CharacterHelper
+
   rails_admin do
   end
 
+  validates :slug, uniqueness: true
+  validates :date, length: { is: 5 }
+  validates :date, format: { with: /\d\d\/\d\d/ }
+
   def month
-    date[0...2].to_i
+    extract_month_from_str date
   end
 
   def day
-    date[3...5].to_i
+    extract_day_from_str date
   end
 
   def birthday_to_s

@@ -24,4 +24,7 @@ ActiveRecord::Schema.define(version: 20150128032417) do
     t.datetime "updated_at",                          null: false
   end
 
+  add_index "characters", ["date"], name: "index_characters_on_date"
+  add_index "characters", ["slug"], name: "index_characters_on_slug", unique: true
+
 end
