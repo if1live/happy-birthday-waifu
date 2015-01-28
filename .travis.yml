@@ -18,6 +18,7 @@ before_script:
   - bundle update
 
 script:
+  - bundle exec rake secret:generate
   - CODECLIMATE_REPO_TOKEN=76fd6954925d5bfa7b57dd28bb1275bb9fcfe1998fa91d1e239d07025f7f4efa bundle exec rake
 
 notifications:
