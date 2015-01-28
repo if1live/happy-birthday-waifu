@@ -17,8 +17,6 @@ install:
 before_script:
   - bundle update
 
-# https://github.com/codeclimate/ruby-test-reporter/issues/34
-# key 보안 조까
 script:
   - CODECLIMATE_REPO_TOKEN=76fd6954925d5bfa7b57dd28bb1275bb9fcfe1998fa91d1e239d07025f7f4efa bundle exec rake
 
