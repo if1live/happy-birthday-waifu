@@ -14,8 +14,14 @@
 ActiveRecord::Schema.define(version: 20150128032417) do
 
   create_table "characters", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "slug"
+    t.string   "name_en"
+    t.string   "name_ko"
+    t.integer  "year"
+    t.string   "date",         limit: 5
+    t.string   "external_url",           default: ""
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
 end

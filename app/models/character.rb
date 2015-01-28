@@ -2,28 +2,28 @@
 
 require 'date'
 
-#class Character < ActiveRecord::Base
-class Character
-  attr_reader :name, :year, :month, :day, :external_url
+class Character < ActiveRecord::Base
+  rails_admin do
+  end
 
-  def initialize(name, month, day, year=nil, external_url=nil)
-    @name = name
-    @month = month
-    @day = day
-    @year = year
-    @external_url = external_url
+  def month
+    date[0...2].to_i
+  end
+
+  def day
+    date[3...5].to_i
   end
 
   def birthday_to_s
     if year
-      "#{@year}년 #{@month}월 #{@day}일"
+      "#{year}년 #{month}월 #{day}일"
     else
-      "#{@month}월 #{@day}일"
+      "#{month}월 #{day}일"
     end
   end
 
   def birthday year
-    Date.new(year, @month, @day)
+    Date.new(year, month, day)
   end
 
   def curr_birthday

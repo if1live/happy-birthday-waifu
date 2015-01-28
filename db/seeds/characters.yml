@@ -1,0 +1,43 @@
+character_1:
+  id: 1
+  slug: kasugano-sora
+  name_en: "Kasugano Sora"
+  name_ko: "카스가노 소라"
+  date: "02/05"
+
+character_2:
+  id: 2
+  slug: amatsume-akira
+  name_en: "Amatsume Akira"
+  name_ko: "아마츠메 아키라"
+  date: "08/03"
+
+character_3:
+  id: 3
+  slug: yorihime-nao
+  name_en: "Yorihime Nao"
+  name_ko: "요리히메 나오"
+  date: "10/07"
+
+character_4:
+  id: 4
+  slug: migiwa-kazuha
+  name_en: "Migiwa Kazuha"
+  name_ko: "미기와 카즈하"
+  date: "08/03"
+
+character_5:
+  id: 5
+  slug: nogisaka-motoka
+  name_en: "Nogisaka Motoka"
+  name_ko: "노기사카 모토카"
+  date: "12/23"
+
+character_6:
+  id: 6
+  slug: kuranaga-kozue
+  name_en: "Kuranaga Kozue"
+  name_ko: "쿠라나가 코즈에"
+  date: "06/01"
+
+  

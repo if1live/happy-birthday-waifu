@@ -6,7 +6,7 @@ describe Character do
   let(:character) { FactoryGirl.build(:character) }
 
   describe '#birthday_to_s' do
-    let(:with_year_character) { FactoryGirl.build(:with_year) }
+    let(:with_year_character) { FactoryGirl.build(:with_year_character) }
 
     it 'without year' do
       expect(character.birthday_to_s).to be == "2월 5일"

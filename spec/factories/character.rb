@@ -1,19 +1,24 @@
 FactoryGirl.define do
-  name = "Kasugano Sora"
-  month = 2
-  day = 5
-
-  factory :character do
-    initialize_with { new(name, month, day) }
+  factory :character, class: Character do
+    slug 'kasugano-sora'
+    name_en 'Kasugano Sora'
+    name_ko '카스가노 소라'
+    date '02/05'
   end
 
-  factory :with_year, class: Character do
+  factory :with_year_character, class: Character do
+    slug 'kasugano-sora'
+    name_en 'Kasugano Sora'
+    name_ko '카스가노 소라'
     year 2008
-    initialize_with { new(name, month, day, year) }
+    date '02/05'
   end
 
-  factory :with_url, class: Character do
+  factory :with_url_character, class: Character do
+    slug 'kasugano-sora'
+    name_en 'Kasugano Sora'
+    name_ko '카스가노 소라'
+    date '02/05'
     external_url = "http://en.wikipedia.org/wiki/Yosuga_no_Sora"
-    initialize_with { new(name, month, day, nil, external_url) }
   end
 end
