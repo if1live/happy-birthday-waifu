@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 
-describe NotificationHelper do
-  let(:dummy_class) { Class.new { include NotificationHelper } }
+describe NotificationsHelper do
+  let(:dummy_class) { Class.new { include NotificationsHelper } }
   let(:subject) { dummy_class.new }
 
   describe "#create_client" do

@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:twitter]
 
   def self.from_omniauth(auth, current_user)
+    #p auth
+
     user = current_user.nil? ? User.where(provider: auth.provider, uid: auth.uid.to_s) : current_user
     if user.blank?
       user = User.new
@@ -16,8 +18,12 @@ class User < ActiveRecord::Base
       user.name = auth.info.name
       user.email = auth.info.email
 
+      user.token = auth.credentials.token
+      user.secret = auth.credentials.secret
+
       # 트위터는 email이 없다. 근데 email이 없으면 저장이 안된다
-      user.email = '' if auth.provider == 'twitter'
+      # email은 고유값이 들어가야한다. 그래서 공백은 불가능
+      user.email = user.password if auth.provider == 'twitter'
 
       auth.provider == 'twitter' ? user.save(:validate => false) : user.save
       user

@@ -1,7 +1,7 @@
 require 'twitter'
 require 'setty'
 
-module NotificationHelper
+module NotificationsHelper
   def create_client
     client = Twitter::REST::Client.new do |config|
       config.consumer_key = Settings.twitter_app_key
@@ -13,5 +13,5 @@ module NotificationHelper
 end
 
 class NotificationFactory
-  include NotificationHelper
+  include NotificationsHelper
 end
