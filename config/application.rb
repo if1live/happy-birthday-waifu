@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+require 'setty'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -26,6 +28,6 @@ module HappyBirthdayWaifu
     # https://github.com/rails/web-console/issues/90
     # This will whitelist all IPv4 and IPv6 addresses. Please, only
     # run tests with that configuration, its a huge security hole.
-    config.web_console.whitelisted_ips = %w( 0.0.0.0/0 ::/0 )
+    config.web_console.whitelisted_ips = %w( 0.0.0.0/0 ::/0 ) if Rails.env.development?
   end
 end

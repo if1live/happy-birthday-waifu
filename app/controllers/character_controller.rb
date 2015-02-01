@@ -1,5 +1,7 @@
 require 'date'
 
+require 'setty'
+
 class CharacterController < ApplicationController
   def index
     today = Date.today
