@@ -1,8 +1,36 @@
-<%= @month %>
-<%= @day %>
+<div class="jumbotron">
+  <h1>Happy Birthday, Waifu</h1>
+  <p>
+	<% waifu_url ="http://rigvedawiki.net/r1/wiki.php/%EB%8A%94%20%EB%82%98%EC%9D%98%20%EC%8B%A0%EB%B6%80" %>
+	<a href="<%= waifu_url %>">신부</a>의 생일을 기억하는 서비스입니다.
+	신부의 생일을 잊어버려서 이벤트를 준비하지 못하는 상황을 방지하는 것이 목표입니다.
+  </p>
+</div>
+
+<% if @today_list %>
+  <section>
+	<h2>오늘(<time><%= @month %>월 <%= @day %>일</time>)</h2>
+  <div class="row">
+	<% @today_list.each do |character| %>
+    <div class="col-sm-4">
+      <%= render 'simple_card', character: character %>
+    </div>
+	<% end %>
+  </div>
+  </section>
+<% end %>
+
+<% if @approach_list %>
+  <section>
+	<h2>Approaching...</h2>
+  <div class="row">
+	<% @approach_list.each do |character| %>
+    <div class="col-sm-4">
+      <%= render 'simple_card', character: character %>
+    </div>
+	<% end %>
+  </div>
+<% end %>
+<section>
+
 <br/>
-<%= @today_list %>
-<br/>
-<%= @approach_list %>
-<br/>
-<%= @all_character_list %>

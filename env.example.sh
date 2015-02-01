@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# copy from "bundle exec rake secret"
+export SECRET_KEY_BASE="GENERATE-SECRET"
+
 export TWITTER_APP_KEY="CREATE-TWITTER-APP"
 export TWITTER_APP_SECRET="CREATE-TWITTER-APP"
 

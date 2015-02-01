@@ -63,4 +63,8 @@ class Character < ActiveRecord::Base
       "D-#{remain}"
     end
   end
+
+  def remain_days_from_today
+    remain_days Date.today
+  end
 end

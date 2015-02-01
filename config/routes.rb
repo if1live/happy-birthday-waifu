@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'character#index'
   get 'characters/:slug' => 'character#detail'
   get 'characters/date/:month/:day' => 'character#date'
+  get 'characters/' => 'character#list'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

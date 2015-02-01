@@ -1,42 +1,48 @@
 require 'date'
 
-
 class CharacterController < ApplicationController
-  def index
+  before_action :assign_month_day
 
+  def assign_month_day
     today = Date.today
     @month = (params.has_key? :month) ? params[:month].to_i : today.month
     @day = (params.has_key? :day) ? params[:day].to_i : today.day
+  end
 
-    date_str = Character.date_to_s @month, @day
-
-    # today
-    today_q = Character.where(date: date_str)
-    # today ~ year end
-    curr_year_q = Character.where('date > ?', date_str).order(date: :asc)
-    # year start ~ today
-    next_year_q = Character.where('date < ?', date_str).order(date: :asc)
-
-    @today_list = today_q.to_a
-    @next_list = curr_year_q.to_a + next_year_q.to_a
-    @all_character_list = @today_list + @next_list
+  def index
+    @today_list = get_today_character_list @month, @day
+    @next_list = get_next_character_list @month, @day
     approach_count = 3
     @approach_list = @next_list[0...approach_count]
-
   end
 
   def date
-    @month = params[:month].to_i
-    @day = params[:day].to_i
-    date_str = Character.date_to_s @month, @day
-
-    character_q = Character.where(date: date_str)
-    @character_list = character_q.to_a
+    @character_list = get_today_character_list @month, @day
   end
 
   def detail
     @slug = params[:slug]
-
     @character = Character.find_by slug: @slug
+  end
+
+  def list
+    today_list = get_today_character_list @month, @day
+    next_list = get_next_character_list @month, @day
+    @all_list = today_list + next_list
+  end
+
+  def get_today_character_list(month, day)
+    date_str = Character.date_to_s month, day
+    today_q = Character.where(date: date_str)
+    today_list = today_q.to_a
+  end
+
+  def get_next_character_list(month, day)
+    date_str = Character.date_to_s month, day
+    # today ~ year end
+    curr_year_q = Character.where('date > ?', date_str).order(date: :asc)
+    # year start ~ today
+    next_year_q = Character.where('date < ?', date_str).order(date: :asc)
+    next_list = curr_year_q.to_a + next_year_q.to_a
   end
 end

@@ -39,7 +39,6 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 
 # bootstrap
 gem 'bootstrap-sass'
-
 gem 'font-awesome-rails'
 
 gem 'simple_form'
@@ -66,4 +65,9 @@ group :development, :test do
   gem 'rspec'
   gem 'factory_girl'
   gem 'rspec-rails'
+end
+
+# rails-assets
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootcards'
 end

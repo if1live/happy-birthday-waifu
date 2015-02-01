@@ -17,8 +17,29 @@
 	<div class="header">
       <nav>
         <ul class="nav nav-pills pull-right">
-          <li role="presentation" class="active"><a href="#">Home</a></li>
-          <!--<li role="presentation"><a href="#">About</a></li>-->
+          <% if request.path == '/' %>
+            <li role="presentation" class="active">
+              <a href="#">Home</a>
+            </li>
+          <% elsif %>
+            <li role="presentation">
+              <a href="/">Home</a>
+            </li>
+          <% end %>
+
+          <!--
+          <li role="presentation"><a href="#">About</a></li>
+          -->
+
+          <% if request.path == (url_for controller: "character", action: "list") %>
+            <li role="presentation" class="active">
+              <a href="#">All</a>
+            </li>
+          <% elsif %>
+            <li role="presentation">
+              <%= link_to "All", controller: "character", action: "list" %>
+            </li>
+          <% end %>
 
           <li role="presentation">
 		  <% if user_signed_in? %>
