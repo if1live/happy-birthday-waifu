@@ -19,7 +19,7 @@
 <% end %>
 
 <% if true %>
-<!-- TODO -->
+<!-- TODO favorite -->
 <!--
 <button type="button" class="btn btn-default">알림 등록</button>
 <br/>
@@ -39,6 +39,10 @@
   </li>
 </ul>
 
-<!-- TODO favorite -->
+<section>
+<%= render_shareable :turbolinks => true,
+:buttons => ['twitter', 'google_plus', 'tumblr', 'facebook'],
+:facebook => {:turbolinks => false} %>
+</section>
 
 <%= render 'disqus' %>
