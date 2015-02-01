@@ -4,6 +4,7 @@ character_1:
   name_en: "Kasugano Sora"
   name_ko: "카스가노 소라"
   date: "02/05"
+  anime_db_id: 13162
 
 character_2:
   id: 2
@@ -11,6 +12,7 @@ character_2:
   name_en: "Amatsume Akira"
   name_ko: "아마츠메 아키라"
   date: "08/03"
+  anime_db_id: 13155
 
 character_3:
   id: 3
@@ -18,6 +20,7 @@ character_3:
   name_en: "Yorihime Nao"
   name_ko: "요리히메 나오"
   date: "10/07"
+  anime_db_id: 13160
 
 character_4:
   id: 4
@@ -25,6 +28,7 @@ character_4:
   name_en: "Migiwa Kazuha"
   name_ko: "미기와 카즈하"
   date: "08/03"
+  anime_db_id: 13157
 
 character_5:
   id: 5
@@ -32,6 +36,7 @@ character_5:
   name_en: "Nogisaka Motoka"
   name_ko: "노기사카 모토카"
   date: "12/23"
+  anime_db_id: 13159
 
 character_6:
   id: 6
@@ -39,5 +44,6 @@ character_6:
   name_en: "Kuranaga Kozue"
   name_ko: "쿠라나가 코즈에"
   date: "06/01"
+  anime_db_id: 13158
 
   

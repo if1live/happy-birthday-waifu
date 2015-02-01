@@ -16,16 +16,7 @@
       <p class="list-group-item-text">생일</p>
       <h4 class="list-group-item-heading">
         <%= character.birthday_to_s %>
-        <%# 생일에 근접할수록 색이 달라지면 재밌을거다 %>
-        <% if character.remain_days_from_today <= 1 %>
-          <span class="label label-primary"><%= character.d_day %></span>
-        <% elsif character.remain_days_from_today <= 7 %>
-          <span class="label label-success"><%= character.d_day %></span>
-        <% elsif character.remain_days_from_today <= 28 %>
-          <span class="label label-info"><%= character.d_day %></span>
-        <% else %>
-          <span class="label label-default"><%= character.d_day %></span>
-        <% end %>
+		<%= render 'd_day', character: character %>
       </h4>
     </div>
   </div>
@@ -34,6 +25,7 @@
       <div class="btn-group">
         <%= link_to controller: 'character', action: 'detail', slug: character.slug do %>
         <button class="btn btn-default">
+		  <i class="fa fa-info"></i>
           캐릭터 페이지
         </button>
         <% end %>

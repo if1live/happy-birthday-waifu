@@ -1,7 +1,44 @@
-<%= @character.name_en %>
-<%= @character.name_ko %>
-<%= @character.birthday_to_s %>
+<h1><%= @character.name_ko %></h1>
+<dl class="dl-horizontal">
+  <dt>이름</dt>
+  <dd><%= @character.name_ko %></dd>
+  <dt>Name</dt>
+  <dd><%= @character.name_en %></dd>
+  <dt>생일</dt>
+  <dd><%= @character.birthday_to_s %></dd>
+  <dt>D-Day</dt>
+  <dd><%= render 'd_day', character: @character %><dd>
+</dl>
 
-<%= @character.d_day %>
-<%= @slug %>
-<%= @character %>
+<h2>Notification</h2>
+<% if not user_signed_in? %>
+<div class="alert alert-warning" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  Twitter 로그인을 해야 알림을 사용할 수 있습니다.
+</div>
+<% end %>
+
+<% if true %>
+<!-- TODO -->
+<!--
+<button type="button" class="btn btn-default">알림 등록</button>
+<br/>
+<button type="button" class="btn btn-primary">알림 해제</button>
+-->
+<% end %>
+
+<h2>External Link</h2>
+<ul>
+  <% if @character.external_url %>
+  <li>
+	<%= link_to "외부 링크", @character.external_url %>
+  </li>
+  <% end %>
+  <li>
+	<%= link_to "Anime Characters Database", @character.anime_character_db_url %>
+  </li>
+</ul>
+
+<!-- TODO favorite -->
+
+<%= render 'disqus' %>

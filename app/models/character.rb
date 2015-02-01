@@ -67,4 +67,8 @@ class Character < ActiveRecord::Base
   def remain_days_from_today
     remain_days Date.today
   end
+
+  def anime_character_db_url
+    "http://www.animecharactersdatabase.com/character.php?id=#{anime_db_id}"
+  end
 end

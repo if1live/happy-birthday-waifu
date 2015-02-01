@@ -17,6 +17,11 @@ class CreateCharacters < ActiveRecord::Migration
 
       t.string :external_url, :default => ""
 
+      # anime character database를 기본으로 연결시킨다
+      # 마이너 캐릭, 위키에 독립페이지가 없어도 여긴 있을거같더라
+      # http://www.animecharactersdatabase.com/character.php?id=13162
+      t.integer :anime_db_id
+
       t.timestamps null: false
     end
 

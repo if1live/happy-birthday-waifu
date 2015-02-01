@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150128100146) do
     t.integer  "year"
     t.string   "date",         limit: 5
     t.string   "external_url",           default: ""
+    t.integer  "anime_db_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end

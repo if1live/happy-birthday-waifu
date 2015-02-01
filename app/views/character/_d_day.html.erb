@@ -1,0 +1,10 @@
+<%# 생일에 근접할수록 색이 달라지면 재밌을거다 %>
+<% if character.remain_days_from_today <= 1 %>
+  <span class="label label-primary"><%= character.d_day %></span>
+<% elsif character.remain_days_from_today <= 7 %>
+  <span class="label label-success"><%= character.d_day %></span>
+<% elsif character.remain_days_from_today <= 28 %>
+  <span class="label label-info"><%= character.d_day %></span>
+<% else %>
+  <span class="label label-default"><%= character.d_day %></span>
+<% end %>
