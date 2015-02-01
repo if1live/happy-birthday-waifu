@@ -41,19 +41,29 @@
             </li>
           <% end %>
 
-          <li role="presentation">
 		  <% if user_signed_in? %>
-			<%= link_to destroy_user_session_path, method: :delete,
-			data: { confirm: "로그아웃하시겠습니까?" }  do%>
-			  <i class='fa fa-twitter'></i> <%= current_user.name %> | Logout
+			<% if request.path == (url_for controller: "users", action: "show") %>
+			<li role="presentation" class="active">
+			<% else %>
+			<li role="presentation">
 			<% end %>
+			  <%= link_to controller: "users", action: "show" do %>
+			  <i class='fa fa-twitter'> </i> <%= current_user.name %>
+			  <% end %>
+			</li>
+			<li role="presentation">
+			  <%= link_to destroy_user_session_path, method: :delete,
+			  data: { confirm: "로그아웃하시겠습니까?" } do %>
+			    Logout
+		      <% end %>
+			</li>
 		  <% else %>
-			<%= link_to user_omniauth_authorize_path(:twitter) do %>
-			  <i class='fa fa-twitter'></i> Login
-			<% end %>
+			<li role="presentation">
+			  <%= link_to user_omniauth_authorize_path(:twitter) do %>
+				<i class='fa fa-twitter'></i> Login
+			  <% end %>
+			</li>
 		  <% end %>
-		  </li>
-
         </ul>
       </nav>
       <h3 class="text-muted">
