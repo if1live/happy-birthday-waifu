@@ -1,3 +1,6 @@
+require 'sidekiq/web'
+require 'sidekiq-cron'
+
 Rails.application.routes.draw do
   get 'welcome/about'
 
@@ -6,6 +9,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount Sidekiq::Web => '/sidekiq'
 
   root 'characters#index'
   get 'characters/:slug' => 'characters#detail'

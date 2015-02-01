@@ -57,6 +57,10 @@ gem 'shareable'
 # markdown
 gem "redcarpet"
 
+gem "sidekiq"
+gem "sidekiq-cron", "~> 0.2.0"
+gem 'sinatra', :require => nil
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
