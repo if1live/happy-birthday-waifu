@@ -3,7 +3,7 @@
 require 'date'
 
 class Character < ActiveRecord::Base
-  include CharacterHelper
+  include CharactersHelper
 
   rails_admin do
   end

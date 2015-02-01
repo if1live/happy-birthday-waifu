@@ -21,4 +21,14 @@ FactoryGirl.define do
     date '02/05'
     external_url = "http://en.wikipedia.org/wiki/Yosuga_no_Sora"
   end
+
+  factory :yesterday_character, class: Character do
+    slug 'yesterday'
+    date '02/04'
+  end
+
+  factory :tomorrow_character, class: Character do
+    slug 'tomorrow'
+    date '02/06'
+  end
 end

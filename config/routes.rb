@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  root 'character#index'
-  get 'characters/:slug' => 'character#detail'
-  get 'characters/date/:month/:day' => 'character#date'
-  get 'characters/' => 'character#list'
+  root 'characters#index'
+  get 'characters/:slug' => 'characters#detail'
+  get 'characters/date/:month/:day' => 'characters#date'
+  get 'characters/' => 'characters#list'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

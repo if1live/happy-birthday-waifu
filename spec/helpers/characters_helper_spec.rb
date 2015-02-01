@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe CharacterHelper do
-  let(:dummy_class) { Class.new { include CharacterHelper } }
+RSpec.describe CharactersHelper, :type => :helper do
+  let(:dummy_class) { Class.new { include CharactersHelper } }
   let(:subject) { dummy_class.new }
 
   describe '#date_to_s' do

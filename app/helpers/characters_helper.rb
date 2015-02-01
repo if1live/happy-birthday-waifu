@@ -1,4 +1,4 @@
-module CharacterHelper
+module CharactersHelper
   def self.included(base)
     base.extend(ClassMethods)
   end
