@@ -2,11 +2,22 @@ production:
   twitter_app_key: "<%= ENV['TWITTER_APP_KEY'] %>"
   twitter_app_secret: "<%= ENV['TWITTER_APP_SECRET'] %>"
 
+  twitter_access_token: "<%= ENV['TWITTER_ACCESS_TOKEN'] %>"
+  twitter_access_token_secret: "<%= ENV['TWITTER_ACCESS_TOKEN_SECRET'] %>"
+
+
 development:
-  twitter_app_key: "oNQNCxQaBIm973t8L9YNrlas5"
-  twitter_app_secret: "Tcq2XKB2ChSKoratA6AFLovdVZfltA406CD8lGdr3ZtV3h40uJ"
+  twitter_app_key: "<%= ENV['TWITTER_APP_KEY'] %>"
+  twitter_app_secret: "<%= ENV['TWITTER_APP_SECRET'] %>"
+
+  twitter_access_token: "<%= ENV['TWITTER_ACCESS_TOKEN'] %>"
+  twitter_access_token_secret: "<%= ENV['TWITTER_ACCESS_TOKEN_SECRET'] %>"
+
 
 test:
   twitter_app_key: "dummy-twitter-app-key"
   twitter_app_secret: "dummy-twitter-app-secret"
+
+  twitter_access_token: "dummy-twitter-access-token"
+  twitter_access_token_secret: "duumy-twitter-access-token-secret"
 

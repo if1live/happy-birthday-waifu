@@ -1,9 +1,9 @@
 require 'date'
 
-require 'setty'
 
 class CharacterController < ApplicationController
   def index
+
     today = Date.today
     @month = (params.has_key? :month) ? params[:month].to_i : today.month
     @day = (params.has_key? :day) ? params[:day].to_i : today.day
