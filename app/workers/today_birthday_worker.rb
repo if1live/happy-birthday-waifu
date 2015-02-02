@@ -2,7 +2,7 @@ class TodayBirthdayWorker
   include Sidekiq::Worker
 
   def perform(*args)
-    main
+    #main
   end
 
   def dummy()

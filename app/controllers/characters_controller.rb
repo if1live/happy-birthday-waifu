@@ -28,11 +28,16 @@ class CharactersController < ApplicationController
   def detail
     @slug = params[:slug]
     @character = Character.find_by slug: @slug
-    render :status => 404 if @character.nil?
+    return render :status => 404 if @character.nil?
 
     favorite_user_q = @character.user_list_q
     @favorite_count = favorite_user_q.count
-    @favorite = Favorite.find_by(user: current_user, character: @character)
+
+    if user_signed_in?
+      @favorite = Favorite.find_by(user: current_user, character: @character)
+    else
+      @favorite = nil
+    end
   end
 
   def index

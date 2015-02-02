@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe CharactersController, :type => :controller do
+  include Devise::TestHelpers
+
   describe "#assign_month_day" do
     it "success" do
       get :date, month: 2, day: 5
