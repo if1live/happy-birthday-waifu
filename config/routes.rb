@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'characters/date/:month/:day' => 'characters#date'
   get 'characters/' => 'characters#list'
 
+  post 'favorites/:character_id/' => 'favorites#toggle'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

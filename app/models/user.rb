@@ -1,9 +1,13 @@
 class User < ActiveRecord::Base
+  include FavoritesHelper
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:twitter]
+
+  has_many :favorite
 
   def self.from_omniauth(auth, current_user)
     #p auth
