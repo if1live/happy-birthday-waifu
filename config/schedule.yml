@@ -1,4 +1,0 @@
-today_birthday_job:
-  cron: "1 0 * * *"
-  class: "TodayBirthdayWorker"
-  queue: today_birthday
