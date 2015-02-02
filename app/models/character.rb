@@ -4,9 +4,12 @@ require 'date'
 
 class Character < ActiveRecord::Base
   include CharactersHelper
+  include FavoritesHelper
 
   rails_admin do
   end
+
+  has_many :favorite
 
   validates :slug, uniqueness: true
   validates :date, length: { is: 5 }
