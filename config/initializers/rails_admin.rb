@@ -8,6 +8,14 @@ RailsAdmin.config do |config|
   # end
   # config.current_user_method(&:current_user)
 
+  # http://demisx.github.io/rails-admin/2014/05/07/authentication-rails-admin-without-devise.html
+  config.authorize_with do
+    authenticate_or_request_with_http_basic('Login required') do |username, password|
+      username == Rails.application.secrets.user &&
+      password == Rails.application.secrets.password
+    end
+  end
+
   ## == Cancan ==
   # config.authorize_with :cancan
 
