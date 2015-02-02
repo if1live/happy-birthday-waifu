@@ -12,4 +12,9 @@ class Favorite < ActiveRecord::Base
   def uncheck
     self.destroy
   end
+
+  def self.checked?(user, character)
+    Favorite.exists? user: user, character: character
+
+  end
 end

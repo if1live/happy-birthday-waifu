@@ -30,6 +30,9 @@ class CharactersController < ApplicationController
     @character = Character.find_by slug: @slug
     render :status => 404 if @character.nil?
 
+    favorite_user_q = @character.user_list_q
+    @favorite_count = favorite_user_q.count
+    @favorite = Favorite.find_by(user: current_user, character: @character)
   end
 
   def index
@@ -53,5 +56,4 @@ class CharactersController < ApplicationController
     next_year_q = Character.where('date < ?', date_str).order(date: :asc)
     next_list = curr_year_q.to_a + next_year_q.to_a
   end
-
 end

@@ -1,2 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>My Page</h1>
+<h2>생일 알림 (<%= @favorite_list.length %>명)</h2>
+<div class="row">
+<% @favorite_list.each do |fav| %>
+  <div class="col-sm-4">
+	<%= render 'characters/simple_card', character: fav %>
+  </div>
+<% end %>
+</div>
