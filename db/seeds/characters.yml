@@ -3,47 +3,59 @@ character_1:
   slug: kasugano-sora
   name_en: "Kasugano Sora"
   name_ko: "카스가노 소라"
+  name_jp: "春日野 穹"
   date: "02/05"
   anime_db_id: 13162
+  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Sora_Kasugano.png
 
 character_2:
   id: 2
   slug: amatsume-akira
   name_en: "Amatsume Akira"
   name_ko: "아마츠메 아키라"
+  name_jp: "天女目 瑛"
   date: "08/03"
   anime_db_id: 13155
+  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Akira_Amatsume.png
 
 character_3:
   id: 3
   slug: yorihime-nao
   name_en: "Yorihime Nao"
   name_ko: "요리히메 나오"
+  name_jp: "依媛 奈緒"
   date: "10/07"
   anime_db_id: 13160
+  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Nao_Yorihime.png
 
 character_4:
   id: 4
   slug: migiwa-kazuha
   name_en: "Migiwa Kazuha"
   name_ko: "미기와 카즈하"
+  name_jp: "渚 一葉"
   date: "08/03"
   anime_db_id: 13157
+  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Kazuha_Migiwa.png
 
 character_5:
   id: 5
   slug: nogisaka-motoka
   name_en: "Nogisaka Motoka"
   name_ko: "노기사카 모토카"
+  name_jp: "乃木坂 初佳"
   date: "12/23"
   anime_db_id: 13159
+  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Motoka_Nogisaka.png
 
 character_6:
   id: 6
   slug: kuranaga-kozue
   name_en: "Kuranaga Kozue"
   name_ko: "쿠라나가 코즈에"
+  name_jp: "倉永 梢"
   date: "06/01"
   anime_db_id: 13158
+  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Kozue_Kuranaga.png
 
   

@@ -17,12 +17,14 @@ ActiveRecord::Schema.define(version: 20150202111303) do
     t.string   "slug"
     t.string   "name_en"
     t.string   "name_ko"
+    t.string   "name_jp"
     t.integer  "year"
-    t.string   "date",         limit: 5
-    t.string   "external_url",           default: ""
+    t.string   "date",             limit: 5
+    t.string   "external_url",               default: ""
     t.integer  "anime_db_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "anime_db_img_url"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
   add_index "characters", ["date"], name: "index_characters_on_date"
