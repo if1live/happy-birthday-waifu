@@ -52,23 +52,22 @@ class Character < ActiveRecord::Base
   end
 
 
-  def remain_days today
-    next_day = next_birthday today
-    next_day.mjd - today.mjd
+  def remain_days(date = nil)
+    date = Date.today if date.nil?
+
+    next_day = next_birthday date
+    next_day.mjd - date.mjd
   end
 
-  def d_day
-    today = Date.today
-    remain = remain_days today
+  def d_day(date = nil)
+    date = Date.today if date.nil?
+
+    remain = remain_days date
     if remain == 0
       "D-Day"
     else
       "D-#{remain}"
     end
-  end
-
-  def remain_days_from_today
-    remain_days Date.today
   end
 
   def anime_character_db_url

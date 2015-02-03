@@ -74,7 +74,8 @@ RSpec.describe CharactersController, :type => :controller do
       get :index, month: 2, day: 5
       expect(response).to have_http_status(:success)
       expect(assigns(:today_list)).to eq([today_character])
-      expect(assigns(:approach_list)).to eq([tomorrow_character, yesterday_character])
+      expect(assigns(:tomorrow_list)).to eq([tomorrow_character])
+      expect(assigns(:approach_list)).to eq([yesterday_character])
     end
   end
 end

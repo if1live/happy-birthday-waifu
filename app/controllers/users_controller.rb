@@ -7,5 +7,6 @@ class UsersController < ApplicationController
     favorite_list = favorite_list.sort { |a, b| a.date <=> b.date }
 
     @favorite_list = favorite_list
+    @today = Date.today
   end
 end

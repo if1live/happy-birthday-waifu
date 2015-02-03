@@ -1,10 +1,12 @@
 <%# 생일에 근접할수록 색이 달라지면 재밌을거다 %>
-<% if character.remain_days_from_today <= 1 %>
-  <span class="label label-primary"><%= character.d_day %></span>
-<% elsif character.remain_days_from_today <= 7 %>
-  <span class="label label-success"><%= character.d_day %></span>
-<% elsif character.remain_days_from_today <= 28 %>
-  <span class="label label-info"><%= character.d_day %></span>
+<% if character.remain_days(date) == 0 %>
+  <span class="label label-danger"><%= character.d_day date %></span>
+<% elsif character.remain_days(date) == 1 %>
+  <span class="label label-warning"><%= character.d_day date %></span>
+<% elsif character.remain_days(date) <= 7 %>
+  <span class="label label-success"><%= character.d_day date %></span>
+<% elsif character.remain_days(date) <= 28 %>
+  <span class="label label-info"><%= character.d_day date %></span>
 <% else %>
-  <span class="label label-default"><%= character.d_day %></span>
+  <span class="label label-default"><%= character.d_day date %></span>
 <% end %>

@@ -3,7 +3,7 @@
 <div class="row">
 <% @favorite_list.each do |fav| %>
   <div class="col-sm-4">
-	<%= render 'characters/simple_card', character: fav %>
+	<%= render 'characters/simple_card', character: fav, date: @today %>
   </div>
 <% end %>
 </div>

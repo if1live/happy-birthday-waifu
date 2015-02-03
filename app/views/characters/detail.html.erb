@@ -7,7 +7,7 @@
   <dt>생일</dt>
   <dd><%= @character.birthday_to_s %></dd>
   <dt>D-Day</dt>
-  <dd><%= render 'd_day', character: @character %><dd>
+  <dd><%= render 'd_day', character: @character, date: @today %><dd>
 </dl>
 
 <h2>Favorite / Notification</h2>
