@@ -10,23 +10,37 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+  * Development : +2.1.5+
 
 * System dependencies
 
 * Configuration
 
 * Database creation
+  * +bundle exec rake db:create+
 
 * Database initialization
+  * +bundle exec rake db:setup+
 
 * How to run the test suite
+  * +bundle exec rspec+
 
 * Services (job queues, cache servers, search engines, etc.)
+  * External server is not exist.
 
 * Deployment instructions
+  * Development : +bundle exec rails s -b 0.0.0.0+
+  * Deploy : Heroku
 
-* ...
+== TODO
+=== Bot
+* 관심 캐릭터로 등록하면 생일날 봇이 멘션으로 알려주기
+* 캐릭터 생일날 봇이 트윗 쓰기
+
+=== DataBase
+* 캐릭터 목록을 스프레드시트로 관리 (Google spreadsheet?)
+* 스프레드시트에서 Seed YAML 생성
+* 더 많은 캐릭터 생일 집어넣기
+* +db:seed+ 사용시 Seed YAML을 기존데이터와 적절히 통합. 없으면 추가하고 변경된 것은 덮어쓰기
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

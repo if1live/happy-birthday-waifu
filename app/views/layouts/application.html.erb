@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="if1live">
 
-  <title>HappyBirthdayWaifu</title>
+  <title>Happy Birthday, Waifu</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -27,7 +27,7 @@
             </li>
           <% end %>
 
-		  <% if request.path == (url_for controller: "welcome", action: "about") %>
+		  <% if /welcome/ =~ request.path %>
           <li role="presentation" class="active"><a href="#">About</a></li>
 		  <% else %>
           <li role="presentation">
@@ -72,7 +72,7 @@
       </nav>
       <h3 class="text-muted">
 		<a href="/">
-		Happy Birthday Waifu
+		Happy Birthday, Waifu
 		</a>
 	  </h3>
     </div>
