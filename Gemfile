@@ -63,7 +63,6 @@ gem "redcarpet"
 
 # heroku
 gem 'puma'
-gem 'rails_12factor'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -85,6 +84,10 @@ group :test do
   gem 'sqlite3'
 end
 
+group :production do
+  # https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems
+  gem 'rails_12factor'
+end
 
 # rails-assets
 source 'https://rails-assets.org' do
