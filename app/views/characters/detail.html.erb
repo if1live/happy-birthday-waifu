@@ -12,6 +12,11 @@
   <dd><%= render 'd_day', character: @character, date: @today %><dd>
 </dl>
 
+<% if @character.anime_db_img_url %>
+<img src="<%= @character.anime_db_img_url %>"
+	 class="img-responsive"/>
+<% end %>
+
 <h2>Favorite / Notification</h2>
 <p><%= @favorite_count %>명의 노답인생이 캐릭터의 생일을 축하할 예정입니다.</p>
 <% if not user_signed_in? %>
