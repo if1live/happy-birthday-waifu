@@ -2,7 +2,7 @@
 <div class="row">
   <% @all_list.each do |character| %>
     <div class="col-sm-4">
-      <%= render 'simple_card', character: character %>
+      <%= render 'simple_card', character: character, date: @today%>
     </div>
   <% end %>
 </div>
