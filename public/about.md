@@ -1,7 +1,7 @@
 # About
 ## 왜 만들었는가?
 
-![2013년 2월 5일 대화 기록](/assets/kasugano-sora-birthday-log.png)
+![2013년 2월 5일 대화 기록](/kasugano-sora-birthday-log.png)
 
 같은 실수를 반복하지 않으려고 만들었다.
 
