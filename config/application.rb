@@ -29,5 +29,8 @@ module HappyBirthdayWaifu
     # This will whitelist all IPv4 and IPv6 addresses. Please, only
     # run tests with that configuration, its a huge security hole.
     config.web_console.whitelisted_ips = %w( 0.0.0.0/0 ::/0 ) if Rails.env.development?
+
+    # https://github.com/heroku/rails_12factor#rails-4-serve-static-assets
+    config.serve_static_assets = true
   end
 end
