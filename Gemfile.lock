@@ -66,6 +66,8 @@ GEM
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
     capistrano-stats (1.1.1)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
     codeclimate-test-reporter (0.4.6)
       simplecov (>= 0.7.1, < 1.0.0)
     coffee-rails (4.1.0)
@@ -77,6 +79,7 @@ GEM
     coffee-script-source (1.8.0)
     colorize (0.7.5)
     columnize (0.9.0)
+    connection_pool (2.1.1)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     devise (3.4.1)
@@ -103,6 +106,7 @@ GEM
       tilt
     hashie (3.3.2)
     hike (1.2.3)
+    hitimes (1.2.2)
     http (0.6.3)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
@@ -158,6 +162,8 @@ GEM
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
       rack (~> 1.1)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
@@ -219,6 +225,9 @@ GEM
     rdoc (4.2.0)
       json (~> 1.4)
     redcarpet (3.2.2)
+    redis (3.2.0)
+    redis-namespace (1.5.1)
+      redis (~> 3.0, >= 3.0.4)
     ref (1.0.5)
     remotipart (1.2.1)
     responders (2.1.0)
@@ -243,6 +252,8 @@ GEM
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
+    rufus-scheduler (3.0.9)
+      tzinfo
     safe_yaml (1.0.4)
     sass (3.4.10)
     sass-rails (5.0.1)
@@ -259,6 +270,16 @@ GEM
     shareable (1.1.4)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    sidekiq (3.3.1)
+      celluloid (>= 0.16.0)
+      connection_pool (>= 2.1.1)
+      json
+      redis (>= 3.0.6)
+      redis-namespace (>= 1.3.1)
+    sidekiq-cron (0.2.0)
+      rufus-scheduler (>= 2.0.24)
+      sidekiq (>= 2.17.3)
+      tilt (< 2.0.0)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -268,6 +289,10 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
     slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
@@ -290,6 +315,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    timers (4.0.1)
+      hitimes
     turbolinks (2.5.3)
       coffee-rails
     twitter (5.13.0)
@@ -350,7 +377,10 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   setty
   shareable
+  sidekiq
+  sidekiq-cron (~> 0.2.0)
   simple_form
+  sinatra
   spring
   sqlite3
   therubyracer

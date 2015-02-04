@@ -60,9 +60,10 @@ gem 'shareable'
 # markdown
 gem "redcarpet"
 
-#gem "sidekiq"
-#gem "sidekiq-cron", "~> 0.2.0"
-#gem 'sinatra', :require => nil
+# sidekiq
+gem "sidekiq"
+gem "sidekiq-cron", "~> 0.2.0"
+gem 'sinatra', :require => nil
 
 # heroku
 gem 'puma'
