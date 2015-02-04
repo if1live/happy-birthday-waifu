@@ -10,36 +10,39 @@ class User < ActiveRecord::Base
   has_many :favorite
 
   def self.from_omniauth(auth, current_user)
-    #p auth
-
     user = current_user.nil? ? User.where(provider: auth.provider, uid: auth.uid.to_s) : current_user
     if user.blank?
+      need_create = true
       user = User.new
+
+      # 바뀌지 않는 값만 new에서 할당
       user.provider = auth.provider
       user.uid = auth.uid
-
       user.password = Devise.friendly_token[0, 20]
-      user.name = auth.info.name
-      user.screen_name = user.info.nickname
-      user.email = auth.info.email
-
-      user.token = auth.credentials.token
-      user.secret = auth.credentials.secret
 
       # 트위터는 email이 없다. 근데 email이 없으면 저장이 안된다
       # email은 고유값이 들어가야한다. 그래서 공백은 불가능
-      user.email = user.password if auth.provider == 'twitter'
+      # 적당히 하나 만들어넣는다
+      user.email = "#{user.uid}@twitter.com" if auth.provider == 'twitter'
 
-      auth.provider == 'twitter' ? user.save(:validate => false) : user.save
       user
     else
+      need_create = false
       user = user.first
     end
 
     # 바뀌었을 가능성이 있는것은 매번 다시 저장
     user.token = auth.credentials.token
     user.secret = auth.credentials.secret
-    user.screen_name = user.info.nickname
+
+    # production 에서는 auth.info가 안먹힌다
+    # 대신 auth.extra.raw_info를 사용해야한다.
+    # https://github.com/arunagw/omniauth-twitter
+    user.name = auth.info.name
+    user.screen_name = auth.extra.raw_info.screen_name
+    user.email = auth.extra.raw_info.name
+
+    user.save
 
     user
   end
