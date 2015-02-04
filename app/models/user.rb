@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 
       user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.name
+      user.screen_name = user.info.nickname
       user.email = auth.info.email
 
       user.token = auth.credentials.token
@@ -32,8 +33,15 @@ class User < ActiveRecord::Base
       auth.provider == 'twitter' ? user.save(:validate => false) : user.save
       user
     else
-      user.first
+      user = user.first
     end
+
+    # 바뀌었을 가능성이 있는것은 매번 다시 저장
+    user.token = auth.credentials.token
+    user.secret = auth.credentials.secret
+    user.screen_name = user.info.nickname
+
+    user
   end
 
   def self.new_with_session(params, session)
