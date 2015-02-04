@@ -35,3 +35,7 @@ npm-debug.log
 
 # shell environment
 env.sh
+
+# deploy
+public/assets/
+pids

@@ -1,0 +1,19 @@
+server {
+    listen 5000;
+
+    access_log /var/log/nginx/birthday/access.log;
+    error_log /var/log/nginx/birthday/error.log warn;
+
+    location / {
+        proxy_set_header   X-Real-IP $remote_addr;
+        proxy_set_header   Host      $http_host;
+        proxy_pass         http://127.0.0.1:4000;
+    }
+
+    # public assets
+    location ~\.(png|jpg|jpeg|gif|svg|js|json|css|html|ico|txt|gz|otf|ttf|woff|woff2|eot) {
+        root /home/kaede/service/happy-birthday-waifu/public/;
+        #autoindex on;
+    }
+}
+	
