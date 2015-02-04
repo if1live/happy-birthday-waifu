@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/about'
   get 'welcome/dev-history' => 'welcome#dev_history'
+  get 'welcome/support'
 
   get 'users/show'
 

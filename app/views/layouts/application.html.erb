@@ -27,11 +27,11 @@
             </li>
           <% end %>
 
-		  <% if /welcome/ =~ request.path %>
+		  <% if /welcome/ =~ request.path and request.path != '/welcome/support' %>
           <li role="presentation" class="active"><a href="#">About</a></li>
 		  <% else %>
           <li role="presentation">
-			<%= link_to "About", controller: "welcome", action: "about" %>
+			<%= link_to "About", controller: "/welcome", action: "about" %>
 		  </li>
 		  <% end %>
 
@@ -68,6 +68,21 @@
 			  <% end %>
 			</li>
 		  <% end %>
+
+          <% if request.path == (url_for controller: '/welcome', action: 'support') %>
+            <li role="presentation" class="active">
+              <a href="#">
+                <i class='fa fa-question'></i> Help!
+              </a>
+            </li>
+		  <% else %>
+          <li role="presentation">
+			<%= link_to controller: "/welcome", action: "support" do %>
+              <i class='fa fa-question'></i> Help!
+            <% end %>
+		  </li>
+		  <% end %>
+
         </ul>
       </nav>
       <h3 class="text-muted">

@@ -2,7 +2,7 @@
 ### 2013/02/05
 카스가노 소라 생일을 잊고있다가 23시 25분에서야 깨달았다. 이것이 모든 일의 시작.
 
-![2013년 2월 5일 대화 기록](/kasugano-sora-birthday-log.png)
+![2013년 2월 5일 대화 기록](/static/kasugano-sora-birthday-log.png)
 
 ### 2015/01/22
 
