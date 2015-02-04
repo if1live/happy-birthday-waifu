@@ -3,6 +3,7 @@ class CreateFavorites < ActiveRecord::Migration
     create_table :favorites do |t|
       t.integer :user_id, null: false
       t.integer :character_id, null: false
+      t.integer :noti_year
 
       t.timestamps null: false
     end
