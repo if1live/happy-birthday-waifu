@@ -40,10 +40,8 @@ class User < ActiveRecord::Base
     # https://github.com/arunagw/omniauth-twitter
     user.name = auth.info.name
     user.screen_name = auth.extra.raw_info.screen_name
-    user.email = auth.extra.raw_info.name
 
     user.save
-
     user
   end
 
