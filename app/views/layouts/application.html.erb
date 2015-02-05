@@ -27,6 +27,7 @@
             </li>
           <% end %>
 
+		  <%#=
 		  <% if /welcome/ =~ request.path and request.path != '/welcome/support' %>
           <li role="presentation" class="active"><a href="#">About</a></li>
 		  <% else %>
@@ -34,6 +35,7 @@
 			<%= link_to "About", controller: "/welcome", action: "about" %>
 		  </li>
 		  <% end %>
+		  %>
 
           <% if request.path == (url_for controller: "characters", action: "list") %>
             <li role="presentation" class="active">
@@ -117,7 +119,8 @@
 	<hr/>
 	<footer class="footer">
       <p>&copy;
-		<a href="https://twitter.com/if1live">@if1live</a>
+		<a href="https://twitter.com/waifu_birth_bot">@waifu_birth_bot</a>
+		| <a href="https://twitter.com/if1live">@if1live</a>
 		| <a href="https://github.com/if1live/happy-birthday-waifu">Repository</a>
 		2015</p>
     </footer>
