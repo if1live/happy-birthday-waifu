@@ -27,7 +27,7 @@
             </li>
           <% end %>
 
-		  <%#=
+		  <% if false %>
 		  <% if /welcome/ =~ request.path and request.path != '/welcome/support' %>
           <li role="presentation" class="active"><a href="#">About</a></li>
 		  <% else %>
@@ -35,7 +35,7 @@
 			<%= link_to "About", controller: "/welcome", action: "about" %>
 		  </li>
 		  <% end %>
-		  %>
+		  <% end %>
 
           <% if request.path == (url_for controller: "characters", action: "list") %>
             <li role="presentation" class="active">
