@@ -18,9 +18,9 @@ require 'devise'
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 
-#webmock를 활성화하면 code climate의 웹 요청이 막힌다
-#이걸 땜빵할 다른 방법을 찾아내야 한다
-#require 'webmock/rspec'
+# codeclimate 처리 없이 webmock를 활성화하면 code climate의 웹 요청이 막힌다
+require 'webmock/rspec'
+WebMock.disable_net_connect!(:allow => "codeclimate.com")
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
