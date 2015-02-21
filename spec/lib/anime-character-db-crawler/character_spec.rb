@@ -11,12 +11,34 @@ def get_filepath(filename)
   return file_path
 end
 
-describe AnimeCharacterDB::CharacterMetadata do
-  let(:subject) { AnimeCharacterDB::CharacterMetadata.new }
+describe AnimeCharacterDB::CharacterData do
+  let(:subject) { AnimeCharacterDB::CharacterData.new }
   describe '#birthday=' do
     it 'success' do
       subject.birthday = 'February 5'
       expect(subject.birthday).to eq('02/05')
+    end
+  end
+
+  describe '#name_jp=' do
+    it 'kanji + hirakana' do
+      subject.name_jp = '春日野 穹 （かすがの そら）'
+      expect(subject.name_kanji).to eq('春日野 穹')
+      expect(subject.name_kana).to eq('かすがの そら')
+    end
+
+    it 'katakana' do
+      name = 'イリーナ・ウラジーミロヴナ・プチナ'
+      subject.name_jp = name
+      expect(subject.name_kanji).to be_nil
+      expect(subject.name_kana).to eq(name)
+    end
+
+    it 'kanji' do
+      name = '山川 美千子'
+      subject.name_jp = name
+      expect(subject.name_kanji).to eq(name)
+      expect(subject.name_kana).to be_nil
     end
   end
 end
