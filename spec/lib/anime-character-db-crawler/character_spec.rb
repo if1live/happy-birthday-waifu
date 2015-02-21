@@ -21,7 +21,7 @@ describe AnimeCharacterDB::CharacterData do
   end
 
   describe '#name_jp=' do
-    it 'kanji + hirakana' do
+    it 'kanji + hiragana' do
       subject.name_jp = '春日野 穹 （かすがの そら）'
       expect(subject.name_kanji).to eq('春日野 穹')
       expect(subject.name_kana).to eq('かすがの そら')
@@ -39,6 +39,20 @@ describe AnimeCharacterDB::CharacterData do
       subject.name_jp = name
       expect(subject.name_kanji).to eq(name)
       expect(subject.name_kana).to be_nil
+    end
+  end
+
+  describe '#name_ko' do
+    it 'kanji + hiragana' do
+      subject.name_jp = '春日野 穹 （かすがの そら）'
+      expect(subject.name_ko).to eq('카스가노 소라')
+    end
+
+    it 'no hiragana' do
+      # TODO
+      name = '山川 美千子'
+      subject.name_jp = name
+      expect(subject.name_ko).to be_nil
     end
   end
 end
@@ -80,6 +94,12 @@ describe AnimeCharacterDB::CharacterHTMLParser do
 
       image = 'http://ami.animecharactersdatabase.com/./images/yosuganosora/Sora_Kasugano.png'
       expect(data.image).to eq(image)
+
+      # source
+      expect(data.source_name).to eq('Yosuga no Sora')
+      expect(data.source_id).to be(1693)
+      src_img = 'http://ami.animecharactersdatabase.com/productimages/1693.jpg'
+      expect(data.source_image).to eq(src_img)
     end
 
     it 'ibuki shirakursa' do
@@ -109,6 +129,12 @@ describe AnimeCharacterDB::CharacterHTMLParser do
 
       image = 'http://ami.animecharactersdatabase.com/uploads/chars/11498-1811138177.jpg'
       expect(data.image).to eq(image)
+
+      # source
+      expect(data.source_id).to be(103704)
+      expect(data.source_name).to eq('Cocoro@Function!')
+      src_img = 'http://ami.animecharactersdatabase.com/productimages/u/11498-932367893.jpg'
+      expect(data.source_image).to eq(src_img)
     end
   end
 

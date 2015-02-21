@@ -9,7 +9,8 @@ module AnimeCharacterDB
                   :birthday,
                   :aliases
     attr_reader :name_kanji,
-                :name_kana
+                :name_kana,
+                :name_ko
 
     # predefined
     attr_accessor :role,
@@ -23,6 +24,11 @@ module AnimeCharacterDB
     attr_accessor :thumbnail,
                   :image
 
+    # source
+    attr_accessor :source_id,
+                  :source_name,
+                  :source_image
+
     attr_reader :extra
 
     def initialize()
@@ -31,6 +37,10 @@ module AnimeCharacterDB
 
     def character_id=(val)
       @character_id = val.to_i
+    end
+
+    def source_id=(val)
+      @source_id = val.to_i
     end
 
     def name_jp=(val)
@@ -54,6 +64,14 @@ module AnimeCharacterDB
           # イリーナ・ウラジーミロヴナ・プチナ
           @name_kana = val
         end
+      end
+    end
+
+    def name_ko
+      # TODO kana없는 경우 영어 표기법에서 한글을 추정해야한다
+      unless @name_kana.nil?
+        converter = KanaToHangul.new
+        converter.convert @name_kana
       end
     end
 
@@ -164,7 +182,31 @@ module AnimeCharacterDB
       read_profile doc, metadata
       read_thumbnail doc, metadata
       read_image doc, metadata
+      read_source doc, metadata
 
+      metadata
+    end
+
+    def read_source(doc, metadata)
+      img_node_list = doc.css('img')
+      img_node_list.each do |el|
+        src = el.get_attribute :src
+        next unless src.include? 'ami.animecharactersdatabase.com'
+        next unless src.include? '/productimages/'
+
+        parent = el.parent
+        raise ArguemntError.new "unknown html" if parent.node_name != 'a'
+        href = parent.get_attribute :href
+        alt = el.get_attribute :alt
+
+        src_id_regexp = /source.php\?id=(?<src_id>\d+)/
+        m = src_id_regexp.match(href)
+
+        metadata.source_id = m.captures[0]
+        metadata.source_name = alt
+        metadata.source_image = src
+        return metadata
+      end
       metadata
     end
 
