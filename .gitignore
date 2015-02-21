@@ -39,3 +39,6 @@ env.sh
 # deploy
 public/assets/
 pids
+
+# emacs
+.#*
