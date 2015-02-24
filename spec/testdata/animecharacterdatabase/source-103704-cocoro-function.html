@@ -1,0 +1,1612 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML LANG=en>
+ <HEAD>
+  <TITLE>Cocoro@Function! | Anime Characters Database</TITLE>
+  <LINK rel="stylesheet" media="all" href="http://ami.animecharactersdatabase.com/acdb-compact.css">
+  <LINK rel="apple-touch-startup-image" href="http://moe.animecharactersdatabase.com/startup.png">
+  <SCRIPT defer type="text/javascript" SRC="http://moe.animecharactersdatabase.com/newscripts2.js"></SCRIPT>
+  <LINK rel="ICON" href="http://moe.animecharactersdatabase.com/phozzblue64.png" type="image/png">
+  <LINK rel="SHORTCUT ICON" href="http://moe.animecharactersdatabase.com/phozzblue64.png" type="image/png">
+  <LINK rel="SEARCH" type="application/opensearchdescription+xml" title="Anime Characters Database" href="search.xml">
+
+  
+  <META name="description" content="Cocoro@Function! / ココロ＠ファンクション ! is a H-Game by PULLTOP / ぷるとっぷ from 2013/09/27">
+  <META name="keywords" content="Cocoro@Function!, , Kokoro@Function!, acdb, anime, characters, anime characters, anime characters database, anime info, anime information">
+  <META http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+  
+  <style type="text/css">
+#letters a {
+//   border: 1px solid #eee;
+  padding: 10px;
+  font-size: 1.75em;
+  font-family: serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#letters sup {
+  font-size: .5em;
+  font-weight: normal;
+
+}
+
+#bt th {
+             background: #48f;
+                  color: #eee;
+
+font-size: 11px;
+text-align: right;
+
+                 border: 1px solid white;
+
+          border-radius: 15px;
+     -moz-border-radius: 15px;
+  -webkit-border-radius: 15px; 
+
+}
+
+#bt td {
+             background: white;
+                  color: #000;
+
+
+font-size: 12px;
+text-indent: 10px;
+
+//                  border: 1px solid #48f;
+
+           border-width: 0;
+
+//           border-radius: 15px;
+//      -moz-border-radius: 15px;
+//   -webkit-border-radius: 15px; 
+
+}
+</style>
+
+<SCRIPT>
+
+var searchActive = 0;
+
+function whattyped(e,m) {
+	if( document.getElementById('searchin').value == "allchars" )
+		var ajaxhelper = "rapidsearch_ajax";
+	else if( document.getElementById('searchin').value == "allseries" )
+		var ajaxhelper = "rapidsearchseries_ajax";
+	else	return;
+
+	if( searchActive == 0 ) {
+		var s 			= 'X = ' + e.screenX + ' and Y = ' + e.screenY;
+
+		bg 			= document.getElementById('gearbg');
+
+		activeWindow 		= m;
+
+		bg.style.display 	= 'inline';
+		bg.style.left 		= 0 + 'px';
+		bg.style.top 		= window.pageYOffset + 'px';
+		bg.style.width 		= '100' + '%';
+		bg.style.height 	= '100' + '%';
+
+		m.style.backgroundColor = 'white';
+		m.style.display 	= 'inline';
+
+		m.style.right 		= 282 + 'px';
+		m.style.top 		= 345 + 'px';
+	}
+
+	searchActive = 1;
+
+	http.open("GET", ajaxhelper + ".php?s=" + document.getElementById('theinput').value, true);
+
+	http.onreadystatechange=function() {
+		if(http.readyState == 4) {
+			document.getElementById('rapid_div').innerHTML = http.responseText;
+		}
+	}
+	http.send(null);
+}
+
+var activeWindow;
+
+function hidegearmenu(o) {
+	o.style.display = 'none';
+	if( activeWindow == null ) return;
+	activeWindow.style.display = 'none';
+}
+
+function gearmenu(e,m) {
+	if( m == null ) return;
+
+	var s 			= 'X = ' + e.screenX + ' and Y = ' + e.screenY;
+
+	bg 			= document.getElementById('gearbg');
+
+	activeWindow 		= m;
+
+	bg.style.display 	= 'inline';
+	bg.style.left 		= 0 + 'px';
+	bg.style.top 		= window.pageYOffset + 'px';
+	bg.style.width 		= '100' + '%';
+	bg.style.height 	= '100' + '%';
+
+	m.style.backgroundColor = 'white';
+	m.style.display 	= 'inline';
+
+	m.style.left 		= e.clientX + 'px';
+	m.style.top 		= (window.pageYOffset + e.clientY) + 'px';
+// 	m.style.left 		= 50 + '%';
+// 	m.style.top 		= 50 + 'px';
+}
+
+function goblack() {
+	bg 			= document.getElementById('gearbg');
+
+	bg.style.display 	= 'inline';
+	bg.style.left 		= 0 + 'px';
+	bg.style.top 		= window.pageYOffset + 'px';
+	bg.style.width 		= '100' + '%';
+	bg.style.height 	= '100' + '%';
+}
+
+</SCRIPT>
+
+ </HEAD>
+ <BODY style="padding: 0px 0px; background: white;">
+<DIV id=top_qs style="height: 40px; margin: 0 0; padding: 1px 3px 3px 3px; background: black  url(http://moe.animecharactersdatabase.com/bg/2013_grad4.png) repeat-x;">
+<DIV>
+ <FORM ACTION=sresults.php>
+  <TABLE>
+   <TR>
+    <TD>
+     <SELECT name=gender>
+      <option value="0" selected='selected'> Gender </option>
+      <option value="1"> Male </option>
+      <option value="2"> Female </option>
+      <option value="3"> Unknown/Ambiguous </option>
+<OPTION>Apparent Gender
+     </SELECT>
+    </TD>
+    <TD>
+     <SELECT name=eye_color>
+      <option value="0" selected='selected'> Eye Color </option>
+      <option value="1"> Black </option>
+      <option value="3"> Blue </option>
+      <option value="4"> Brown </option>
+      <option value="5"> Green </option>
+      <option value="6"> Gray </option>
+      <option value="7"> Orange </option>
+      <option value="8"> Purple </option>
+      <option value="9"> Red </option>
+      <option value="10"> White </option>
+      <option value="11"> Yellow </option>
+      <option value="12"> Pink </option>
+      <option value="14"> Blue-Green </option>
+      <option value="20"> Not Visible </option>
+<OPTION>Eye Color
+     </SELECT>
+    </TD>
+    <TD>
+     <SELECT name=hair_color>
+      <option value="0" selected='selected'> Hair Color </option>
+      <option value="1"> Black </option>
+      <option value="2"> Blonde/Yellow </option>
+      <option value="3"> Blue </option>
+      <option value="4"> Brown </option>
+      <option value="5"> Green </option>
+      <option value="6"> Gray </option>
+      <option value="7"> Orange </option>
+      <option value="8"> Purple </option>
+      <option value="9"> Red </option>
+      <option value="10"> White </option>
+      <option value="12"> Pink </option>
+      <option value="13"> Maroon </option>
+      <option value="14"> Blue-Green </option>
+      <option value="20"> Not Visible </option>
+<OPTION>Hair Color
+     </SELECT>
+    </TD>
+    <TD>
+     <SELECT name=hair_length>
+      <option value="0" selected='selected'> Hair Length </option>
+      <option value="1"> No Hair </option>
+      <option value="2"> To Ears </option>
+      <option value="3"> To Neck </option>
+      <option value="4"> To Shoulders </option>
+      <option value="5"> To Chest </option>
+      <option value="6"> To Waist </option>
+      <option value="7"> Past Waist </option>
+      <option value="8"> Hair Up / Indeterminate </option>
+<OPTION>Hair Length
+     </SELECT>
+    </TD>
+    <TD>
+     <SELECT name=age>
+      <option value="0" selected='selected'> Apparent Age </option>
+      <option value="1"> Child </option>
+      <option value="3"> Teen </option>
+      <option value="4"> Adult </option>
+      <option value="5"> Senior </option>
+      <option value="6"> Ageless </option>
+<OPTION>Apparent Age
+     </SELECT>
+    </TD>
+    <TD>
+     <SELECT name=mimikko>
+      <option value="0" selected='selected'> Animal Ears </option>
+      <option value="1"> No </option>
+      <option value="2"> Yes </option>
+<OPTION>Animal Ears
+     </SELECT>
+    </TD>
+    <TD>
+     <INPUT TYPE=HIDDEN NAME=otherchar VALUE=0>
+     <INPUT TYPE=SUBMIT VALUE="Search 71871 Characters">
+    </TD>
+  </TABLE>
+ </FORM>
+</DIV>
+</DIV>
+<DIV>
+<A name=sitetop></A>
+
+<!-- 2 -->
+<DIV style="background: black url(http://moe.animecharactersdatabase.com/uploads/forum/8282-460805704.jpg);">
+
+<DIV style="height: 300px; background: url(http://moe.animecharactersdatabase.com/bg/eri3-0.png) top center no-repeat;">
+<TABLE style="margin-right: 0px; width: 100%; padding: 0; border-spacing: 0; font-size: 11px;">
+ <TR>
+  <TD rowspan=2 style="text-align: left; vertical-align: top; padding: 0px; height: 300px;"><DIV style="margin-top: 20px; margin-left: 0px;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 2014 Large -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-7106850598454425"
+     data-ad-slot="6590678384"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></DIV>
+  </TD>
+
+
+  <TD id=loginbox style="color: white; padding-right: 5px; vertical-align: top; text-align: right; background: url(http://moe.animecharactersdatabase.com/bg/white_right_57.png) right top no-repeat;">
+   
+<FORM METHOD=POST ACTION=login.php>
+ <DIV>
+ User Name
+<BR>
+ <INPUT TYPE=TEXT SIZE=15 MAXLENGTH=100 NAME=username>
+<BR>
+ Password
+<BR>
+ <INPUT TYPE=PASSWORD SIZE=15 MAXLENGTH=100 NAME=userpass>
+<BR>
+ <INPUT TYPE=SUBMIT VALUE="Login">
+<BR>
+ <P><A href="forum_signup.php">Sign Up</A></P>
+
+ </DIV>
+</FORM>
+  </TD>
+
+ <TR>
+  <TD style="vertical-align: bottom; text-align: right; padding-right: 5px; padding-top: 5px;">
+
+<A style="color: #80f; font-weight: bold; background: inherit; font-family: serif; font-size: 2em; text-decoration: none; " href="index.php"><IMG SRC="http://ami.animecharactersdatabase.com/hosted/Red2.png" ALT="Anime Characters Database"></A>
+
+  </TD>
+
+</TABLE>
+</DIV>
+
+</DIV>
+<!-- /2\ -->
+
+
+<DIV style="background: url(http://moe.animecharactersdatabase.com/bg/cirno4.png) repeat;">
+
+<DIV style="background: url(http://moe.animecharactersdatabase.com/bg/eri3-1.png) top center no-repeat; height: 90px;">
+<TABLE style="margin-right: 0px; width: 100%;">
+ <TR>
+  <TD style="text-align: left;"><SPAN style="color: #f80; text-decoration: none;" href="character.php?id=12372">Server Time 9:46 AM, Tue Feb 24 2015</SPAN></TD>
+  <TD style="vertical-align: bottom; text-align: right;">
+<FORM ACTION=searchacdb.php>
+ <DIV style="color: black; font-weight: bold;">
+   <SELECT id=searchin style="" NAME=i>
+    <OPTION VALUE="allchars" SELECTED> Characters
+    <OPTION VALUE="allseries"> Anime and Games
+    <OPTION VALUE="t"> Tags
+    <OPTION VALUE="v"> Voice Actors
+    <OPTION VALUE="m"> Members
+    <OPTION VALUE="s"> Studios
+   </SELECT>
+   <INPUT style="font-weight: bold; color: black; background: black url(http://ami.animecharactersdatabase.com/bg/yellograd.png); border-color: #840; border-width: 1px; padding: 2px;" id=theinput TYPE=TEXT onkeyup='whattyped(event,document.getElementById("rapid_div"))' TYPE=TEXT NAME=q SIZE=20>
+
+  <INPUT style="font-weight: bold; color: black; background: black url(http://ami.animecharactersdatabase.com/bg/yellograd.png); border-color: #840; border-width: 1px; padding: 2px;" TYPE=SUBMIT VALUE="Search">
+ </DIV>
+</FORM></TD>
+</TABLE>
+
+<!-- 4 -->
+<DIV id=top_rand style="padding: 3px;">
+<UL>
+ <LI> <A href="#mainmenu">Menu</A>
+ <LI> <A href="source.php?random=2">Random Anime</A>
+ <LI> <A href="character.php?random=1">Random Male</A>
+ <LI> <A href="character.php?random=2">Random Female</A>
+ <LI> <A href="source.php?random=1">Random Game</A>
+ <LI>
+<IMG src="http://moe.animecharactersdatabase.com/oxygen/16x16/apps/wine.png" ALT=""> 
+ <A href="lounge.php?channel_id=1444">Lounge 4</A> 
+<IMG src="http://moe.animecharactersdatabase.com/oxygen/16x16/actions/im-user.png" ALT=""> 
+
+ </LI>
+ <LI style="height: 32px;"> <IMG src="http://moe.animecharactersdatabase.com/oxygen/32x32/categories/applications-system.png" onclick='gearmenu(event,document.getElementById("menugeardiv"));'>
+
+</UL>
+</DIV>
+<!-- /4\ -->
+</DIV>
+</DIV>
+<DIV style="font-size: 1.2em; padding: 2px; background: url(http://moe.animecharactersdatabase.com/bg/cirno4.png) repeat; text-align: left; color: #F80; font-weight: bold;">
+
+<A style="text-decoration: none; color: #F80;" href="links.php">Tip</A>
+<A style="font-weight: bold; color: #F8F8F8; text-decoration: underline;"  href="pageviewcounters.php?type_id=1">- Most Viewed Characters</A> 
+
+</DIV><DIV style="margin-top: 15px; margin-bottom: 15px; width: 100%;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Responsive One -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7106850598454425"
+     data-ad-slot="3391581583"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></DIV>
+<DIV id=gearbg style="display: none; position:absolute; z-index:3; background: black; opacity: .8;" onclick='hidegearmenu(this);'></DIV>
+<DIV id=menugeardiv style="display: none; position:absolute; z-index:4; width: 200px; background: black url(http://ami.animecharactersdatabase.com/bg/yellograd.png);">
+<UL>
+ <LI> <A href="who.php">Who</A>
+ <LI> <A href="exam.php?recent">Quizzes</A>
+ <LI> <A href="charactervs.php">VS</A>
+ <LI> <A href="guilds.php">Guilds</A>
+ <LI> <A href="newforum.php">Forum</A>
+ <LI> <A href="news.php">News</A>
+ <LI> <A href="myfavchars.php">Favourites</A>
+ <LI> <A href="cards.php">Cards</A>
+ <LI> <A href="cards_individual.php">My Cards</A>
+</UL>
+</DIV>
+
+<DIV id=rapid_div style="display: none; position:absolute; z-index:4; width: 200px; background: black url(http://ami.animecharactersdatabase.com/bg/yellograd.png);">
+</DIV>
+
+
+<DIV class=ni style="">
+<TABLE class=content style="border-spacing: 0px; margin: 0;">
+ <TR VALIGN=TOP style="vertical-align: top;">
+  <TD id=maincontent class=maincontent style="vertical-align: top; border-color: white;">
+<DIV id=ulmenu>
+<UL>
+  <LI>  <B>0</B> <A href="#newcommentstop"> Comments</A>
+ <LI>  <B>0</B> <A href="#images">Additional Images</A>
+ <LI>  <B>13</B> <A href="#characters">Characters</A>
+ <LI>  <A href="source.php?id=103704&amp;airtime">Air Time / Season Info</A>
+</UL>
+</DIV>
+<DIV id=ulmenu>
+<UL>
+ <LI><A href="#reviews">0 Reviews</A>
+ <LI> <A href="#violence">Violence Rating</A>
+ <LI><a href="#similar">Similar</A>
+ <LI><a href="source.php?id=103704&amp;va#va">VA</A>
+
+ <LI><a href="#lists">Lists</A>
+
+</UL>
+</DIV><DIV style="text-align: left; padding-left: 10px;"></DIV>
+<DIV class=middleframe style="padding: 0px 0px; background: inherit;">
+<H1 class=frameheader style="background: url(http://moe.animecharactersdatabase.com/bg/bg9666.png) repeat-x;">
+<IMG src="http://moe.animecharactersdatabase.com/img/50red.png" ALT="">  Cocoro@Function!
+</H1>
+<DIV class=outframe style="background: inherit;">
+
+<DIV class=vector>
+ <TABLE cellpadding=0px cellspacing=2px>
+  <TR>	
+  <TD>
+   <A HREF="source.php?id=103704&amp;back=10"><IMG SRC="http://ami.animecharactersdatabase.com/bg/bback.gif" ALT="Go Back Ten"></A>
+  </TD>
+  <TD>
+   <A HREF="source.php?id=103702">
+    <IMG SRC="http://ami.animecharactersdatabase.com/productimages/u/5688-387368268.jpg" ALT="Totono" TITLE="Totono" CLASS=vector>
+   </A>
+  </TD>
+  <TD>
+   <A HREF="source.php?id=103703">
+    <IMG SRC="http://ami.animecharactersdatabase.com/productimages/u/5583-224513197.jpg" ALT="Samurai Oyako to Haramase Dousei Seikatsu" TITLE="Samurai Oyako to Haramase Dousei Seikatsu" CLASS=vector>
+   </A>
+  </TD>
+  <TD>
+   <A HREF="source.php?id=103704">
+    <IMG SRC="http://ami.animecharactersdatabase.com/productimages/u/11498-932367893.jpg" ALT="Cocoro@Function!" TITLE="Cocoro@Function!" >
+   </A>
+  </TD>
+  <TD>
+   <A HREF="source.php?id=103705">
+    <IMG SRC="http://ami.animecharactersdatabase.com/productimages/u/5583-1856904854.jpg" ALT="Gunjin Shoujo no Kozukuri Ninmu" TITLE="Gunjin Shoujo no Kozukuri Ninmu" CLASS=vector>
+   </A>
+  </TD>
+  <TD>
+   <A HREF="source.php?id=103706">
+    <IMG SRC="http://ami.animecharactersdatabase.com/productimages/u/5688-1217606556.jpg" ALT="Otome Switch" TITLE="Otome Switch" CLASS=vector>
+   </A>
+  </TD>
+  <TD>
+   <A HREF="source.php?id=103704&amp;forward=10"><IMG SRC="http://ami.animecharactersdatabase.com/bg/nnext.gif" ALT="Go Forward Ten"></A>
+  </TD>
+ </TABLE>
+</DIV><A name=opinion></A>
+<a name=top></a><H3> Cocoro@Function! (H-Game) </H3>
+<DIV id=besttable>
+   <TABLE id=bt>
+    <TR>
+     <TH style="width: 180px;">Series ID</TH>
+     <TD>103704</td>
+    <TR>
+     <TH>English Title</TH>
+     <TD>Cocoro@Function!</td>
+    <TR>
+     <TH>Aliases</TH>
+     <TD></td>
+    <TR>
+     <TH>Romaji Title</TH>
+     <TD>Kokoro@Function!</td>
+    <tr>
+     <TH>Furigana Title</TH>
+     <TD LANG=ja>ココロ＠ファンクション !</td>
+    <TR>
+     <TH>Japanese Title</TH>
+     <TD LANG=ja>ココロ＠ファンクション !</td>
+    <tr>
+     <TH>Japanese Studio Name</TH>
+     <TD LANG=ja><A href="studio.php?lang=ja&amp;id=103704">ぷるとっぷ</A></td>
+    <TR>
+     <TH>English Studio Name</TH>
+     <TD><A href="studio.php?lang=en&amp;id=103704">PULLTOP</A></td>
+    <TR>
+     <TH>Content Rating</TH>
+     <TD>A - Adult</td>
+    <TR>
+     <TH>Genre Tags</TH>
+     <TD></td>
+    <TR>
+     <TH>Release Date</TH>
+     <TD><a href="dates.php?date=2013/09/27">2013/09/27</a></td>
+    <TR>
+     <TH>Links</TH>
+     <TD><a target=_blank href="refer.php?id=103704&amp;url=1">Home Page</a>     <a target=_blank href="refer.php?id=103704&amp;url=7">Getchu</a></TD>
+
+    
+ <TR>
+  <TH>Character Popularity <A href="seriespop.php">*</A></TH>
+  <TD>0</TD>
+
+    
+    
+    <TR>
+     <TH>Watching</TH>
+     <TD> <SPAN style="font-size: 1.6em;">Interested</SPAN> <SPAN style="color: #08F;">TitiMontana<B>[ 0 ]</B></SPAN></TD>
+     </TD>
+   </TABLE>
+</DIV>
+<H3>Extra Info</H3>
+<DIV id=besttable>
+<TABLE id=bt>
+</TABLE>
+</DIV>
+<BR><BR>
+<A name=plot></A>
+<H3>Story &amp; Information - </H3>
+<DIV id=besttable>
+<TABLE>
+  <TD>
+  </TD>
+</TABLE>
+</DIV>
+</DIV></DIV><BR><A name=images></A>
+<DIV class=middleframe style="padding: 0px 0px; background: inherit;">
+<H1 class=frameheader style="background: url(http://moe.animecharactersdatabase.com/bg/bg9666.png) repeat-x;">
+<IMG src="http://moe.animecharactersdatabase.com/img/50red.png" ALT=""> Additional Images
+</H1>
+<DIV class=outframe style="background: inherit;">
+
+<H3><A href="photo.php?pid=103704">0 Images</A></H3>
+<DIV id=bigtile>
+ <UL>
+ </UL>
+</DIV>
+</DIV></DIV><BR><A name=characters></A>
+<DIV id=ulmenu>
+ <UL style="border-width: 1px 0 1px 0;">
+  <LI>Order by: 
+  <LI> <A href="source.php?id=103704&amp;all&amp;order=eyec#characters">Eye Color</A> 
+  <LI> <A href="source.php?id=103704&amp;all&amp;order=hairc#characters">Hair Color</A> 
+  <LI> <A href="source.php?id=103704&amp;all&amp;order=hairl#characters">Hair Length</A> 
+  <LI> <A href="source.php?id=103704&amp;all&amp;order=age#characters">Age</A> 
+  <LI> <A href="source.php?id=103704&amp;all&amp;order=gender#characters">Gender</A> 
+  <LI> <A href="source.php?id=103704&amp;all&amp;order=mimikko#characters">Mimikko</A>
+  <LI> <A href="source.php?id=103704&amp;all&amp;order=pid2#characters">Section</A>
+ </UL>
+</DIV>
+<DIV class=middleframe style="padding: 0px 0px; background: inherit;">
+<H1 class=frameheader style="background: url(http://moe.animecharactersdatabase.com/bg/bg9666.png) repeat-x;">
+<IMG src="http://moe.animecharactersdatabase.com/img/50red.png" ALT=""> 
+13 of 13 Characters
+</H1>
+<DIV class=outframe style="background: inherit;">
+
+<TABLE style="width: 100%;">
+ <TR>
+  <TD>
+
+<DIV id=besttable_c>
+<TABLE style="width: auto; margin-left: 0; background: #66CCFF; border-style: none;">
+ <TR>
+  <TD style="font-weight: bold; color: #66CCFF;">Male</TD>
+  <TD>1 / 13</TD>
+  <TD>7.69 %</TD>
+</TABLE>
+</DIV>
+
+   </TD>
+
+<TD style="text-align: center; border: 1px solid purple; border-width: 0 0 1px 0;"><A style="text-decoration: none; font-weight: bold;" href="allchars.php?id=103704&amp;tile">Show All</A></TD>
+
+  <TD>
+
+<DIV id=besttable_c>
+<TABLE style="width: auto; margin-right: 0; background: #FF99CC; border-style: none;">
+ <TR>
+  <TD style="font-weight: bold; color: #FF99CC;">Female</TD>
+  <TD>12  / 13</TD>
+  <TD>92.31 %</TD>
+</TABLE>
+</DIV>
+
+   </TD>
+</TABLE>
+<DIV id=tile1>
+ <UL>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=62896" style="font-size: 10px;">Taiyou Hayami</A></div>
+  <A HREF="character.php?id=62896"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1897566571.jpg" ALT="Image of Taiyou Hayami" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=62895" style="font-size: 10px;">Asagao Hayami</A></div>
+  <A HREF="character.php?id=62895"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-575849526.jpg" ALT="Image of Asagao Hayami" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=66563" style="font-size: 10px;">Bell</A></div>
+  <A HREF="character.php?id=66563"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1644147491.jpg" ALT="Image of Bell" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=62897" style="font-size: 10px;">Chie Endou</A></div>
+  <A HREF="character.php?id=62897"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-200201004.jpg" ALT="Image of Chie Endou" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=62892" style="font-size: 10px;">Hijiri Yuzuriha</A></div>
+  <A HREF="character.php?id=62892"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1407670382.jpg" ALT="Image of Hijiri Yuzuriha" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=62894" style="font-size: 10px;">Ibuki Shirakusa</A></div>
+  <A HREF="character.php?id=62894"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-135469648.jpg" ALT="Image of Ibuki Shirakusa" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=62899" style="font-size: 10px;">Kanon Nohara</A></div>
+  <A HREF="character.php?id=62899"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-826003023.jpg" ALT="Image of Kanon Nohara" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=62898" style="font-size: 10px;">Kasumi Harusaki</A></div>
+  <A HREF="character.php?id=62898"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-881307120.jpg" ALT="Image of Kasumi Harusaki" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=66565" style="font-size: 10px;">Komatsu</A></div>
+  <A HREF="character.php?id=66565"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1403455963.jpg" ALT="Image of Komatsu" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=62893" style="font-size: 10px;">Mebae Shirakusa</A></div>
+  <A HREF="character.php?id=62893"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-447666738.jpg" ALT="Image of Mebae Shirakusa" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=62891" style="font-size: 10px;">Mina Hasugase</A></div>
+  <A HREF="character.php?id=62891"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1518305038.jpg" ALT="Image of Mina Hasugase" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=66566" style="font-size: 10px;">Nozawa</A></div>
+  <A HREF="character.php?id=66566"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1563184718.jpg" ALT="Image of Nozawa" ></A>
+ </li>
+ <li style="width: 150px;">
+  <div class=tile1top><A HREF="character.php?id=66564" style="font-size: 10px;">Tamaki Fujibakama</A></div>
+  <A HREF="character.php?id=66564"><IMG style="width: 150px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-679911419.jpg" ALT="Image of Tamaki Fujibakama" ></A>
+ </li>
+ </UL>
+</DIV>
+<H3>Options</H3>
+<UL>
+ <LI><A href="episodes.php?pid=103704">Index Episodes</A>
+ <LI><A href="allchars.php?id=103704">View All 13 Characters</A>
+ <LI><A href="allchars2.php?id=103704">View by Role</A>
+ <LI><A href="allchars.php?id=103704&amp;tile">View favorites</A>
+ <LI><A href="seriescharacters.php?id=103704&amp;all&amp;order=pid2#characters" style="font-weight: bold;">View franchise</A>
+
+</UL>
+</DIV></DIV><BR>
+<DIV class=middleframe style="padding: 0px 0px; background: inherit;">
+<H1 class=frameheader style="background: url(http://moe.animecharactersdatabase.com/bg/bg9666.png) repeat-x;">
+<IMG src="http://moe.animecharactersdatabase.com/img/50red.png" ALT=""> Characters
+</H1>
+<DIV class=outframe style="background: inherit;">
+
+<H6>
+ <A HREF="textpub.php?id=103704">TEXT VIEW OF NAMES</A>
+</H6>
+		
+  <H2 class=role>Protagonist</H2>
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=62896"><IMG CLASS=noborder ALT="Taiyou Hayami" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1897566571.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=62896">Taiyou Hayami</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=62896">(速水 太陽)</A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  <H2 class=role>Unsorted</H2>
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=66563"><IMG CLASS=noborder ALT="Bell" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1644147491.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=66563">Bell</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=66563">(ベル)</A></LI>
+     <LI><A HREF="voice.php?name=66563"> CV: 羽鳥空 </A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=66564"><IMG CLASS=noborder ALT="Tamaki Fujibakama" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-679911419.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=66564">Tamaki Fujibakama</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=66564">(藤袴 環 （ふじばかま たまき）)</A></LI>
+     <LI><A HREF="voice.php?name=66564"> CV: 萌花ちょこ </A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=66565"><IMG CLASS=noborder ALT="Komatsu" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1403455963.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=66565">Komatsu</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=66565">(小松)</A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=66566"><IMG CLASS=noborder ALT="Nozawa" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1563184718.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=66566">Nozawa</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=66566">(野沢)</A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=62891"><IMG CLASS=noborder ALT="Mina Hasugase" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1518305038.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=62891">Mina Hasugase</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=62891">(蓮ヶ瀬 水菜 （はすがせ みな）)</A></LI>
+     <LI><A HREF="voice.php?name=62891"> CV: 遥そら </A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=62892"><IMG CLASS=noborder ALT="Hijiri Yuzuriha" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1407670382.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=62892">Hijiri Yuzuriha</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=62892">(譲葉 聖 （ゆずりは ひじり）)</A></LI>
+     <LI><A HREF="voice.php?name=62892"> CV: 優希芹果 </A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=62893"><IMG CLASS=noborder ALT="Mebae Shirakusa" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-447666738.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=62893">Mebae Shirakusa</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=62893">(白草 めばえ （しらくさ めばえ）)</A></LI>
+     <LI><A HREF="voice.php?name=62893"> CV: 桃也みなみ </A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=62894"><IMG CLASS=noborder ALT="Ibuki Shirakusa" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-135469648.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=62894">Ibuki Shirakusa</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=62894">(白草 いぶき （しらくさ いぶき）)</A></LI>
+     <LI><A HREF="voice.php?name=62894"> CV: 藤咲ウサ </A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=62895"><IMG CLASS=noborder ALT="Asagao Hayami" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-575849526.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=62895">Asagao Hayami</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=62895">(速水 朝顔 （はやみ あさがお）)</A></LI>
+     <LI><A HREF="voice.php?name=62895"> CV: 羽鳥いち </A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=62897"><IMG CLASS=noborder ALT="Chie Endou" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-200201004.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=62897">Chie Endou</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=62897">(遠藤 智慧 （えんどう ちえ）)</A></LI>
+     <LI><A HREF="voice.php?name=62897"> CV: 星咲イリア </A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=62898"><IMG CLASS=noborder ALT="Kasumi Harusaki" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-881307120.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=62898">Kasumi Harusaki</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=62898">(春咲 かすみ （はるさき かすみ）)</A></LI>
+     <LI><A HREF="voice.php?name=62898"> CV: 白月かなめ </A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+  
+  <TABLE CLASS=sourcechars>
+   <TR>
+    <TD CLASS=imgside>
+     <A HREF="character.php?id=62899"><IMG CLASS=noborder ALT="Kanon Nohara" src="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-826003023.jpg"></A>
+    </TD>
+    <TD CLASS=proside style="vertical-align: top;">
+<UL>
+     <LI><A HREF="character.php?id=62899">Kanon Nohara</A></LI>
+     <LI><A LANG=ja HREF="character.php?id=62899">(野原 花音 （のはら かのん）)</A></LI>
+     <LI><A HREF="voice.php?name=62899"> CV: 陽月ひおり </A></LI>
+</UL>
+    </TD>
+   </TR>
+  </TABLE>
+</DIV></DIV><BR><A name=violence></A>
+<DIV class=middleframe style="padding: 0px 0px; background: inherit;">
+<H1 class=frameheader style="background: url(http://moe.animecharactersdatabase.com/bg/bg9666.png) repeat-x;">
+<IMG src="http://moe.animecharactersdatabase.com/img/50red.png" ALT=""> <A href="violentanime.php">Violence</A>
+</H1>
+<DIV class=outframe style="background: inherit;">
+
+<H3><A href="violentanime.php">Rated Anime</A></H3>
+
+</DIV></DIV><BR>
+<A name=similar></a>
+<DIV class=middleframe style="padding: 0px 0px; background: inherit;">
+<H1 class=frameheader style="background: url(http://moe.animecharactersdatabase.com/bg/bg9666.png) repeat-x;">
+<IMG src="http://moe.animecharactersdatabase.com/img/50red.png" ALT=""> <A href="similarseries.php">Similar Series</A>
+</H1>
+<DIV class=outframe style="background: inherit;">
+
+</DIV></DIV><BR>
+<DIV class=middleframe style="padding: 0px 0px; background: inherit;">
+<H1 class=frameheader style="background: url(http://moe.animecharactersdatabase.com/bg/bg9666.png) repeat-x;">
+<IMG src="http://moe.animecharactersdatabase.com/img/50red.png" ALT=""> Comments
+</H1>
+<DIV class=outframe style="background: inherit;">
+
+<A name=newcommentstop></A>
+<DIV style="border: 2px solid #ace;">
+<FORM STYLE="text-align: left;" METHOD=POST ACTION="source.php?id=103704#newcommentstop">
+ <DIV id=besttable>
+  <TABLE>
+   <TR>
+    <TH COLSPAN=2 style="text-align: left;">
+     Comment
+    </TH>
+   <TR>
+    <TH>
+     <TEXTAREA NAME=comment COLS=60 ROWS=4 style="width: 100%; overflow: auto;"></TEXTAREA>
+    </TH>
+    <TH style="width: 100px; text-align: center;">
+      <INPUT TYPE=SUBMIT NAME=post_comment VALUE="Post">
+    </TH>
+   <TR>
+    <TD>
+      Name      <INPUT TYPE=TEXT NAME=name VALUE="">
+      <INPUT TYPE=SUBMIT NAME=preview VALUE="Preview">
+    </TD>
+    <TD>
+     
+     
+    </TD>
+<TR>
+<TD colspan=2 style="font-size: 9px;"><A href="ask.php">Contact an Admin</A> <BR> <I>By posting, you agree to follow <A target=_blank href="books.php?id=50">the rules</A>.</I> Posts breaking the rules will be edited or deleted by moderators.</TD>
+
+
+  </TABLE>
+ </DIV>
+</FORM>
+</DIV>
+<A name=newcomments></A>
+</DIV></DIV><BR><A name=reviews></A>
+<DIV class=middleframe style="padding: 0px 0px; background: inherit;">
+<H1 class=frameheader style="background: url(http://moe.animecharactersdatabase.com/bg/bg9666.png) repeat-x;">
+<IMG src="http://moe.animecharactersdatabase.com/img/50red.png" ALT=""> <A href="reviews.php">Reviews</A>
+</H1>
+<DIV class=outframe style="background: inherit;">
+
+<H3><A href="reviews.php?id=103704">Write a Review</A></H3>
+</DIV></DIV><BR>
+<DIV class=middleframe style="padding: 0px 0px; background: inherit;">
+<H1 class=frameheader style="background: url(http://moe.animecharactersdatabase.com/bg/bg9666.png) repeat-x;">
+ <IMG src="http://moe.animecharactersdatabase.com/oxygen/48x48/actions/irc-voice.png" ALT=""> Latest
+</H1>
+<DIV class=outframe style="background: inherit;">
+
+<TABLE style="width: 100%;">
+ <TR>
+  <TD style="width: 50%; vertical-align: top; word-wrap: break-word;">
+<H3><A style="color: black; text-decoration: none;" href="commentcenter.php?type=1">Characters Comments</A> <A href="c_rss.php"><IMG SRC="http://moe.animecharactersdatabase.com/oxygen/48x48/mimetypes/application-rss+xml.png" ALT="RSS Feed for Latest Character Comments"></A></H3>
+<DIV id=besttable>
+<TABLE>
+ <TR>
+  <TH rowspan=2 style="padding: 5px; vertical-align: top; width: 100px; border-color: white; background: white;">
+   <A href="character.php?id=46107"><IMG ALT="Christophe Blanc" TITLE="Christophe Blanc" HEIGHT=100 WIDTH=100 SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/4758-2119753183.jpg"></A>
+  </TH>
+  <TH style="text-align: left; border-color: white; background: white;"><SPAN style="color: gray;">Anonymous</SPAN></TH>
+  <TD style="text-align: right; border-color: white; font-style: italic;">Yesterday 04:17 pm</TD>
+ <TR>
+  <TD colspan=2 style="border-color: white; vertical-align: top;">
+   <P style="margin-left: 15px;">I like wise character like cris.b.
+
+</P>
+  </TD>
+ <TR>
+</TABLE>
+</DIV>
+  </TD>
+  <TD style="width: 50%; vertical-align: top; word-wrap: break-word;">
+<H3><A style="color: black; text-decoration: none;" href="commentcenter.php?type=2">Anime and Games Comments</A> <A href="c_rss.php?type=2"><IMG SRC="http://moe.animecharactersdatabase.com/oxygen/48x48/mimetypes/application-rss+xml.png" ALT="RSS Feed for Latest Character Comments"></A></H3>
+<DIV id=besttable>
+<TABLE>
+ <TR>
+  <TH rowspan=2 style="padding: 5px; vertical-align: top; width: 100px; border-color: white; background: white;">
+   <A href="source.php?id=100552">
+    <IMG ALT="Umineko no Naku koro Ni The Animation" TITLE="Umineko no Naku koro Ni The Animation" HEIGHT=100 WIDTH=100 SRC="http://ami.animecharactersdatabase.com/productimages/100552.jpg">
+   </A>
+  </TH>
+  <TH style="text-align: left; border-color: white; background: white;"><SPAN style="color: blue;"><B><A href="user.php?uid=28616">ANIMazer</A></B></SPAN></TH>
+  <TD style="text-align: right; border-color: white; font-style: italic;">Feb 17, 2015</TD>
+ <TR>
+  <TD colspan=2 style="border-color: white; vertical-align: top;">
+   <P style="margin-left: 15px;">I´ll just finished watching this anime and it was pretty cool. It´s kind of a violent and bloody murder mystery mixed with some occult stuff. It also has some interesting characters and a few scary girls with supernatural powers. These girls will probably give you some chills from time to time. I really liked this anime so I will send it directly to my favorites list. I´ll hope I can find some more series like this one eventually.<IMG alt="" src="http://ami.animecharactersdatabase.com/emote/act-up.png">  </P>
+  </TD>
+ <TR>
+</TABLE>
+</DIV>
+  </TD>
+</TABLE>
+<H3><A style="color: black; text-decoration: none;" href="reviews.php">Reviews</A></H3>
+<DIV id=besttable>
+<TABLE style="margin-left: 0px; width: auto;">
+ <TR>
+  <TH>9 <img alt="9 Star" src="http://ami.animecharactersdatabase.com/forum/e107_images/rate/dark/lev9.png"></TH>
+  <TD><A href="reviews.php?review_id=78">Higurashi When They Cry</A></TD>
+  <TD style="text-align: right;">Feb 14, 2015 / Feb 14, 2015</TD>
+  <TH>by <A href="reviews.php?uid=9180">Mitsugu</A></TH>
+  <TH>Review length: Long</TH>
+</TABLE>
+</DIV>
+<H3>Sponsored Links</H3><script type="text/javascript" src="http://ap.lijit.com/www/delivery/fpi.js?z=268100&u=animecharactersdatabase&width=300&height=250"></script>
+</DIV></DIV><BR>
+<DIV class=middleframe style="padding: 0px 0px; background: inherit;">
+<H1 class=frameheader style="background: url(http://moe.animecharactersdatabase.com/bg/bg9666.png) repeat-x;">
+<IMG src="http://moe.animecharactersdatabase.com/img/50red.png" ALT=""> Who's This Character Board v2
+</H1>
+<DIV class=outframe style="background: inherit;">
+
+<DIV id=main_who_posts style="border: 1px solid #e0e0e0;">
+<TABLE class=who_posts>
+ <TR>
+  <TD class=who_posts_a><I class=small>04:04 am</I><BR><I class=who_posts>Anonymous</I></TD>
+  <TD class=who_posts_b style="word-wrap: break-word;">Who is this blonde ?  </TD>
+  <TD class=who_posts_c>
+   <A href="who.php?id=16552"><B>View #16552</B></A><BR>
+   <I class=small>&nbsp;</I>
+ </TD>
+</TABLE>
+<TABLE class=who_posts>
+ <TR>
+  <TD class=who_posts_a><I class=small>03:47 am</I><BR><I class=who_posts>Anonymous</I></TD>
+  <TD class=who_posts_b style="word-wrap: break-word;">Who is this and what manga is she from?  </TD>
+  <TD class=who_posts_c>
+   <A href="who.php?id=16551"><B>View #16551</B></A><BR>
+   <I class=small>&nbsp;</I>
+ </TD>
+</TABLE>
+<TABLE class=who_posts>
+ <TR>
+  <TD class=who_posts_a><I class=small>02:57 am</I><BR><I class=who_posts>Anonymous</I></TD>
+  <TD class=who_posts_b style="word-wrap: break-word;">Where is this from?   NSFW (18+)</TD>
+  <TD class=who_posts_c>
+   <A href="who.php?id=16550"><B>View #16550</B></A><BR>
+   <I class=small>&nbsp;</I>
+ </TD>
+</TABLE>
+<TABLE class=who_posts>
+ <TR>
+  <TD class=who_posts_a><I class=small>02:30 am</I><BR><I class=who_posts>Anonymous</I></TD>
+  <TD class=who_posts_b style="word-wrap: break-word;">Who is this?  </TD>
+  <TD class=who_posts_c>
+   <A href="who.php?id=16549"><B>View #16549</B></A><BR>
+   <I class=small>[ Replies: 1]</I>
+ </TD>
+</TABLE>
+<TABLE class=who_posts>
+ <TR>
+  <TD class=who_posts_a><I class=small>12:37 am</I><BR><I class=who_posts>Anonymous</I></TD>
+  <TD class=who_posts_b style="word-wrap: break-word;">Who is this?  </TD>
+  <TD class=who_posts_c>
+   <A href="who.php?id=16548"><B>View #16548</B></A><BR>
+   <I class=small>[ Replies: 1]</I>
+ </TD>
+</TABLE>
+</DIV>
+<H2><A href="who.php">[ View MORE ]</A></H2>
+<DIV class=left>
+<FORM METHOD=POST ACTION="who.php">
+ <TABLE class=who_posts style="margin: auto; width: 600px;">
+  <TR>
+   <TD class=who_posts_b>URL</TD>
+   <TD class=who_posts_a><INPUT class=s500 TYPE=TEXT NAME=url VALUE=""><INPUT TYPE=HIDDEN NAME=newthread VALUE=""></TD>
+
+  <TR>
+   <TD class=who_posts_b>Comment</TD>
+   <TD class=who_posts_a><TEXTAREA COLS=60 ROWS=4 class=s500 NAME=msg>Who is this?</TEXTAREA></TD>
+
+  <TR>
+   <TD class=who_posts_b>Name</TD>
+   <TD class=who_posts_a><INPUT TYPE=TEXT NAME=name VALUE=""> <INPUT TYPE=SUBMIT NAME=postanon VALUE="Post (Anonymous)"></TD>
+
+  <TR>
+   <TD class=who_posts_a colspan=2>
+    <INPUT TYPE=HIDDEN NAME=botcheck VALUE="abc">
+    <INPUT TYPE=CHECKBOX NAME=nsfw> NSFW (18+) ?
+   </TD>
+
+ </TABLE>
+</FORM>
+</DIV>
+
+<P>Post a link to an image you want the Anime Characters Database Community to Identify</P>
+
+<BR>
+<A href="rss_wtcb_a.php"><img class=noborder alt="New Posts" title="New Posts" src="http://ami.animecharactersdatabase.com/rss2.png"></A>
+<A href="rss_wtcb_c.php"><img class=noborder alt="New Comments" title="New Comments" src="http://ami.animecharactersdatabase.com/rss2.png"></A>
+</DIV></DIV><BR>
+
+     </TD>
+     <TD id=mar2012side class=mar2012side style="width: 200px; text-align: center; padding-right: 10px; border-color: white;">
+<DIV class=box> 
+<H2 class=newside>Cocoro@Function!</H2>
+<DIV class=newside>
+<TABLE>
+ <TR>
+  <TD>Appears on 1 <A href="watch.php">watching lists</A>.</TD>
+ <TR>
+  <TD></TD>
+ <TR>
+  <TD><P>Appears on 4 <a href=myfavseries.php?id=103704>favorites lists</A>.</P></TD>
+ <TR>
+  <TD></TD>
+ <TR>
+  <TD><A href="episodeblog.php?new=103704&amp;pid=103704">Blog it!</A></TD>
+
+
+
+ <TR>
+  <TD><P><A href="recommend.php?title=103704">if you liked this, you might also like ....</A></TD>
+
+
+</TABLE>
+</DIV></DIV>
+<DIV class=box>
+<H2>Guild Activity Today</H2>
+
+<TABLE style="width: 100%; text-align: left;">
+ <TR>
+  <TD>#1</TD>
+  <TD style="width: 25px;"><A href="guilds.php?guild_id=25"><IMG style="height: 25px;" src="http://ami.animecharactersdatabase.com/uploads/guild/gallery/5688-623078674.jpg" ALT="Guild Crest"></A></TD>
+  <TD> <A href="guilds.php?guild_id=25">Rainbow Lovers</A></TD>
+</TABLE>
+
+<TABLE style="width: 100%; text-align: left;">
+ <TR>
+  <TD>#2</TD>
+  <TD style="width: 25px;"><A href="guilds.php?guild_id=43"><IMG style="height: 25px;" src="http://ami.animecharactersdatabase.com/uploads/forum/8282-1001811284.png" ALT="Guild Crest"></A></TD>
+  <TD> <A href="guilds.php?guild_id=43">Role-Play Guild</A></TD>
+</TABLE>
+
+<TABLE style="width: 100%; text-align: left;">
+ <TR>
+  <TD>#3</TD>
+  <TD style="width: 25px;"><A href="guilds.php?guild_id=5"><IMG style="height: 25px;" src="http://ami.animecharactersdatabase.com/uploads/guild/gallery/8744-853500924.jpg" ALT="Guild Crest"></A></TD>
+  <TD> <A href="guilds.php?guild_id=5">Oppai Appreciation Guild</A></TD>
+</TABLE>
+
+<TABLE style="width: 100%; text-align: left;">
+ <TR>
+  <TD>#4</TD>
+  <TD style="width: 25px;"><A href="guilds.php?guild_id=16"><IMG style="height: 25px;" src="http://ami.animecharactersdatabase.com/uploads/guild/gallery/5583-1522639511.jpg" ALT="Guild Crest"></A></TD>
+  <TD> <A href="guilds.php?guild_id=16">VN Guild</A></TD>
+</TABLE>
+
+<TABLE style="width: 100%; text-align: left;">
+ <TR>
+  <TD>#5</TD>
+  <TD style="width: 25px;"><A href="guilds.php?guild_id=24"><IMG style="height: 25px;" src="http://ami.animecharactersdatabase.com/uploads/guild/gallery/5583-1192113357.jpg" ALT="Guild Crest"></A></TD>
+  <TD> <A href="guilds.php?guild_id=24">Aura Kingdom</A></TD>
+</TABLE>
+
+<UL>
+ <LI> <A href="guild_ap.php"><I>Activity Points</I></A>
+</UL>
+</DIV><BR><DIV style="text-align: left;"><script type="text/javascript" src="http://ap.lijit.com/www/delivery/fpi.js?z=167431&u=animecharactersdatabase&width=160&height=600"></script></DIV>
+<DIV class=box>
+ <H2> VS </H2>
+
+<P><I><A href="charactervs.php?uid=18651">CalvinClannad</A> asks</I></P>
+<B>Who do you like more?</B>
+
+ <P><A href="character.php?id=66137">Souta Hatate</A></P><A href="character.php?id=66137"><IMG style="width: 50px; height: 50px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1131366677.jpg"></A>
+
+ <P><A href="charactervs.php?id=2855"><IMG src="http://moe.animecharactersdatabase.com/hosted/vs.png"></A></P>
+
+ <A href="character.php?id=46262"><IMG style="width: 50px; height: 50px;" SRC="http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/5688-1289932614.jpg"></A><P><A href="character.php?id=46262">Kyoutarou Kakei</A></P>
+
+
+ <UL>
+  <LI> <A href="charactervs.php">View More VS Matches</A>
+  <LI> <A href="charactervs.php?new">New VS</A>
+ </UL>
+</DIV>
+<DIV class=box>
+<H2>Latest Forum Posts</H2>
+<DIV id=cb2>
+<DIV class=cb>
+<DIV>
+<IMG ALT="" SRC="http://ami.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <A href="newforum.php?goto=15057">Re:Ohai there :3</A><BR>
+Hey AlterEX and welcome on Acdb ! o/
+I&#039;m Tiw[more ...]<BR>
+Posted by TiwaLeChaton<BR>
+<SMALL>Mon 6:49 PM</SMALL>
+</DIV><BR>
+<DIV>
+<IMG ALT="" SRC="http://ami.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <A href="newforum.php?goto=15056">Ohai there :3</A><BR>
+So, hi.
+I&#039;m Alter, 21 going on 22, from the [more ...]<BR>
+Posted by AlterEX<BR>
+<SMALL>Mon 6:36 PM</SMALL>
+</DIV><BR>
+<DIV>
+<IMG ALT="" SRC="http://ami.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <A href="newforum.php?goto=15055">Re:Should our ethnicity/race be applied to characters from fantasy/fictional setting</A><BR>
+Yeah, I&#039;ve been using the &#039;Chinese&#039;[more ...]<BR>
+Posted by LiCobra<BR>
+<SMALL>Mon 1:22 AM</SMALL>
+</DIV><BR>
+
+</DIV>
+<P><A href="newforum.php?latest">More Forum Posts</A></P>
+<P><A href="forumrss.php"><IMG src="http://ami.animecharactersdatabase.com/oxygen/48x48/mimetypes/application-rss+xml.png" ALT="RSS"></A></P>
+
+</DIV>
+</DIV>
+<DIV class=box>
+<H2>Image Filter</H2>
+<FORM METHOD=POST ACTION="">
+ <DIV style="padding: 10px;">
+  <SELECT NAME=my_cr style="">
+      <option value="0" selected='selected'> Safe Images </option>
+      <option value="1"> Questionable </option>
+      <option value="2"> Everything </option>
+ </SELECT>
+ <INPUT TYPE=SUBMIT VALUE=Set style="">
+ </DIV>
+</FORM>
+</DIV>
+<DIV class=box>
+<H2>Interface Language</H2>
+
+ <DIV style="padding: 10px;">
+ <FORM METHOD=POST ACTION="">
+  <TABLE>
+   <TR>
+    <TH>
+<SELECT NAME=mylangid>
+      <option value="1" selected='selected'> English </option>
+      <option value="2"> 日本語 </option>
+      <option value="3"> 简化字 </option>
+      <option value="4"> Français </option>
+      <option value="5"> Deutsch </option>
+      <option value="6"> 한국어 </option>
+      <option value="7"> Español </option>
+</SELECT>
+<INPUT TYPE=SUBMIT VALUE="Update"></TH>
+
+  </TABLE>
+ </FORM>
+ </DIV>
+</DIV>
+<DIV class=box>
+ <H2> Server Time </H2>
+ 9:46 AM, Tue Feb 24 2015 
+
+</DIV>
+<DIV class=box>
+<H2>~Lounge~</H2>
+
+
+<DIV id=cb><DIV class=cb>
+<DIV><IMG ALT="" SRC="http://ami.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>09:24 am</SMALL><BR>
+&lt;<A href="user.php?uid=30386">Anime_Freak16</A>&gt; long time no see :3
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://ami.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>09:24 am</SMALL><BR>
+&lt;<A href="user.php?uid=30386">Anime_Freak16</A>&gt; hello gasm
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://ami.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>09:23 am</SMALL><BR>
+&lt;<A href="user.php?uid=5">Anime Characters Database</A>&gt; It will take 1 hour(s) 15 minute(s) 5 second(s) to download 66 gigabytes at 15 MB/sec
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://ami.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>09:23 am</SMALL><BR>
+&lt;<A href="user.php?uid=12652">OMGasm</A>&gt; .dl 66 g 15 m
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://ami.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>09:23 am</SMALL><BR>
+&lt;<A href="user.php?uid=12652">OMGasm</A>&gt; hey
+</DIV><BR></DIV>
+</DIV>
+</DIV><BR><DIV style="text-align: left;"><script type="text/javascript">
+if (!window.OX_ads) { OX_ads = []; }
+OX_ads.push({ "auid" : "478211" });
+</script>
+<script type="text/javascript">
+document.write('<scr'+'ipt src="http://ax-d.pixfuture.net/w/1.0/jstag"><\/scr'+'ipt>');
+</script>
+<noscript><iframe id="522e08bb1d90a" name="522e08bb1d90a" src="http://ax-d.pixfuture.net/w/1.0/afr?auid=478211&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="160" height="600"><a href="http://ax-d.pixfuture.net/w/1.0/rc?cs=522e08bb1d90a&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ax-d.pixfuture.net/w/1.0/ai?auid=478211&cs=522e08bb1d90a&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript></DIV>
+<DIV class=box>
+<H2>Chatbox</H2>
+
+<DIV id=cb><DIV class=cb>
+<DIV><IMG ALT="" SRC="http://moe.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>05:22 am</SMALL><BR>
+&lt;<A TITLE="Probably more fudanshi than you." href="user.php?uid=12652">OMGasm</A>&gt; btw rei, two improvements to the dropdown partial search i could suggest would be<br>1: remove the bg overlay (or at least make it more subtle :x )<br>2: make it more forgiving because it only does a starts with x kind of search 
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://moe.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>Yesterday 12:12 am</SMALL><BR>
+&lt;<A TITLE="I love the smell of a kicked ass in the mornin'" href="user.php?uid=8148">Hetalia_Italy</A>&gt; and I was there to witness it :&#039;D 
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://moe.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>Yesterday 12:06 am</SMALL><BR>
+&lt;<A TITLE="" href="user.php?uid=1">Rei</A>&gt; Thanks ANIMazer! Still lots more improvements in the works.<IMG alt="" src="http://ami.animecharactersdatabase.com/emote/act-up.png"><br><br>Congrats to 13x31 for making the 1,000,000th lounge post ! ^_^ 
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://moe.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>Feb 20, 2015</SMALL><BR>
+&lt;<A TITLE="Watashi wa koneko desu =ω=" href="user.php?uid=29714">TiwaLeChaton</A>&gt; Thanks a lot ANIMazer ! ^^ 
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://moe.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>Feb 20, 2015</SMALL><BR>
+&lt;<A TITLE="" href="user.php?uid=28616">ANIMazer</A>&gt; I´m definitly sure that many people will appreciate the translations Tiwa. Hopefully, that will also attract more people to become members of this great site.  <IMG src="http://ami.animecharactersdatabase.com/oh/119.gif"> Keep up the good work (with everything) and good luck with the rest of the translations! I will cheer for you. Ganbare!  <IMG src="http://ami.animecharactersdatabase.com/oh/105.gif"> 
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://moe.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>Feb 20, 2015</SMALL><BR>
+&lt;<A TITLE="Watashi wa koneko desu =ω=" href="user.php?uid=29714">TiwaLeChaton</A>&gt; Thanks ANIMazer ^^ We gonna work, Rei and me, about the translations because I noticed that they are not complete for the french language. (For the other languages I don&#039;t know but we will see when we gonna do it ^^) I&#039;m happy that you noticed the interface and I hope that people that don&#039;t usually speak english will appreciate the translations ^^ 
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://moe.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>Feb 20, 2015</SMALL><BR>
+&lt;<A TITLE="" href="user.php?uid=28616">ANIMazer</A>&gt; This site is getting better and better. I´ll just noticed that Interface language thingy. That was a great idea! It will make it so much easier for people around the world who is not used to the english language. Great job!<IMG alt="" src="http://ami.animecharactersdatabase.com/emote/act-up.png">  
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://moe.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>Feb 19, 2015</SMALL><BR>
+&lt;<A TITLE="" href="user.php?uid=27517">yeshay</A>&gt;  🙍  
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://moe.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>Feb 19, 2015</SMALL><BR>
+&lt;<A TITLE="" href="user.php?uid=27517">yeshay</A>&gt; Sorry but the character is new to me 
+</DIV><BR>
+<DIV><IMG ALT="" SRC="http://moe.animecharactersdatabase.com/forum/e107_themes/dAb_08/images/chatbox_16.png"> <SMALL>Feb 15, 2015</SMALL><BR>
+&lt;<A TITLE="" href="user.php?uid=1">Rei</A>&gt; Thanks!  I&#039;m happy to hear so many approve of her.<IMG alt="" src="http://ami.animecharactersdatabase.com/emote/act-up.png">  
+</DIV><BR></DIV>
+<P><A href="cbhistory.php">Chatbox History</A></P>
+</DIV>
+</DIV>
+<DIV class=box>
+<H2>Popular</H2>
+<DIV>
+  <A class=sidemenutrans HREF="character.php?id=68164">Ken Kaneki</A>
+ <DIV onClick="window.location.href = 'http://anicdb.com/character.php?id=68164';" style="margin: auto; width: 150px; height: 100px; background: url(http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-1583262927.jpg) center center;">&nbsp;</DIV>
+  <A class=sidemenutrans href="characterofthemonth.php">[ Current Character of the Month Leader ]</a>
+<BR><BR>
+  <A class=sidemenutrans HREF="character.php?id=68089">Sheele</A>
+ <DIV onClick="window.location.href = 'http://anicdb.com/character.php?id=68089';" style="margin: auto; width: 150px; height: 100px; background: url(http://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/11498-380811123.jpg) center center;">&nbsp;</DIV>
+  <A class=sidemenutrans href="characteroftheweek.php">[ Current Character of the Week Leader ]</a>
+<BR><BR>
+  <A class=sidemenutrans HREF="character.php?id=23289">Chifuyu Orimura</A>
+ <DIV onClick="window.location.href = 'http://anicdb.com/character.php?id=23289';" style="margin: auto; width: 150px; height: 100px; background: url(http://ami.animecharactersdatabase.com/images/2558/Chifuyu_thumb.jpg) center center;">&nbsp;</DIV>
+  <A class=sidemenutrans href="characteroftheday.php">[ Character of the Day ]</a>
+<BR><BR>
+</DIV>
+</DIV><DIV class=box>
+<H2>Members</H2>
+<DIV>
+	<P>We have <A href="memberstats.php">30266 members</A></P>
+	<P>Newest member: <A href="user.php?uid=30811">Zuluchan</A></P>
+</DIV><DIV style="margin: 10px; text-align: center;">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<div>
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHPwYJKoZIhvcNAQcEoIIHMDCCBywCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAbWG5iVOKbjwD95y2q6/ZNZHHK4tZztwUcQeNH3sBcy0gYawHy92psp55k3zjp4Pwu/TRNpRC/Mo5iy26qh6LReo6jvA+kHIaKCO5sIuwhG29wip0Mn/joqIvh9vFw4tTStdMm7laBT6fyS1wbQayBb6g9Sxbff4tBXas0gEkizzELMAkGBSsOAwIaBQAwgbwGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIbdVDXisRIJqAgZg0Q4nDqmwZJ1EdYXNh4UEUtfPzcPia3NvmPWU2hhtlXkMdM9dtyg6nhdCeEJDC6darh3Itpu5XVOgwOehYvvExOSHGYFrwLM2xS8XMYbEbOb3T0IkLqHCRb4kNOHiwq4CQr0HHWKc4dKKlbM+44/x2jk60Y+Rr1zLsY3AoQWqKS8oDgqdYWvn+AwxtDuowbQ5/apJ3xkRGA6CCA4cwggODMIIC7KADAgECAgEAMA0GCSqGSIb3DQEBBQUAMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTAeFw0wNDAyMTMxMDEzMTVaFw0zNTAyMTMxMDEzMTVaMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwUdO3fxEzEtcnI7ZKZL412XvZPugoni7i7D7prCe0AtaHTc97CYgm7NsAtJyxNLixmhLV8pyIEaiHXWAh8fPKW+R017+EmXrr9EaquPmsVvTywAAE1PMNOKqo2kl4Gxiz9zZqIajOm1fZGWcGS0f5JQ2kBqNbvbg2/Za+GJ/qwUCAwEAAaOB7jCB6zAdBgNVHQ4EFgQUlp98u8ZvF71ZP1LXChvsENZklGswgbsGA1UdIwSBszCBsIAUlp98u8ZvF71ZP1LXChvsENZklGuhgZSkgZEwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tggEAMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADgYEAgV86VpqAWuXvX6Oro4qJ1tYVIT5DgWpE692Ag422H7yRIr/9j/iKG4Thia/Oflx4TdL+IFJBAyPK9v6zZNZtBgPBynXb048hsP16l2vi0k5Q2JKiPDsEfBhGI+HnxLXEaUWAcVfCsQFvd2A1sxRr67ip5y2wwBelUecP3AjJ+YcxggGaMIIBlgIBATCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwCQYFKw4DAhoFAKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTEyMDMxOTIzNDY1MFowIwYJKoZIhvcNAQkEMRYEFBDr1kobqg8WVarBJjD4tUxSsKjYMA0GCSqGSIb3DQEBAQUABIGAu/TRvjyPTjiSZ6DGGc5RyyebR59DyfQZn2lA7sRkn3WeT8Mscqbvgix0nQCRTF7fmz2TPrTDSagyg1biX5pAmAFAbdR/+MnttKlvHlMWaXHOKFyF244pbCNicFWTxHT5Me2eYo1BYxQdEt2J+DSAONMqe7bizf1Jo3aFSE6mv88=-----END PKCS7-----
+">
+<input style="border-width: 2px;" type="image" src="http://moe.animecharactersdatabase.com/img/donate.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
+</div>
+</form>
+</DIV>
+
+<P style="font-size: 1.5em;"><A href="supporters.php">Supporters</A></P>
+</DIV>
+<BR>
+  </TD>
+</TABLE>
+
+<!--Start Footer-->
+
+<DIV id=footer style="border: 1px solid black; border-width: 1px 0 0 0; padding: 0px; background: #111; color: #eee;">
+<A name=mainmenu></A>
+<TABLE style="margin-left: 0px;">
+ <TR>
+  <TD>
+   <a rel="alternate" lang="ja" hreflang="ja" href="http://www.animecharactersdatabase.com/jp/source.php?id=103704" title="日本語 - Translate">
+    <img src="http://ami.animecharactersdatabase.com/FLAGS/ja.gif" alt="日本語">
+   </a>
+   <a rel="alternate" lang="ko" hreflang="ko" href="http://www.animecharactersdatabase.com/kr/source.php?id=103704" title="한국어 - Translate">
+    <img src="http://ami.animecharactersdatabase.com/FLAGS/ko.gif" alt="한국어">
+   </a>
+   <a rel="alternate" lang="zh" hreflang="zh" href="http://www.animecharactersdatabase.com/cn/source.php?id=103704" title="简化字 - Translate">
+    <img src="http://ami.animecharactersdatabase.com/FLAGS/zh.gif" alt="简化字">
+   </a>
+   <a rel="alternate" lang="fr" hreflang="fr" href="http://www.animecharactersdatabase.com/fr/source.php?id=103704" title="Français - Translate">
+    <img src="http://ami.animecharactersdatabase.com/FLAGS/fr.gif" alt="Français">
+   </a>
+   <a rel="alternate" lang="de" hreflang="de" href="http://www.animecharactersdatabase.com/ge/source.php?id=103704" title="Deutsch - Translate">
+    <img src="http://ami.animecharactersdatabase.com/FLAGS/de.gif" alt="Deutsch">
+   </a>
+   <a rel="alternate" lang="es" hreflang="es" href="http://www.animecharactersdatabase.com/sp/source.php?id=103704" title="Español - Translate">
+    <img src="http://ami.animecharactersdatabase.com/FLAGS/es.gif" alt="Español">
+   </a>
+   <a rel="alternate" lang="af" hreflang="af" href="http://www.animecharactersdatabase.com/af/source.php?id=103704" title="Afrikaans - Translate">
+    <img src="http://ami.animecharactersdatabase.com/FLAGS/af.gif" alt="Afrikaans">
+   </a>
+   <a rel="alternate" lang="en" hreflang="en" href="http://www.animecharactersdatabase.com/source.php?id=103704" title="English - Translate">
+    <img src="http://ami.animecharactersdatabase.com/FLAGS/en.gif" alt="English">
+   </a>
+  </TD>
+</TABLE>
+
+<DIV style="background: black; text-align: center;">
+<BR>
+<H2><A style="color: white; text-decoration: none;" href="#sitetop"><IMG ALT="Top" SRC="http://moe.animecharactersdatabase.com/oxygen/22x22/actions/go-up.png"> Main Menu <A style="color: white; text-decoration: none;" href="#sitetop"><IMG ALT="Top" SRC="http://moe.animecharactersdatabase.com/oxygen/22x22/actions/go-up.png"></A></H2><DIV><script type="text/javascript">
+if (!window.OX_ads) { OX_ads = []; }
+OX_ads.push({ "auid" : "478213" });
+</script>
+<script type="text/javascript">
+document.write('<scr'+'ipt src="http://ax-d.pixfuture.net/w/1.0/jstag"><\/scr'+'ipt>');
+</script>
+<noscript><iframe id="522e08bb1e9d3" name="522e08bb1e9d3" src="http://ax-d.pixfuture.net/w/1.0/afr?auid=478213&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="728" height="90"><a href="http://ax-d.pixfuture.net/w/1.0/rc?cs=522e08bb1e9d3&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ax-d.pixfuture.net/w/1.0/ai?auid=478213&cs=522e08bb1e9d3&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript></DIV>
+<TABLE id=menutable class=menutable>
+ <TR>
+<TD id=menu1><H2>Characters</H2>
+<UL>
+ <LI style="font-weight: bold;"><A style="color: #aaf;" href="mkcharacter.php"> : Add Character </A>
+ <LI><A style="color: #aaf;" href="approved.php"> : Approved Characters </A>
+ <LI><A href="characterofthemonth.php"> : Character of the Month </A>
+ <LI><A href="characteroftheweek.php"> : Character of the Week </A>
+ <LI><A href="characteroftheday.php"> : Character of the Day </A>
+ <LI><A href="relations.php"> : Relations </A>
+ <LI><A href="love.php"> : Loved Characters </A>
+ <LI><A href="hate.php"> : Hated Characters </A>
+ <LI><A href="latest.php"> : Latest Characters </A>
+</UL>
+</TD>
+
+<TD id=menu2><H2>Series</H2>
+<UL>
+ <LI style="font-weight: bold;"><A style="color: #aaf;" href="mktitle.php"> : Add Series </A>
+ <LI><A style="color: #aaf;" href="adoptedseries.php"> : Adopted Series </A>
+ <LI><A href="episodeblog.php"> : Episode Blogs </A>
+ <LI><A href="dates.php"> : Release Dates </A>
+ <LI><A href="mtags.php"> : Tag Search </A>
+ <LI><A href="recommend.php"> : Anime Recommender</A>
+</UL>
+</TD>
+
+<TD id=menu3><H2> Characters </H2>
+<UL>
+ <LI><A style="color: #aaf;" href="myfavchars.php"> : Fav Chars </A>
+ <LI><A style="color: #aaf;" href="groups.php"> : Character Groups </A>
+ <LI><A href="favtrends.php"> : Fav Trends </A>
+ <LI><A href="nocharacters.php"> : Series with No Characters </A>
+ <LI><A href="rate.php"> : Rate Characters </A>
+ <LI><A href="pageviewcounters.php"> : Most Views </A>
+
+</UL>
+</TD>
+
+<TD id=menu4><H2> Series </H2>
+<UL>
+ <LI style="font-weight: bold;"><A style="color: #aaf;" href="watching.php"> : Watching List </A>
+ <LI style="font-weight: bold;"><A style="color: #aaf;" href="watch.php"> : Anime Planner </A>
+ <LI><A style="color: #aaf;" href="myfavseries.php"> : Fav Series </A>
+ <LI><A href="listpromos.php"> : Promo Images </A>
+ <LI><A href="allseries.php"> : All Series, A-Z Listing</A>
+ <LI><A href="studio.php"> : Studios</A>
+ <LI style="font-weight: bold;"><A href="seasons.php"> : Seasons </A>
+</UL>
+</TD>
+
+<TD id=menu5><H2>Social</H2>
+<UL>
+ <LI><A href="lounge.php"> : The Lounge </A>
+ <LI><A href="ignore.php"> : Ignore List </A>
+ <LI><A href="newforum.php"> : Forum </A>
+ <LI><A href="neko_stats.php"> : Neko Stats </A>
+ <LI><A href="loli_stats.php"> : Loli Stats </A>
+</UL>
+</TD>
+<TR>
+<TD id=menu6><H2>Members</H2>
+<UL>
+ <LI><A href="ranks.php"> : Ranks </A>
+ <LI><A href="promotion.php"> : Promotions </A>
+ <LI><A href="leaderboards.php"> : Leader Boards</A>
+ <LI><A href="achievements.php"> : Achievements</A>
+
+
+</UL>
+</TD>
+
+<TD id=menu7><H2> Members </H2>
+<UL>
+ <LI><A style="color: #aaf;" href="forum_usersettings.php"> : Account Info </A>
+ <LI><A style="color: #aaf;" href="aboutme.php"> : Saved Profiles </A>
+ <LI><A style="color: #aaf;" href="myfiles.php"> : My Files </A>
+</UL>
+</TD>
+
+<TD id=menu8><H2>Features</H2>
+<UL>
+ <LI><A href="who.php"> : Who </A>
+ <LI><A href="photo.php"> : Images </A>
+ <LI><A href="treasure.php"> : Treasure Hunters Guild </A>
+ <LI><A href="extradetails.php"> : Extra Details </A>
+ <LI><A href="tagcp.php"> : Tag CP</A>
+ <LI><A href="newtags.php"> : Tags </A>
+</UL>
+</TD>
+
+<TD id=menu9><H2>Other</H2>
+<UL>
+ <LI><A style="color: #aaf;" href="ninbu.php"> : Missions </A>
+ <LI><A href="news.php"> : News </A>
+ <LI><A href="books.php"> : Guides </A>
+ <LI><A href="queue.php"> : Updates </A>
+ <LI><A href="antisocial.php"> : Hide Side </A>
+</UL>
+</TD>
+
+<TD id=menu10><H2> More </H2>
+<UL>
+ <LI><A href="bbcode.php"> : BBCode Examples </A>
+ <LI><A href="http://www.animecharactersdatabase.com/oh/"> : Emotes </A>
+ <LI><A href="imagelookup.php"> : Reverse Image </A>
+ <LI><A href="http://twitter.com/animecharacters">: twitter</A>
+ <LI><A href="http://animecharactersdatabase.tumblr.com/">: tumblr</A>
+</UL>
+</TD>
+<TR>
+<TD id=menu11><H2>Mod Characters</H2>
+<UL>
+ <LI><A style="color: red;" href="mkcharacter.php?modmode"> : Moderate Characters</A>
+ <LI><A style="color: red;" href="character_status.php"> : Untouched Characters </A>
+ <LI><A style="color: red;" href="mod_char.php"> : Character Changes </A>
+</UL>
+</TD>
+
+<TD id=menu12><H2>Moderators</H2>
+<UL>
+ <LI><A style="color: red;" href="mod_nomatches.php"> : No Matches </A>
+ <LI><A style="color: red;" href="issues.php"> : Issues </A>
+</UL>
+</TD>
+
+<TD id=menu13><H2>Moderators</H2>
+<UL>
+ <LI><A style="color: red;" href="bannedwords.php"> : Banned Words </A>
+ <LI><A style="color: red;" href="dash.php"> : DASH! / Mod Links </A>
+ <LI><A style="color: red;" href="caps.php?banlog"> : List Bans </A>
+</UL>
+</TD>
+
+<TD id=menu14><H2>Admin Links</H2>
+<UL>
+ <LI><A style="color: white;" href="caps.php"> : CAPS </A>
+ <LI><A style="color: white;" href="franchise.php"> : Franchise Editor </A>
+ <LI><A style="color: white;" href="login_failures.php"> : Login Failures </A>
+</UL>
+</TD>
+
+<TD id=menu15><H2>Head Admin Links</H2>
+<UL>
+ <LI><A style="color: white;" href="doranks.php"> : Treasury </A>
+ <LI><A style="color: white;" href="sql_log.php"> : SQL Log </A>
+ <LI><A style="color: white;" href="utmp.php"> : UTMP </A>
+ <LI><A style="color: white;" href="updates.php"> : All Features </A>
+ <LI><A style="color: white;" href="cos.php"> : COS </A>
+</UL>
+</TD>
+<TR>
+
+<TD id=menu16><H2>Projects 1</H2>
+<UL>
+ <LI><A href="world.php"> : Worlds </A>
+ <LI><A href="recommend.php"> : Auto-Recommend Anime </A>
+ <LI><A href="dice.php?ante=5"> : Dice </A>
+ <LI><A href="memo.php"> : Memo </A>
+ <LI><A href="alerts.php"> : Alerts </A>
+</UL>
+</TD>
+
+<TD id=menu17><H2>Projects 2</H2>
+<UL>
+ <LI><A href="va.php"> : VA Database </A>
+ <LI><A href="cv.php"> : CV Database </A>
+ <LI><A href="items.php"> : Items </A>
+ <LI><A href="awards.php"> : Awards Center </A>
+ <LI><A href="projects.php"> : ACDB Projects </A>
+</UL>
+</TD>
+
+<TD id=menu18><H2>Projects 3</H2>
+<UL>
+ <LI><A href="traps.php"> : Traps </A>
+ <LI><A style="color: white;" href="modnotes.php"> : Notes </A>
+ <LI><A style="color: white;" href="eventlog.php"> : Event Log </A>
+ <LI><A href="cards.php"> : Cards </A>
+ <LI><A href="mobile.php"> : Mobile Site</A>
+</UL>
+</TD>
+
+<TD id=menu19><H2>EVERYTHING</H2>
+<UL>
+ <LI><A href="ALL_PHP.html"> : EVERYTHING </A>
+</UL>
+</TD>
+
+
+<TD id=menu20><H2>Stats</H2>
+<UL>
+ <LI><A style="color: white;" href="stats.php"> : Traffic Stats </A>
+ <LI><A href="dbstats.php"> : Trait Stats </A>
+ <LI><A style="color: white;" href="memberstats.php"> : Member Stats </A>
+ <LI><A style="color: red;" href="emails.php"> : eMail Status </A>
+ <LI><A style="color: red;" href="whatshappening.php"> : What's Happening </A>
+</UL>
+
+</TD>
+</TABLE><DIV><script type="text/javascript">
+if (!window.OX_ads) { OX_ads = []; }
+OX_ads.push({ "auid" : "478212" });
+</script>
+<script type="text/javascript">
+document.write('<scr'+'ipt src="http://ax-d.pixfuture.net/w/1.0/jstag"><\/scr'+'ipt>');
+</script>
+<noscript><iframe id="522e08bb1e224" name="522e08bb1e224" src="http://ax-d.pixfuture.net/w/1.0/afr?auid=478212&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="300" height="250"><a href="http://ax-d.pixfuture.net/w/1.0/rc?cs=522e08bb1e224&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="http://ax-d.pixfuture.net/w/1.0/ai?auid=478212&cs=522e08bb1e224&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript></DIV>
+<H2><A style="color: white; text-decoration: none;" href="#sitetop"><IMG ALT="Top" SRC="http://moe.animecharactersdatabase.com/oxygen/22x22/actions/go-up.png"> Back to Top <A style="color: white; text-decoration: none;" href="#sitetop"><IMG ALT="Top" SRC="http://moe.animecharactersdatabase.com/oxygen/22x22/actions/go-up.png"></A></H2><BR>
+</DIV>
+<DIV style="background: #151515; padding-top: 2px; border: 1px solid black; border-width:  0 0 1px 0; margin-bottom: 10px;"></DIV>
+
+ <TABLE class=footer>
+  <TR>
+   <TD style="vertical-align: top;">
+    <P>All images are copyright of their respective owners.</P>
+<P>Users Online 166 | Rendered in 42.7 ms. R-69-W-1-M-1896.98 KB (L)</P> <I>Sun, 22 Feb 2015 21:40:49 -0500</I>
+
+   </TD>
+   <TD class=footright style="vertical-align: top;">
+    <P>Copyright © <A style="color: #f80; text-decoration: none" href="http://www.goralsoftware.com/">Goral Software</A></P>
+
+<P><A style="color: #f80; text-decoration: none" href="privacy.php">Privacy Policy</A> | <A style="color: #f80; text-decoration: none" href=tos.php>ToS</A> | <A style="color: #f80; text-decoration: none" href="books.php?id=59">Link to Us</A> | <A style="color: #f80; text-decoration: none" href=advertise.php>Advertise</A> | <A style="color: #f80; text-decoration: none" href=beamus.php>Beam Us</A> | <A style="color: #f80; text-decoration: none" href="about.php">About</A> </P>
+<!-- Start PWA Bottom Award -->
+ <DIV><A HREF="http://www.popularwebsiteawards.com?URL=animecharactersdatabase.com/" TARGET = _BLANK><IMG SRC = "http://ami.animecharactersdatabase.com/img/PWA_Award.png" BORDER = 0 STYLE = "border: 0px; "></A></DIV>
+<!-- End PWA Top Right Award -->
+
+ <P> <A style="color: #f80; text-decoration: none; font-size: 2em;" href="books.php?id=62">Q &amp; A</A> </P>
+
+   </TD>
+ </TABLE>
+</DIV>
+<!--End Footer--><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-1766362-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+ </DIV>
+ </DIV>
+ </BODY>
+</HTML>

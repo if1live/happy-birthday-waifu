@@ -1,7 +1,7 @@
 require 'nokogiri'
 
 module AnimeCharacterDB
-  class CharacterData
+  class CharacterData < BaseData
     # required
     attr_accessor :character_id,
                   :name_en,
@@ -28,12 +28,6 @@ module AnimeCharacterDB
     attr_accessor :source_id,
                   :source_name,
                   :source_image
-
-    attr_reader :extra
-
-    def initialize()
-      @extra = {}
-    end
 
     def character_id=(val)
       @character_id = val.to_i
@@ -75,15 +69,6 @@ module AnimeCharacterDB
       end
     end
 
-
-    def filter_to_array(val)
-      if val.is_a? String
-        val.split ', '
-      else
-        val
-      end
-    end
-
     def tags=(val)
       @tags = filter_to_array(val)
     end
@@ -119,10 +104,6 @@ module AnimeCharacterDB
 
         @birthday = sprintf("%02d/%02d", month, day)
       end
-    end
-
-    def set_extra(key, value)
-      @extra[key] = value
     end
   end
 
