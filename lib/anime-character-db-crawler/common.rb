@@ -20,6 +20,5 @@ module AnimeCharacterDB
 
     # TODO to_i + attr_accessor
     # TODo filter_to_array + attr_accesssor
-
   end
 end

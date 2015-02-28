@@ -87,6 +87,7 @@ group :development, :test do
   gem 'rspec'
   gem 'factory_girl'
   gem 'rspec-rails'
+  gem 'guard-rspec', require: false
 end
 
 group :test do

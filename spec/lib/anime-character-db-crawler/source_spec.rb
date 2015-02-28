@@ -26,13 +26,61 @@ describe AnimeCharacterDB::SourceHTMLParser do
   describe '#read' do
     it 'yosuga no sora' do
       data = subject.read yosuga_no_sora_html
+      # required
+      expect(data.src_id).to eq(1693)
+      expect(data.title_en).to eq('Yosuga no Sora')
+      expect(data.title_jp).to eq('ヨスガノソラ')
+      expect(data.title_romaji).to eq('Yosuga no Sora')
+      expect(data.title_furigana).to eq('よすがのそら')
+      expect(data.aliases).to eq('')
+
+      # optional
+      expect(data.studio_jp).to eq('スフィア')
+      expect(data.studio_en).to eq('Sphere')
+      expect(data.content_rating).to eq('A - Adult')
+      expect(data.genre_tags).to eq(['incest', 'harem', 'lolicon', 'romantic comedy'])
+      expect(data.release_date).to eq(Date.new 2008, 12, 05)
+
+      # thumbnail
+      img_thumbnail = "http://ami.animecharactersdatabase.com/productimages/1693.jpg"
+      expect(data.img_thumbnail).to eq(img_thumbnail)
+
+      # character
+      expected_characters = [
+        AnimeCharacterDB::SimpleCharacterData.new(13156, 'Haruka Kasugano'),
+        AnimeCharacterDB::SimpleCharacterData.new(13155, 'Akira Amatsume'),
+        AnimeCharacterDB::SimpleCharacterData.new(13157, 'Kazuha Migiwa'),
+        AnimeCharacterDB::SimpleCharacterData.new(13159, 'Motoka Nogisaka'),
+        AnimeCharacterDB::SimpleCharacterData.new(13160, 'Nao Yorihime'),
+        AnimeCharacterDB::SimpleCharacterData.new(13162, 'Sora Kasugano'),
+        AnimeCharacterDB::SimpleCharacterData.new(13158, 'Kozue Kuranaga'),
+        AnimeCharacterDB::SimpleCharacterData.new(13161, 'Ryouhei Nakazato'),
+        AnimeCharacterDB::SimpleCharacterData.new(13163, 'Yahiro Ifukube'),
+      ]
+      expect(data.characters).to eq(expected_characters)
     end
 
     it 'cocoro function' do
       data = subject.read cocoro_function_html
+      # required
+      expect(data.src_id).to eq(103704)
+      expect(data.title_en).to eq('Cocoro@Function!')
+      expect(data.title_jp).to eq('ココロ＠ファンクション !')
+      expect(data.title_romaji).to eq('Kokoro@Function!')
+      expect(data.title_furigana).to eq('ココロ＠ファンクション !')
+      expect(data.aliases).to eq('')
+      # optional
+      expect(data.studio_jp).to eq('ぷるとっぷ')
+      expect(data.studio_en).to eq('PULLTOP')
+      expect(data.content_rating).to eq('A - Adult')
+      expect(data.genre_tags).to eq([])
+      expect(data.release_date).to eq(Date.new 2013, 9, 27)
+
+      # thumbnail
+      img_thumbnail = "http://ami.animecharactersdatabase.com/productimages/u/11498-932367893.jpg"
+      expect(data.img_thumbnail).to eq(img_thumbnail)
+
+      # character
     end
   end
-
-
-
 end

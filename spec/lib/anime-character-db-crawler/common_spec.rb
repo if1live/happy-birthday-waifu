@@ -1,3 +1,4 @@
+require 'rails_helper'
 require 'anime-character-db-crawler'
 
 describe AnimeCharacterDB::BaseData do
