@@ -3,39 +3,32 @@ require 'nokogiri'
 module AnimeCharacterDB
   class CharacterData < BaseData
     # required
-    attr_accessor :character_id,
-                  :name_en,
+    integer_attr_accessor :character_id
+    attr_accessor :name_en,
                   :name_jp,
-                  :birthday,
-                  :aliases
+                  :birthday
+    tags_attr_accessor :aliases
     attr_reader :name_kanji,
                 :name_kana,
                 :name_ko
 
     # predefined
     attr_accessor :role,
-                  :tags,
                   :cv,
-                  :voice_actors,
                   :type,
                   :blood_type
+    tags_attr_accessor :tags
+    tags_attr_accessor :voice_actors
 
     # image
     attr_accessor :thumbnail,
                   :image
 
     # source
-    attr_accessor :source_id,
-                  :source_name,
+    integer_attr_accessor :source_id
+    attr_accessor :source_name,
                   :source_image
 
-    def character_id=(val)
-      @character_id = val.to_i
-    end
-
-    def source_id=(val)
-      @source_id = val.to_i
-    end
 
     def name_jp=(val)
       @name_jp = val
@@ -67,14 +60,6 @@ module AnimeCharacterDB
         converter = KanaToHangul.new
         converter.convert @name_kana
       end
-    end
-
-    def tags=(val)
-      @tags = filter_to_array(val)
-    end
-
-    def voice_actors=(val)
-      @voice_actors = filter_to_array(val)
     end
 
     def birthday=(val)

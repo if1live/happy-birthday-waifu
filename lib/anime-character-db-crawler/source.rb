@@ -18,32 +18,24 @@ module AnimeCharacterDB
 
   class SourceData < BaseData
     # required
-    attr_accessor :src_id,
-                  :title_en,
+    integer_attr_accessor :src_id
+    attr_accessor :title_en,
                   :title_jp,
                   :title_romaji,
-                  :title_furigana,
-                  :aliases
+                  :title_furigana
+    tags_attr_accessor :aliases
 
     attr_accessor :studio_jp,
                   :studio_en,
                   :content_rating,
-                  :genre_tags,
                   :release_date
+    tags_attr_accessor :genre_tags
 
     attr_accessor :img_thumbnail
     attr_reader :characters
 
     def initialize
       @characters = []
-    end
-
-    def src_id=(val)
-      @src_id = val.to_i
-    end
-
-    def genre_tags=(val)
-      @genre_tags = filter_to_array val
     end
 
     def release_date=(val)

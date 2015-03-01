@@ -32,7 +32,7 @@ describe AnimeCharacterDB::SourceHTMLParser do
       expect(data.title_jp).to eq('ヨスガノソラ')
       expect(data.title_romaji).to eq('Yosuga no Sora')
       expect(data.title_furigana).to eq('よすがのそら')
-      expect(data.aliases).to eq('')
+      expect(data.aliases).to eq([])
 
       # optional
       expect(data.studio_jp).to eq('スフィア')
@@ -68,7 +68,7 @@ describe AnimeCharacterDB::SourceHTMLParser do
       expect(data.title_jp).to eq('ココロ＠ファンクション !')
       expect(data.title_romaji).to eq('Kokoro@Function!')
       expect(data.title_furigana).to eq('ココロ＠ファンクション !')
-      expect(data.aliases).to eq('')
+      expect(data.aliases).to eq([])
       # optional
       expect(data.studio_jp).to eq('ぷるとっぷ')
       expect(data.studio_en).to eq('PULLTOP')

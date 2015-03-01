@@ -18,7 +18,24 @@ module AnimeCharacterDB
       @extra[key] = value
     end
 
-    # TODO to_i + attr_accessor
-    # TODo filter_to_array + attr_accesssor
+    def self.integer_attr_accessor(name)
+      define_method(name) do
+        instance_variable_get("@#{name}")
+      end
+
+      define_method("#{name}=") do |value|
+        instance_variable_set("@#{name}", value.to_i)
+      end
+    end
+
+    def self.tags_attr_accessor(name)
+      define_method(name) do
+        instance_variable_get("@#{name}")
+      end
+
+      define_method("#{name}=") do |value|
+        instance_variable_set("@#{name}", filter_to_array(value))
+      end
+    end
   end
 end
