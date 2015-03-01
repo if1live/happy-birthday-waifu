@@ -64,13 +64,13 @@ module AnimeCharacterDB
 
     def convert_slug(val)
       slug = val.downcase
-      # remove special char
-      invalid_char_list = ['!', '?', '/']
-      invalid_char_list.each do |x|
-        slug = slug.gsub x, ''
-      end
       invalid_word_list = ['(series)', '(franchise)']
       invalid_word_list.each do |x|
+        slug = slug.gsub x, ''
+      end
+
+      invalid_char_list = ['!', '?', '/', '~', '.', '"', "'", '(', ')']
+      invalid_char_list.each do |x|
         slug = slug.gsub x, ''
       end
 

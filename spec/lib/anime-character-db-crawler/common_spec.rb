@@ -55,6 +55,19 @@ describe AnimeCharacterDB::BaseData do
       expect(subject.convert_slug 'Haiyoru! Nyaruani').to eq('haiyoru-nyaruani')
     end
 
+    it 'special character-1' do
+      name = 'Osananajimi wa Daitouryou ~My girlfriend is the President.~'
+      expected = 'osananajimi-wa-daitouryou-my-girlfriend-is-the-president'
+      expect(subject.convert_slug name).to eq(expected)
+    end
+    it 'special character-2' do
+      name = "Wezekieru 'Eru'"
+      expect(subject.convert_slug name).to eq("wezekieru-eru")
+    end
+    it 'special character-3' do
+      expect(subject.convert_slug 'Weremiya (Remi)').to eq('weremiya-remi')
+    end
+
     it 'remove group' do
       name = 'Haiyore! Nyaruko-san (Series) (Franchise)'
       expect(subject.convert_slug name).to eq('haiyore-nyaruko-san')

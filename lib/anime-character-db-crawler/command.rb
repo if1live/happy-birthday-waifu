@@ -84,17 +84,17 @@ module AnimeCharacterDB
       data_filename = base_path.join('data.yml')
       File.write(data_filename, YAML.dump(character_data.to_hash))
 
-      # 관련된 이미지를 받아서 어디에 저장할 것인가?
-      img_url = character_data.image
+      # 관련된 이미지를 받아서 저장
+      # 캐릭터 큰 이미지는 용량이 커서(개당 300kb급) 저장하지 않는다.
+      # url은 저장해놓으니까 외부 링크를 거는 식으로 가는걸 생각하기
+      #img_url = character_data.image
+      #img_filename = base_path.join("img#{File.extname(img_url).downcase}")
+      #open(img_filename, 'wb') do |file|
+      #  file << open(img_url).read
+      #end
+
       thumb_url = character_data.thumbnail
-
-      img_filename = base_path.join("img#{File.extname(img_url).downcase}")
       thumb_filename = base_path.join("thumb#{File.extname(thumb_url).downcase}")
-
-      open(img_filename, 'wb') do |file|
-        file << open(img_url).read
-      end
-
       open(thumb_filename, 'wb') do |file|
         file << open(thumb_url).read
       end
@@ -104,7 +104,7 @@ module AnimeCharacterDB
       result.data = character_data
       result.base_path = base_path
       result.data_file = data_filename
-      result.img_file = img_filename
+      #result.img_file = img_filename
       result.thumb_file = thumb_filename
       result
     end
