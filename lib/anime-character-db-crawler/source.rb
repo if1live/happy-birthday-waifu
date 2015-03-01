@@ -51,7 +51,7 @@ module AnimeCharacterDB
     end
 
     def create_slug
-      @title_en.downcase.gsub(' ', '-')
+      convert_slug @title_en
     end
 
     def release_date=(val)

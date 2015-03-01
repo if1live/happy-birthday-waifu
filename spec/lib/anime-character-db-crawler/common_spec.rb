@@ -41,4 +41,23 @@ describe AnimeCharacterDB::BaseData do
       expect(subject.foo).to eq(['a', 'b', 'c'])
     end
   end
+
+  describe '#create_slug' do
+    it 'simple' do
+      expect(subject.convert_slug 'Yosuga no Sora').to eq('yosuga-no-sora')
+    end
+    it 'simple-1' do
+      name = 'Nyarlathotep / Nyaruko'
+      expect(subject.convert_slug name).to eq('nyarlathotep-nyaruko')
+    end
+
+    it 'special character' do
+      expect(subject.convert_slug 'Haiyoru! Nyaruani').to eq('haiyoru-nyaruani')
+    end
+
+    it 'remove group' do
+      name = 'Haiyore! Nyaruko-san (Series) (Franchise)'
+      expect(subject.convert_slug name).to eq('haiyore-nyaruko-san')
+    end
+  end
 end

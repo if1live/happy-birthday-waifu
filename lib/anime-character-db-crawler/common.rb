@@ -61,5 +61,25 @@ module AnimeCharacterDB
     def ==(o)
       o.to_hash == o.to_hash
     end
+
+    def convert_slug(val)
+      slug = val.downcase
+      # remove special char
+      invalid_char_list = ['!', '?', '/']
+      invalid_char_list.each do |x|
+        slug = slug.gsub x, ''
+      end
+      invalid_word_list = ['(series)', '(franchise)']
+      invalid_word_list.each do |x|
+        slug = slug.gsub x, ''
+      end
+
+      slug = slug.strip
+      # "a   b"의 공백을 1개로 취급하는 편법
+      slug = slug.split(' ').join('-')
+      raise ArgumentError.new "fix this method" if slug.include? '('
+
+      slug
+    end
   end
 end

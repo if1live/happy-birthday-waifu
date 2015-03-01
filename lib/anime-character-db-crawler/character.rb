@@ -30,7 +30,7 @@ module AnimeCharacterDB
                   :source_image
 
     def create_slug
-      @name_en.downcase.gsub(' ', '-')
+      convert_slug @name_en
     end
 
     def parse_name_jp(val)

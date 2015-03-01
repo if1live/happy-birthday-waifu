@@ -27,13 +27,6 @@ describe AnimeCharacterDB::SourceData do
       #p data
     end
   end
-
-  describe '#create_slug' do
-    it 'success' do
-      subject.title_en = 'Yosuga no Sora'
-      expect(subject.create_slug).to eq('yosuga-no-sora')
-    end
-  end
 end
 
 describe AnimeCharacterDB::SourceHTMLParser do
