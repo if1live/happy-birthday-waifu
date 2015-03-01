@@ -29,6 +29,10 @@ module AnimeCharacterDB
     attr_accessor :source_name,
                   :source_image
 
+    def create_slug
+      @name_en.downcase.gsub(' ', '-')
+    end
+
     def parse_name_jp(val)
       # 春日野 穹 （かすがの そら）
       regexp = /(?<kanji>.+)（(?<kana>.+)）/

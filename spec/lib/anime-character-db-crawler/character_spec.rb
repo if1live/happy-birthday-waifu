@@ -69,6 +69,13 @@ describe AnimeCharacterDB::CharacterData do
       #p data
     end
   end
+
+  describe '#create_slug' do
+    it 'success' do
+      subject.name_en = 'Sora Kasugano'
+      expect(subject.create_slug).to eq("sora-kasugano")
+    end
+  end
 end
 
 describe AnimeCharacterDB::CharacterHTMLParser do

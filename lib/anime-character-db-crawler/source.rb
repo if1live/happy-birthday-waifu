@@ -14,6 +14,18 @@ module AnimeCharacterDB
     def ==(o)
       character_id == o.character_id and name_en == o.name_en
     end
+
+    def to_hash
+      {
+        character_id: @character_id,
+        name_en: @name_en,
+      }
+    end
+
+    def from_hash hash
+      @character_id = hash[:character_id]
+      @name_en = hash[:name_en]
+    end
   end
 
   class SourceData < BaseData
@@ -38,6 +50,10 @@ module AnimeCharacterDB
       @characters = []
     end
 
+    def create_slug
+      @title_en.downcase.gsub(' ', '-')
+    end
+
     def release_date=(val)
       @release_date = Date.parse(val)
     end
@@ -59,15 +75,26 @@ module AnimeCharacterDB
       :release_date,
       :genre_tags,
       :img_thumbnail,
-      :characters,
     ]
 
     def to_hash
-      to_hash_core SERIALIZE_ATTR_NAME_LIST
+      hash = to_hash_core SERIALIZE_ATTR_NAME_LIST
+      # characters 는 그냥 저장하면 object 상태로 저장된다
+      # 따로 직렬화 수행
+      hash[:characters] = []
+      @characters.each do |x|
+        hash[:characters] << x.to_hash
+      end
+      hash
     end
 
     def from_hash(hash)
       from_hash_core hash, SERIALIZE_ATTR_NAME_LIST
+      hash[:characters].each do |x|
+        character = SimpleCharacterData.new
+        character.from_hash x
+        self << character
+      end
     end
   end
 
