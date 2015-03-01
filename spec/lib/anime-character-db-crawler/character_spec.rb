@@ -55,6 +55,20 @@ describe AnimeCharacterDB::CharacterData do
       expect(subject.name_ko).to be_nil
     end
   end
+
+  describe '#to_hash' do
+    it 'success' do
+      subject.character_id = '13162'
+      subject.name_en = 'Sora Kasugano'
+      subject.name_jp = '春日野 穹 （かすがの そら）'
+
+      data = subject.to_hash
+      dst = AnimeCharacterDB::CharacterData.new
+      dst.from_hash data
+      expect(subject).to eq(dst)
+      #p data
+    end
+  end
 end
 
 describe AnimeCharacterDB::CharacterHTMLParser do

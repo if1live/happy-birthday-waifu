@@ -45,6 +45,30 @@ module AnimeCharacterDB
     def <<(val)
       @characters << val
     end
+
+    SERIALIZE_ATTR_NAME_LIST = [
+      :src_id,
+      :title_en,
+      :title_jp,
+      :title_romaji,
+      :title_furigana,
+      :aliases,
+      :studio_jp,
+      :studio_en,
+      :content_rating,
+      :release_date,
+      :genre_tags,
+      :img_thumbnail,
+      :characters,
+    ]
+
+    def to_hash
+      to_hash_core SERIALIZE_ATTR_NAME_LIST
+    end
+
+    def from_hash(hash)
+      from_hash_core hash, SERIALIZE_ATTR_NAME_LIST
+    end
   end
 
 

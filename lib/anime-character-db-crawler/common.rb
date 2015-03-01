@@ -37,5 +37,29 @@ module AnimeCharacterDB
         instance_variable_set("@#{name}", filter_to_array(value))
       end
     end
+
+    def to_hash_core attr_name_list
+      data = {}
+      attr_name_list.each do |attr_name|
+        data[attr_name] = instance_variable_get("@#{attr_name}")
+      end
+
+      data[:extra] = extra
+      data
+    end
+
+    def from_hash_core hash, attr_name_list
+      attr_name_list.each do |attr_name|
+        val = hash[attr_name]
+        next if val.nil?
+        instance_variable_set("@#{attr_name}", val)
+      end
+      @extra = hash[:extra]
+      self
+    end
+
+    def ==(o)
+      o.to_hash == o.to_hash
+    end
   end
 end

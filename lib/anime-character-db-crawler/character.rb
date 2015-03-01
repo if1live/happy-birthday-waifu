@@ -29,36 +29,47 @@ module AnimeCharacterDB
     attr_accessor :source_name,
                   :source_image
 
-
-    def name_jp=(val)
-      @name_jp = val
-
+    def parse_name_jp(val)
       # 春日野 穹 （かすがの そら）
       regexp = /(?<kanji>.+)（(?<kana>.+)）/
       m = regexp.match val
 
+      name_kanji = nil
+      name_kana = nil
       unless m.nil?
-        @name_kanji = m.captures[0].strip
-        @name_kana = m.captures[1].strip
+        name_kanji = m.captures[0].strip
+        name_kana = m.captures[1].strip
       else
         # only kanji or only kana
         hira_match = /\p{Hiragana}/.match(val)
         kata_match = /\p{Katakana}/.match(val)
         if hira_match.nil? and kata_match.nil?
           # 山川 美千子
-          @name_kanji = val
+          name_kanji = val
         else
           # イリーナ・ウラジーミロヴナ・プチナ
-          @name_kana = val
+          name_kana = val
         end
       end
+      {
+        kanji: name_kanji,
+        kana: name_kana
+      }
+    end
+
+    def name_kanji
+      parse_name_jp(@name_jp)[:kanji]
+    end
+
+    def name_kana
+      parse_name_jp(@name_jp)[:kana]
     end
 
     def name_ko
       # TODO kana없는 경우 영어 표기법에서 한글을 추정해야한다
-      unless @name_kana.nil?
+      unless name_kana.nil?
         converter = KanaToHangul.new
-        converter.convert @name_kana
+        converter.convert name_kana
       end
     end
 
@@ -89,6 +100,33 @@ module AnimeCharacterDB
 
         @birthday = sprintf("%02d/%02d", month, day)
       end
+    end
+
+    SERIALIZE_ATTR_NAME_LIST = [
+      :character_id,
+      :name_en,
+      :name_jp,
+      :birthday,
+      :aliases,
+      :role,
+      :cv,
+      :type,
+      :blood_type,
+      :tags,
+      :voice_actors,
+      :thumbnail,
+      :image,
+      :source_id,
+      :source_name,
+      :source_image
+    ]
+
+    def to_hash
+      to_hash_core SERIALIZE_ATTR_NAME_LIST
+    end
+
+    def from_hash(hash)
+      from_hash_core hash, SERIALIZE_ATTR_NAME_LIST
     end
   end
 

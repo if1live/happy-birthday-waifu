@@ -13,6 +13,20 @@ end
 
 
 describe AnimeCharacterDB::SourceData do
+  let(:subject) { AnimeCharacterDB::SourceData.new }
+  describe '#to_hash-#from_hash' do
+    it 'success' do
+      subject.src_id = '1693'
+      subject.title_en = 'Yosuga no Sora'
+      subject.title_jp = 'ヨスガノソラ'
+
+      data = subject.to_hash
+      dst = AnimeCharacterDB::SourceData.new
+      dst.from_hash data
+      expect(subject).to eq(dst)
+      #p data
+    end
+  end
 end
 
 describe AnimeCharacterDB::SourceHTMLParser do
