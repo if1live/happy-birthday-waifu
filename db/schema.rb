@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204115818) do
+ActiveRecord::Schema.define(version: 20150308051615) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "slug"
@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(version: 20150204115818) do
     t.string   "anime_db_img_url"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
+    t.integer  "source_id"
   end
 
   add_index "characters", ["date"], name: "index_characters_on_date"
   add_index "characters", ["slug"], name: "index_characters_on_slug", unique: true
+  add_index "characters", ["source_id"], name: "index_characters_on_source_id"
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id",      null: false
@@ -39,6 +41,20 @@ ActiveRecord::Schema.define(version: 20150204115818) do
   end
 
   add_index "favorites", ["user_id", "character_id"], name: "index_favorites_on_user_id_and_character_id", unique: true
+
+  create_table "sources", force: :cascade do |t|
+    t.string   "slug"
+    t.string   "title_en"
+    t.string   "title_jp"
+    t.string   "title_romaji"
+    t.string   "title_furigana"
+    t.integer  "anime_db_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "sources", ["anime_db_id"], name: "index_sources_on_anime_db_id", unique: true
+  add_index "sources", ["slug"], name: "index_sources_on_slug", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

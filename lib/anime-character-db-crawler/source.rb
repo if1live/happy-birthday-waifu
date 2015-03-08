@@ -26,6 +26,10 @@ module AnimeCharacterDB
       @character_id = hash[:character_id]
       @name_en = hash[:name_en]
     end
+
+    def self.create_from_hash hash
+      SimpleCharacterData.new hash[:character_id], hash[:name_en]
+    end
   end
 
   class SourceData < BaseData
@@ -91,8 +95,7 @@ module AnimeCharacterDB
     def from_hash(hash)
       from_hash_core hash, SERIALIZE_ATTR_NAME_LIST
       hash[:characters].each do |x|
-        character = SimpleCharacterData.new
-        character.from_hash x
+        character = SimpleCharacterData.create_from_hash x
         self << character
       end
     end
