@@ -1,0 +1,233 @@
+require 'yaml'
+require 'anime-character-db-crawler'
+
+namespace :master_data do
+  SEED_ROOT = Rails.root.join 'db', 'seeds'
+  ANIME_CHARACTER_DB_ROOT = Rails.root.join 'anime-character-db'
+  SOURCE_ROOT = ANIME_CHARACTER_DB_ROOT.join 'source'
+  CHARACTER_ROOT = ANIME_CHARACTER_DB_ROOT.join 'character'
+
+  class OriginalDataReader
+    def initialize(root_path, data_klass)
+      @root_path = root_path
+      @data_klass = data_klass
+    end
+
+    def read
+      data_list = []
+      Dir.entries(@root_path).each do |dirname|
+        next if ['.', '..'].include? dirname
+        data_filename = File.join(@root_path, dirname, 'data.yml')
+        txt = File.read data_filename
+        yaml_data = YAML.load txt
+
+        data = @data_klass.new
+        data.from_hash yaml_data
+        data_list << data
+      end
+      data_list
+    end
+
+    def self.source_reader
+      self.new SOURCE_ROOT, AnimeCharacterDB::SourceData
+    end
+
+    def self.character_reader
+      self.new CHARACTER_ROOT, AnimeCharacterDB::CharacterData
+    end
+  end
+
+
+  module MasterDataModule
+    def initialize(seed)
+      @master_data = seed
+      @next_seed_idx = last_seed_idx + 1
+    end
+
+    def merge(data)
+      return if skip_data? data
+
+      seed_data = data_to_hash data
+      data_key = find_data_unique_key data
+      seed_key = find_seed_key data_key
+      if seed_key.nil?
+        # 새로 저장해야되는 경우
+        merge_new_data seed_data
+      else
+        # 기존에 저장된 것이 존재하는 경우
+        merge_prev_data seed_key, seed_data
+      end
+    end
+
+    def add_seed_id(seed_key, seed_data)
+      seed_idx = seed_idx_from_seed_key seed_key
+      seed_data['id'] = seed_idx if seed_data['id'].nil?
+      seed_data
+    end
+
+    def merge_new_data(seed_data)
+      seed_key = create_seed_key(@next_seed_idx)
+      @next_seed_idx += 1
+
+      add_seed_id(seed_key, seed_data)
+      @master_data[seed_key] = seed_data
+    end
+
+    def merge_prev_data(seed_key, seed_data)
+      add_seed_id(seed_key, seed_data)
+      @master_data[seed_key] = seed_data
+    end
+
+    def to_seed
+      @master_data
+    end
+
+    def find_seed_key(data_key)
+      @master_data.each do |key, value|
+        if find_data_key_from_seed(value) == data_key
+          return key
+        end
+      end
+      nil
+    end
+
+    def seed_idx_from_seed_key(seed_key)
+      seed_key.split('_')[-1].to_i
+    end
+
+    def last_seed_idx
+      if @master_data.empty?
+        0
+      else
+        last_seed_key = @master_data.keys.sort.reverse[0]
+        seed_idx_from_seed_key last_seed_key
+      end
+    end
+  end
+
+  class SourceMasterData
+    include MasterDataModule
+
+    def create_seed_key(id)
+      "source_#{id}"
+    end
+
+    def skip_data?(data)
+      false
+    end
+
+    def data_to_hash(data)
+      {
+        'id' => data.src_id,
+
+        'slug' => data.create_slug,
+        'title_en' => data.title_en,
+        'title_jp' => data.title_jp,
+        'title_romaji' => data.title_romaji,
+        'title_furigana' => data.title_furigana,
+
+        'anime_db_id' => data.src_id,
+      }
+    end
+
+    def find_data_unique_key(data)
+      data.src_id
+    end
+
+    def find_data_key_from_seed(seed)
+      seed['anime_db_id']
+    end
+  end
+
+  class CharacterMasterData
+    include MasterDataModule
+
+    def create_seed_key(id)
+      "character_#{id}"
+    end
+
+    def skip_data?(data)
+      # 생일이 없는 캐릭터는 굳이 다룰 필요가 없다
+      data.birthday == nil
+    end
+
+    def data_to_hash(data)
+      {
+        'id' => nil,
+
+        'slug' => data.create_slug,
+        'name_en' => data.name_en,
+        'name_jp' => data.name_jp,
+        'name_ko' => data.name_ko,
+        'date' => data.birthday,
+
+        'anime_db_id' => data.character_id,
+        'anime_db_img_url' => data.image,
+
+        'source_id' => data.source_id,
+      }
+    end
+
+    def find_data_unique_key(data)
+      data.character_id
+    end
+
+    def find_data_key_from_seed(seed)
+      seed['anime_db_id']
+    end
+  end
+
+  class SeedSerializer
+    def initialize filename
+      @filename = File.join(SEED_ROOT, filename)
+    end
+
+    def read
+      return {} unless File.exists? @filename
+      txt = File.read @filename
+      seed = YAML.load txt
+    end
+
+    def write seed
+      txt = YAML.dump seed
+      File.write @filename, txt
+    end
+
+    def self.create_source
+      self.new 'sources.yml'
+    end
+
+    def self.create_character
+      self.new 'characters.yml'
+    end
+  end
+
+  def create_source_seed
+    source_list = OriginalDataReader.source_reader.read
+    source_serializer = SeedSerializer.create_source
+    source_seed = source_serializer.read
+    source_master_data = SourceMasterData.new source_seed
+    source_list.each do |data|
+      source_master_data.merge data
+    end
+    source_serializer.write source_master_data.to_seed
+  end
+
+  def create_character_seed
+    # character
+    character_list = OriginalDataReader.character_reader.read
+    character_serializer = SeedSerializer.create_character
+    character_seed = character_serializer.read
+    character_master_data = CharacterMasterData.new character_seed
+    character_list.each do |data|
+      character_master_data.merge data
+    end
+    character_serializer.write character_master_data.to_seed
+  end
+
+  "create db/seeds/*.yml"
+  task create: :environment do
+    create_source_seed
+    create_character_seed
+  end
+end

@@ -1,61 +1,91 @@
+---
 character_1:
   id: 1
-  slug: kasugano-sora
-  name_en: "Kasugano Sora"
+  slug: sora-kasugano
+  name_en: Sora Kasugano
+  name_jp: "春日野 穹 （かすがの そら）"
   name_ko: "카스가노 소라"
-  name_jp: "春日野 穹"
-  date: "02/05"
+  date: 02/05
   anime_db_id: 13162
-  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Sora_Kasugano.png
-
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/yosuganosora/Sora_Kasugano.png
+  source_id: 1693
 character_2:
   id: 2
-  slug: amatsume-akira
-  name_en: "Amatsume Akira"
+  slug: akira-amatsume
+  name_en: Akira Amatsume
+  name_jp: "天女目 瑛 （あまつめ あきら）"
   name_ko: "아마츠메 아키라"
-  name_jp: "天女目 瑛"
-  date: "08/03"
+  date: 08/03
   anime_db_id: 13155
-  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Akira_Amatsume.png
-
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/yosuganosora/Akira_Amatsume.png
+  source_id: 1693
 character_3:
   id: 3
-  slug: yorihime-nao
-  name_en: "Yorihime Nao"
+  slug: nao-yorihime
+  name_en: Nao Yorihime
+  name_jp: "依媛 奈緒 （よりひめ なお）"
   name_ko: "요리히메 나오"
-  name_jp: "依媛 奈緒"
-  date: "10/07"
+  date: 10/07
   anime_db_id: 13160
-  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Nao_Yorihime.png
-
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/yosuganosora/Nao_Yorihime.png
+  source_id: 1693
 character_4:
   id: 4
-  slug: migiwa-kazuha
-  name_en: "Migiwa Kazuha"
+  slug: kazuha-migiwa
+  name_en: Kazuha Migiwa
+  name_jp: "渚 一葉 （みぎわ かずは）"
   name_ko: "미기와 카즈하"
-  name_jp: "渚 一葉"
-  date: "08/03"
+  date: 08/03
   anime_db_id: 13157
-  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Kazuha_Migiwa.png
-
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/yosuganosora/Kazuha_Migiwa.png
+  source_id: 1693
 character_5:
   id: 5
-  slug: nogisaka-motoka
-  name_en: "Nogisaka Motoka"
+  slug: motoka-nogisaka
+  name_en: Motoka Nogisaka
+  name_jp: "乃木坂 初佳 （のぎさか もとか）"
   name_ko: "노기사카 모토카"
-  name_jp: "乃木坂 初佳"
-  date: "12/23"
+  date: 12/23
   anime_db_id: 13159
-  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Motoka_Nogisaka.png
-
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/yosuganosora/Motoka_Nogisaka.png
+  source_id: 1693
 character_6:
   id: 6
-  slug: kuranaga-kozue
-  name_en: "Kuranaga Kozue"
+  slug: kozue-kuranaga
+  name_en: Kozue Kuranaga
+  name_jp: "倉永 梢 （くらなが こずえ）"
   name_ko: "쿠라나가 코즈에"
-  name_jp: "倉永 梢"
-  date: "06/01"
+  date: 06/01
   anime_db_id: 13158
-  anime_db_img_url: http://ami.animecharactersdatabase.com/images/yosuganosora/Kozue_Kuranaga.png
-
-  
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/yosuganosora/Kozue_Kuranaga.png
+  source_id: 1693
+character_7:
+  id: 7
+  slug: haruka-kasugano
+  name_en: Haruka Kasugano
+  name_jp: "春日野 悠 （かすがの はるか）"
+  name_ko: "카스가노 하루카"
+  date: 02/05
+  anime_db_id: 13156
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/yosuganosora/Haruka_Kasugano.png
+  source_id: 1693
+character_8:
+  id: 8
+  slug: ryouhei-nakazato
+  name_en: Ryouhei Nakazato
+  name_jp: "中里 亮平 （なかざと りょうへい）"
+  name_ko: "나카자토 료헤이"
+  date: 09/25
+  anime_db_id: 13161
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/yosuganosora/Ryouhei_Nahazato.png
+  source_id: 1693
+character_9:
+  id: 9
+  slug: yahiro-ifukube
+  name_en: Yahiro Ifukube
+  name_jp: "伊福部 やひろ （いふくべ やひろ）"
+  name_ko: "이후쿠베 야히로"
+  date: 01/10
+  anime_db_id: 13163
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/yosuganosora/Yahiro_Ifukube.png
+  source_id: 1693
