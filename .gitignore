@@ -42,3 +42,4 @@ pids
 
 # emacs
 .#*
+.DS_Store

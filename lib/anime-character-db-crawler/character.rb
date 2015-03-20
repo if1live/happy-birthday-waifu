@@ -250,6 +250,11 @@ module AnimeCharacterDB
           '/img/vote.png',
           '/hosted/Red2.png',
           '/PWA_Award.png',
+          '/oxygen/',
+          '/img/50red.png',
+          '/hosted/vs.png',
+          '.jpg',
+          '/oh/',
         ]
 
         is_valid = true
@@ -262,7 +267,11 @@ module AnimeCharacterDB
 
         next unless is_valid
 
-        raise ArgumentError.new "cannot find valid character image url" unless metadata.image.nil?
+        if !metadata.image.nil? && metadata.image != src
+          #puts "curr img src : #{src}"
+          #puts "prev img src : #{metadata.image}"
+          raise ArgumentError.new "duplicated url occur, curr=#{src}, prev=#{metadata.image}"
+        end
         metadata.image = src
       end
       metadata
