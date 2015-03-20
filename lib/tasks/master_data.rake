@@ -142,13 +142,55 @@ namespace :master_data do
   class CharacterMasterData
     include MasterDataModule
 
+    # 러브라이브 캐릭 같은 경우 생일이 기록 안되있더라?
+    # 없는 경우 수동으로 생일 목록 관리해야될듯 -_-
+    # 크롤링 결과는 나중에 재생성 가능하니까 코드(또는 데이터로 분리해야된다)
+    PREDEFINED_BIRTHDAY_TABLE = {
+      'Eri Ayase' => '10/21',
+      'Hanayo Koizumi' => '01/17',
+      'Honoka Kousaka' => '08/03',
+      'Nico Yazawa' => '07/22',
+      'Maki Nishikino' => '04/19',
+      'Kotori Minami' => '09/12',
+      'Nozomi Toujou' => '06/09',
+      'Rin Hoshizora' => '11/01',
+      'Umi Sonoda' => '03/15',
+    }
+
+    PREDEFINED_NAME_KO_TABLE = {
+      'Eri Ayase' => '아야세 에리',
+      'Rin Hoshizora' => '호시조라 린',
+      'Nozomi Toujou' => '토죠 노조미',
+      'Hanayo Koizumi' => '코이즈미 하나요',
+    }
+
     def create_seed_key(id)
       "character_#{id}"
     end
 
     def skip_data?(data)
       # 생일이 없는 캐릭터는 굳이 다룰 필요가 없다
-      data.birthday == nil
+      filtered_birthday(data) == nil
+    end
+
+    def filtered_birthday(data)
+      if data.birthday.nil?
+        if PREDEFINED_BIRTHDAY_TABLE.include?(data.name_en)
+          PREDEFINED_BIRTHDAY_TABLE[data.name_en]
+        else
+          nil
+        end
+      else
+        data.birthday
+      end
+    end
+
+    def filtered_name_ko(data)
+      if PREDEFINED_NAME_KO_TABLE.include?(data.name_en)
+        PREDEFINED_NAME_KO_TABLE[data.name_en]
+      else
+        data.name_ko
+      end
     end
 
     def data_to_hash(data)
@@ -158,8 +200,8 @@ namespace :master_data do
         'slug' => data.create_slug,
         'name_en' => data.name_en,
         'name_jp' => data.name_jp,
-        'name_ko' => data.name_ko,
-        'date' => data.birthday,
+        'name_ko' => filtered_name_ko(data),
+        'date' => filtered_birthday(data),
 
         'anime_db_id' => data.character_id,
         'anime_db_img_url' => data.image,

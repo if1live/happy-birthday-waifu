@@ -89,3 +89,93 @@ character_9:
   anime_db_id: 13163
   anime_db_img_url: http://ami.animecharactersdatabase.com/./images/yosuganosora/Yahiro_Ifukube.png
   source_id: 1693
+character_10:
+  id: 10
+  slug: honoka-kousaka
+  name_en: Honoka Kousaka
+  name_jp: "高坂 穂乃果（こうさか ほのか）"
+  name_ko: "코우사카 호노카"
+  date: 08/03
+  anime_db_id: 56646
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/5524-166066080.png
+  source_id: 103317
+character_11:
+  id: 11
+  slug: eri-ayase
+  name_en: Eri Ayase
+  name_jp: "絢瀬 絵里（あやせ えり）"
+  name_ko: "아야세 에리"
+  date: 10/21
+  anime_db_id: 56647
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/5524-1640246428.png
+  source_id: 103317
+character_12:
+  id: 12
+  slug: kotori-minami
+  name_en: Kotori Minami
+  name_jp: "南 ことり（みなみ ことり）"
+  name_ko: "미나미 코토리"
+  date: 09/12
+  anime_db_id: 56648
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/5524-494288855.png
+  source_id: 103317
+character_13:
+  id: 13
+  slug: umi-sonoda
+  name_en: Umi Sonoda
+  name_jp: "園田 海未（そのだ うみ）"
+  name_ko: "소노다 우미"
+  date: 03/15
+  anime_db_id: 56649
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/5524-779816816.png
+  source_id: 103317
+character_14:
+  id: 14
+  slug: rin-hoshizora
+  name_en: Rin Hoshizora
+  name_jp: "星空 凛（ほしぞら りん）"
+  name_ko: "호시조라 린"
+  date: 11/01
+  anime_db_id: 56650
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/5524-518651873.png
+  source_id: 103317
+character_15:
+  id: 15
+  slug: maki-nishikino
+  name_en: Maki Nishikino
+  name_jp: "西木野 真姫（にしきの まき）"
+  name_ko: "니시키노 마키"
+  date: 04/19
+  anime_db_id: 56651
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/5524-406522676.png
+  source_id: 103317
+character_16:
+  id: 16
+  slug: nozomi-toujou
+  name_en: Nozomi Toujou
+  name_jp: "東條 希（とうじょう のぞみ）"
+  name_ko: "토죠 노조미"
+  date: 06/09
+  anime_db_id: 56652
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/5524-1814451805.png
+  source_id: 103317
+character_17:
+  id: 17
+  slug: hanayo-koizumi
+  name_en: Hanayo Koizumi
+  name_jp: "小泉 花陽（こいずみ はなよ）"
+  name_ko: "코이즈미 하나요"
+  date: 01/17
+  anime_db_id: 56653
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/5524-875567995.png
+  source_id: 103317
+character_18:
+  id: 18
+  slug: nico-yazawa
+  name_en: Nico Yazawa
+  name_jp: "矢澤 にこ（やざわ にこ）"
+  name_ko: "야자와 니코"
+  date: 07/22
+  anime_db_id: 56654
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/5524-1730616007.png
+  source_id: 103317
