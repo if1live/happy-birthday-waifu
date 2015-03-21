@@ -179,3 +179,13 @@ character_18:
   anime_db_id: 56654
   anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/5524-1730616007.png
   source_id: 103317
+character_19:
+  id: 19
+  slug: yuuna-yuuki
+  name_en: Yuuna Yuuki
+  name_jp: "結城 友奈"
+  name_ko: "유우키 유우나"
+  date: 03/21
+  anime_db_id: 70171
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/11498-1336690129.png
+  source_id: 104212

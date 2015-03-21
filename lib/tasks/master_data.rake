@@ -52,9 +52,11 @@ namespace :master_data do
       seed_key = find_seed_key data_key
       if seed_key.nil?
         # 새로 저장해야되는 경우
+        # puts "merge new data #{seed_key} #{data_key}"
         merge_new_data seed_data
       else
         # 기존에 저장된 것이 존재하는 경우
+        # puts "merge prev data #{seed_key} #{data_key}"
         merge_prev_data seed_key, seed_data
       end
     end
@@ -99,8 +101,11 @@ namespace :master_data do
       if @master_data.empty?
         0
       else
-        last_seed_key = @master_data.keys.sort.reverse[0]
-        seed_idx_from_seed_key last_seed_key
+        # "11" < "2",  왜냐하면 숫자가 아니라 문자열이니까
+        # master_data 에서 뽑은 키를 그대로 비교하면 위의 문제가 발생하기 때문에
+        # string key 에서 integer 를 뽑아내고 이것을 이용해야한다
+        num_array = @master_data.keys.map { |x| x.split('_')[-1].to_i }
+        num_array.reverse[0]
       end
     end
   end
@@ -146,6 +151,7 @@ namespace :master_data do
     # 없는 경우 수동으로 생일 목록 관리해야될듯 -_-
     # 크롤링 결과는 나중에 재생성 가능하니까 코드(또는 데이터로 분리해야된다)
     PREDEFINED_BIRTHDAY_TABLE = {
+      # love live
       'Eri Ayase' => '10/21',
       'Hanayo Koizumi' => '01/17',
       'Honoka Kousaka' => '08/03',
@@ -155,6 +161,9 @@ namespace :master_data do
       'Nozomi Toujou' => '06/09',
       'Rin Hoshizora' => '11/01',
       'Umi Sonoda' => '03/15',
+
+      # Yuki Yuna is a Hero
+      'Yuuna Yuuki' => '03/21',
     }
 
     PREDEFINED_NAME_KO_TABLE = {
@@ -162,6 +171,7 @@ namespace :master_data do
       'Rin Hoshizora' => '호시조라 린',
       'Nozomi Toujou' => '토죠 노조미',
       'Hanayo Koizumi' => '코이즈미 하나요',
+      'Yuuna Yuuki' => '유우키 유우나',
     }
 
     def create_seed_key(id)

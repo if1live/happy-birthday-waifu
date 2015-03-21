@@ -300,6 +300,10 @@ module AnimeCharacterDB
           '/img/50red.png',
           '/hosted/vs.png',
           '/oh/',
+          # http://ami.animecharactersdatabase.com/img/ACDB.png
+          '/img/ACDB.png',
+          # http://ami.animecharactersdatabase.com/./images/souleater/Zesu_Za_Kiddo_thumb.jpg,
+          '/images/souleater/',
         ]
 
         is_valid = true
