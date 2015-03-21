@@ -151,8 +151,16 @@ module AnimeCharacterDB
       curr = elem.next_sibling
       while not curr.nil? do
         node_name = curr.node_name
+        if node_name != 'div'
+          curr = curr.next_sibling
+        end
+
+        if curr.get_attribute(:itemtype) == 'http://schema.org/TVSeries'
+          curr = curr.children[0]
+        end
+
         id_val = curr.get_attribute :id
-        if node_name == 'div' && id_val == 'besttable'
+        if id_val == 'besttable'
           table_node = curr.css('table')[0]
           return table_node
         end
@@ -189,6 +197,9 @@ module AnimeCharacterDB
         attr_name = attr_table[key]
         data.send("#{attr_name}=", value)
       end
+
+      raise ArgumentError.new "cannot find src_id" if data.src_id.nil?
+
       data
     end
   end

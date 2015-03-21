@@ -164,6 +164,12 @@ namespace :master_data do
 
       # Yuki Yuna is a Hero
       'Yuuna Yuuki' => '03/21',
+
+      # madoka
+      # 대부분의 마마마 캐릭은 생일이 설정되어있지 않다
+      # origin : http://wiki.puella-magi.net/Madoka_Kaname
+      'Madoka Kaname' => '10/03',
+      'Mami Tomoe' => '06/05'
     }
 
     PREDEFINED_NAME_KO_TABLE = {
@@ -172,6 +178,8 @@ namespace :master_data do
       'Nozomi Toujou' => '토죠 노조미',
       'Hanayo Koizumi' => '코이즈미 하나요',
       'Yuuna Yuuki' => '유우키 유우나',
+      'Madoka Kaname' => '카나메 마도카',
+      'Mami Tomoe' => '토모에 마미',
     }
 
     def create_seed_key(id)
