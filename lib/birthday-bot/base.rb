@@ -31,7 +31,7 @@ module BirthdayBot
     end
 
     def create_message(character)
-      url = "http://birthday.libsora.so/character/#{character.id}"
+      url = "http://birthday.libsora.so/characters/#{character.id}"
       msg = "#{character.birthday_to_s}은 #{character.name_ko}(#{character.name_jp}, #{character.name_en}) 생일입니다. #{url}"
       msg = msg.gsub '（', '('
       msg = msg.gsub '）', ')'
