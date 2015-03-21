@@ -304,6 +304,8 @@ module AnimeCharacterDB
           '/img/ACDB.png',
           # http://ami.animecharactersdatabase.com/./images/souleater/Zesu_Za_Kiddo_thumb.jpg,
           '/images/souleater/',
+          # http://ami.animecharactersdatabase.com/images/2552/Madoka_Kaname_thumb.jpg
+          '_thumb.',
         ]
 
         is_valid = true

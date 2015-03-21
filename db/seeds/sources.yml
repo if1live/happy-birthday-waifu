@@ -31,3 +31,11 @@ source_4:
   title_romaji: Rabu Raibu! School Idol Project!
   title_furigana: "ラブライブ！ スクールアイドルプロジェクト!"
   anime_db_id: 103317
+source_5:
+  id: 2552
+  slug: puella-magi-madoka-magica
+  title_en: Puella Magi Madoka Magica
+  title_jp: "魔法少女まどか☆マギカ"
+  title_romaji: Mahou Shoujo Madoka ★ Magika
+  title_furigana: "まほうしょうじょまどかマギカ"
+  anime_db_id: 2552

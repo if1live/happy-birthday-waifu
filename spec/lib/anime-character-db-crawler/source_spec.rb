@@ -34,6 +34,8 @@ describe AnimeCharacterDB::SourceHTMLParser do
   let(:yosuga_no_sora_html) { File.read yosuga_no_sora_filepath }
   let(:cocoro_function_filepath) { get_filepath 'source-103704-cocoro-function.html' }
   let(:cocoro_function_html) { File.read cocoro_function_filepath }
+  let(:madoka_filepath) { get_filepath 'source-2552-puella-magi-madoka-magica.html' }
+  let(:madoka_html) { File.read madoka_filepath }
 
   let(:subject) { AnimeCharacterDB::SourceHTMLParser.new }
 
@@ -95,6 +97,17 @@ describe AnimeCharacterDB::SourceHTMLParser do
       expect(data.img_thumbnail).to eq(img_thumbnail)
 
       # character
+    end
+
+    it 'madoka' do
+      data = subject.read madoka_html
+      # required
+      expect(data.src_id).to eq(2552)
+      expect(data.title_en).to eq('Puella Magi Madoka Magica')
+      expect(data.title_jp).to eq('魔法少女まどか☆マギカ')
+      expect(data.title_romaji).to eq('Mahou Shoujo Madoka ★ Magika')
+      expect(data.title_furigana).to eq('まほうしょうじょまどかマギカ')
+      expect(data.aliases).to eq([])
     end
   end
 end
