@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
   post 'favorites/:character_id/' => 'favorites#toggle'
 
+  # manage
+  get 'manage/' => 'manage#index'
+  post 'manage/tweet_character_birthday'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

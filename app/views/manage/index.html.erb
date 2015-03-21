@@ -1,0 +1,58 @@
+<% if @debug_mode %>
+<h1>Debug Mode : <%= @today_str %></h1>
+<% else %>
+<h1>Service Mode : <%= @today_str %></h1>
+<% end %>
+
+<h2>Current State : </h2>
+<dl class="dl-horizontal">
+  <dt>debug mode</dt>
+  <dd>
+	<%= @debug_mode %>
+	<a href="./?debug=true&date=<%= @today_str %>">debug=true</a>
+	<a href="./?debug=false&date=<%= @today_str %>">debug=false</a>
+  </dd>
+  <dt>access token</dt>
+  <dd><%= @access_token %></dd>
+  <dt>secret token</dt>
+  <dd><%= @secret_token %></dd>
+</dl>
+
+<form action="." method="get">
+  <select name="debug">
+	<option value="true"
+		<% if @debug_mode %>selected<% end %>>debug</option>
+	<option value="false"
+		<% unless @debug_mode %>selected<% end %>>service</option>
+  </select>
+  <input type="text" name="date" value="<%= @today_str %>" placeholder="02/05"/>
+  <button class="btn btn-default">GoTo</button>
+</form>
+
+<h3>Today Birthday Character List</h3>
+<table class="table table-hover">
+  <thead>
+	<tr>
+	  <th>id</th>
+	  <th>slug</th>
+	  <th>name_ko</th>
+	  <th>func</th>
+	</tr>
+  </thead>
+  <tbody>
+	<% @character_list.each do |character| %>
+	  <tr>
+		<td><%= character.id %></td>
+		<td><%= character.slug %></td>
+		<td><%= character.name_ko %></td>
+		<td>
+		  <form action="<%= url_for controller: "manage", action: "tweet_character_birthday" %>" method="post">
+			<%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+			<input type="hidden" name="character_id" value="<%= character.id %>"/>
+			<button class="btn btn-default">Tweet</button>
+		  </form>
+		</td>
+	  </tr>
+	<% end %>
+  </tbody>
+</table>
