@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'welcome/about'
-  get 'welcome/dev-history' => 'welcome#dev_history'
   get 'welcome/support'
 
   get 'users/show'
@@ -10,7 +9,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   root 'characters#index'
-  get 'characters/:slug' => 'characters#detail'
+  get 'characters/:character_id' => 'characters#detail'
   get 'characters/date/:month/:day' => 'characters#date'
   get 'characters/' => 'characters#list'
 

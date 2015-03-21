@@ -54,13 +54,13 @@ RSpec.describe CharactersController, :type => :controller do
     let!(:character) { FactoryGirl.create(:character) }
 
     it "returns http success" do
-      get :detail, slug: character.slug
+      get :detail, character_id: character.id
       expect(response).to have_http_status(:success)
       expect(assigns(:character)).to eq(character)
     end
 
     it "access not exist" do
-      get :detail, slug: 'not-exist'
+      get :detail, character_id: -1
       expect(response).to have_http_status(404)
     end
   end
