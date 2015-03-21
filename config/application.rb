@@ -34,5 +34,9 @@ module HappyBirthdayWaifu
     # https://github.com/heroku/rails_12factor#rails-4-serve-static-assets
     # heroku를 버리고 자체 서버 운영하면서 해당 필드가 필요없어졌다.
     # config.serve_static_assets = true
+
+    unless Rails.env.test?
+      WebMock.disable!
+    end
   end
 end

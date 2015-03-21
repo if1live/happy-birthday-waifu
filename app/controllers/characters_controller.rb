@@ -37,8 +37,7 @@ class CharactersController < ApplicationController
   end
 
   def detail
-    @slug = params[:slug]
-    @character = Character.find_by slug: @slug
+    @character = Character.find_by(id: params[:character_id])
     return render :status => 404 if @character.nil?
 
     favorite_user_q = @character.user_list_q

@@ -13,9 +13,6 @@
 * 개발자 계정
   * [@if1live](https://twitter.com/if1live)
 
-## 잡담
-* [개발기록](/welcome/dev-history)
-
 
 ## TODO / 기여
 * [Repository](https://github.com/if1live/happy-birthday-waifu) 참고
