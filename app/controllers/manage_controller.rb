@@ -59,7 +59,7 @@ class ManageController < ApplicationController
     character_id = params[:character_id]
     character = Character.find character_id
 
-    bot = BirthdayBot::TwitterSender.new @access_token, @secret_token
+    bot = BirthdayBot::TwitterSender.create @access_token, @secret_token, debug_mode?
     tweet = bot.tweet_character_birthday character
     render json: { ok: true, url: tweet.uri.to_s }
   end

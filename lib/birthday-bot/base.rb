@@ -1,11 +1,12 @@
 require 'open-uri'
+require 'twitter'
 
 module BirthdayBot
   class TwitterSender
     attr_reader :client_key, :secret_key
     attr_reader :access_token, :secret_token
 
-    def initialize(access_token = nil, secret_token = nil)
+    def initialize(access_token, secret_token)
       @client_key = ENV['TWITTER_APP_KEY']
       @secret_key = ENV['TWITTER_APP_SECRET']
       raise ArgumentError.new "client key is empty" if @client_key.nil?
@@ -18,7 +19,6 @@ module BirthdayBot
         raise ArgumentError.new "empty secret token"
       end
 
-
       @access_token = access_token.strip
       @secret_token = secret_token.strip
 
@@ -30,11 +30,28 @@ module BirthdayBot
       end
     end
 
-    def create_message(character)
-      url = "http://birthday.libsora.so/characters/#{character.id}"
-      msg = "#{character.birthday_to_s}은 #{character.name_ko}(#{character.name_jp}, #{character.name_en}) 생일입니다. #{url}"
+    def self.create(access_token, secret_token, debug = false)
+      if debug
+        FakeTwitterSender.new access_token, secret_token
+      else
+        RealTwitterSender.new access_token, secret_token
+      end
+    end
+
+    def url(character_id)
+      "http://birthday.libsora.so/characters/#{character_id}"
+    end
+
+    def filter_message(msg)
+      # 사용하지 않기로 한 텍스트 제거
       msg = msg.gsub '（', '('
       msg = msg.gsub '）', ')'
+      msg
+    end
+
+    def create_message(character)
+      msg = "#{character.birthday_to_s}은 #{character.name_ko}(#{character.name_jp}, #{character.name_en}) 생일입니다. #{url character.id}"
+      msg = filter_message msg
       msg
     end
 
@@ -46,6 +63,25 @@ module BirthdayBot
       end
     end
 
+  end
+
+
+  class FakeTwitterSender < TwitterSender
+    attr_reader :called_method
+
+    def initialize(access_token, secret_token)
+      super access_token, secret_token
+      @called_method = nil
+    end
+    def tweet_text_birthday(character)
+      @called_method = :tweet_text_birthday
+    end
+    def tweet_media_birthday(character)
+      @called_method = :tweet_media_birthday
+    end
+  end
+
+  class RealTwitterSender < TwitterSender
     def tweet_text_birthday(character)
       message = create_message character
       @client.update message
