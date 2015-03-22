@@ -189,3 +189,23 @@ character_19:
   anime_db_id: 70171
   anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/11498-1336690129.png
   source_id: 104212
+character_20:
+  id: 20
+  slug: madoka-kaname
+  name_en: Madoka Kaname
+  name_jp: "鹿目 まどか"
+  name_ko: "카나메 마도카"
+  date: 10/03
+  anime_db_id: 23248
+  anime_db_img_url: http://ami.animecharactersdatabase.com/images/2552/Madoka_Kaname.png
+  source_id: 2552
+character_21:
+  id: 21
+  slug: mami-tomoe
+  name_en: Mami Tomoe
+  name_jp: "巴 マミ (ともえ　まみ)"
+  name_ko: "토모에 마미"
+  date: 06/05
+  anime_db_id: 23249
+  anime_db_img_url: http://ami.animecharactersdatabase.com/images/2552/Mami_Tomoe.png
+  source_id: 2552
