@@ -108,40 +108,23 @@ module MasterData
   class CharacterMasterData
     include MasterDataModule
 
-    # 러브라이브 캐릭 같은 경우 생일이 기록 안되있더라?
-    # 없는 경우 수동으로 생일 목록 관리해야될듯 -_-
-    # 크롤링 결과는 나중에 재생성 가능하니까 코드(또는 데이터로 분리해야된다)
-    PREDEFINED_BIRTHDAY_TABLE = {
-      # love live
-      'Eri Ayase' => '10/21',
-      'Hanayo Koizumi' => '01/17',
-      'Honoka Kousaka' => '08/03',
-      'Nico Yazawa' => '07/22',
-      'Maki Nishikino' => '04/19',
-      'Kotori Minami' => '09/12',
-      'Nozomi Toujou' => '06/09',
-      'Rin Hoshizora' => '11/01',
-      'Umi Sonoda' => '03/15',
+    def predefined_birthday_table
+      if @predefined_birthday_cache.nil?
+        data_file = 'predefined_birthday.yml'
+        data_filepath = File.join File.dirname(__FILE__), data_file
+        @predefined_birthday_cache = YAML.load_file data_filepath
+      end
+      @predefined_birthday_cache
+    end
 
-      # Yuki Yuna is a Hero
-      'Yuuna Yuuki' => '03/21',
-
-      # madoka
-      # 대부분의 마마마 캐릭은 생일이 설정되어있지 않다
-      # origin : http://wiki.puella-magi.net/Madoka_Kaname
-      'Madoka Kaname' => '10/03',
-      'Mami Tomoe' => '06/05'
-    }
-
-    PREDEFINED_NAME_KO_TABLE = {
-      'Eri Ayase' => '아야세 에리',
-      'Rin Hoshizora' => '호시조라 린',
-      'Nozomi Toujou' => '토죠 노조미',
-      'Hanayo Koizumi' => '코이즈미 하나요',
-      'Yuuna Yuuki' => '유우키 유우나',
-      'Madoka Kaname' => '카나메 마도카',
-      'Mami Tomoe' => '토모에 마미',
-    }
+    def predefined_name_ko_table
+      if @predefined_name_ko_cache.nil?
+        data_file = 'predefined_name_ko.yml'
+        data_filepath = File.join File.dirname(__FILE__), data_file
+        @predefined_name_ko_cache = YAML.load_file data_filepath
+      end
+      @predefined_name_ko_cache
+    end
 
     def create_seed_key(id)
       "character_#{id}"
@@ -154,8 +137,8 @@ module MasterData
 
     def filtered_birthday(data)
       if data.birthday.nil?
-        if PREDEFINED_BIRTHDAY_TABLE.include?(data.name_en)
-          PREDEFINED_BIRTHDAY_TABLE[data.name_en]
+        if predefined_birthday_table.include?(data.name_en)
+          predefined_birthday_table[data.name_en]
         else
           nil
         end
@@ -165,8 +148,8 @@ module MasterData
     end
 
     def filtered_name_ko(data)
-      if PREDEFINED_NAME_KO_TABLE.include?(data.name_en)
-        PREDEFINED_NAME_KO_TABLE[data.name_en]
+      if predefined_name_ko_table.include?(data.name_en)
+        predefined_name_ko_table[data.name_en]
       else
         data.name_ko
       end
