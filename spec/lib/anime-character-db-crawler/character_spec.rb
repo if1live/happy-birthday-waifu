@@ -12,26 +12,11 @@ def get_filepath(filename)
 end
 
 describe AnimeCharacterDB::CharacterData do
+  # 구현은 다른 클래스에 분리되어있기 떄문에 간단하게 테스트
   let(:subject) { AnimeCharacterDB::CharacterData.new }
   describe '#birthday=' do
     it 'February 5' do
       subject.birthday = 'February 5'
-      expect(subject.birthday).to eq('02/05')
-    end
-    it 'february 5' do
-      subject.birthday = 'february 5'
-      expect(subject.birthday).to eq('02/05')
-    end
-    it 'Feb 5' do
-      subject.birthday = 'Feb 5'
-      expect(subject.birthday).to eq('02/05')
-    end
-    it 'feb 5' do
-      subject.birthday = 'feb 5'
-      expect(subject.birthday).to eq('02/05')
-    end
-    it '02/05' do
-      subject.birthday = '02/05'
       expect(subject.birthday).to eq('02/05')
     end
   end
