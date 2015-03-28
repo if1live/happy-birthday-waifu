@@ -209,3 +209,113 @@ character_21:
   anime_db_id: 23249
   anime_db_img_url: http://ami.animecharactersdatabase.com/images/2552/Mami_Tomoe.png
   source_id: 2552
+character_22:
+  id: 22
+  slug: miki-hoshii
+  name_en: Miki Hoshii
+  name_jp: "星井美希"
+  name_ko: "호시이 미키"
+  date: 11/23
+  anime_db_id: 33801
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-476817281.png
+  source_id: 104289
+character_23:
+  id: 23
+  slug: haruka-amami
+  name_en: Haruka Amami
+  name_jp: "天海春香 （あまみ はるか）"
+  name_ko: "아마미 하루카"
+  date: 04/03
+  anime_db_id: 70885
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-1330358478.png
+  source_id: 104289
+character_24:
+  id: 24
+  slug: chihaya-kisaragi
+  name_en: Chihaya Kisaragi
+  name_jp: "如月千早 (きさらぎ　ちはや)"
+  name_ko: "키사라기 치하야"
+  date: 02/25
+  anime_db_id: 70886
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-1702936062.png
+  source_id: 104289
+character_25:
+  id: 25
+  slug: yukiho-hagiwara
+  name_en: Yukiho Hagiwara
+  name_jp: "萩原雪歩 (はぎわら　ゆきほ)"
+  name_ko: "하기와라 유키호"
+  date: 12/24
+  anime_db_id: 70887
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-1303155755.png
+  source_id: 104289
+character_26:
+  id: 26
+  slug: yayoi-takatsuki
+  name_en: Yayoi Takatsuki
+  name_jp: "高槻やよい (たかつき　やよい)"
+  name_ko: "타카츠키 야요이"
+  date: 03/25
+  anime_db_id: 70888
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-1155872455.png
+  source_id: 104289
+character_27:
+  id: 27
+  slug: makoto-kikuchi
+  name_en: Makoto Kikuchi
+  name_jp: "菊地真 (きくち　まこと)"
+  name_ko: "키쿠치 마코토"
+  date: 08/29
+  anime_db_id: 70889
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-1646726868.png
+  source_id: 104289
+character_28:
+  id: 28
+  slug: mami-futami
+  name_en: Mami Futami
+  name_jp: "双海真美 (ふたみ　まみ)"
+  name_ko: "후타미 마미"
+  date: 05/22
+  anime_db_id: 70890
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-769976916.png
+  source_id: 104289
+character_29:
+  id: 29
+  slug: iori-minase
+  name_en: Iori Minase
+  name_jp: "水瀬伊織 (みなせ　いおり)"
+  name_ko: "미나세 이오리"
+  date: 05/05
+  anime_db_id: 70891
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-2144407218.png
+  source_id: 104289
+character_30:
+  id: 30
+  slug: ami-futami
+  name_en: Ami Futami
+  name_jp: "双海亜美 (ふたみ　あみ)"
+  name_ko: "후타미 아미"
+  date: 05/22
+  anime_db_id: 70892
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-1949597525.png
+  source_id: 104289
+character_31:
+  id: 31
+  slug: azusa-miura
+  name_en: Azusa Miura
+  name_jp: "三浦あずさ (みうら　あずさ)"
+  name_ko: "미우라 아즈사"
+  date: 07/19
+  anime_db_id: 70893
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-1909691806.png
+  source_id: 104289
+character_32:
+  id: 32
+  slug: ritsuko-akizuki
+  name_en: Ritsuko Akizuki
+  name_jp: "秋月律子 (あきずき　りつこ)"
+  name_ko: "아키즈키 리츠코"
+  date: 06/23
+  anime_db_id: 70894
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-1762475734.png
+  source_id: 104289

@@ -27,6 +27,11 @@ describe AnimeCharacterDB::CharacterData do
       expect(subject.name_kanji).to eq('春日野 穹')
       expect(subject.name_kana).to eq('かすがの そら')
     end
+    it 'kanji + hiragana 2' do
+      subject.name_jp = '如月千早 (きさらぎ　ちはや)'
+      expect(subject.name_kanji).to eq('如月千早')
+      expect(subject.name_kana).to eq('きさらぎ ちはや')
+    end
 
     it 'katakana' do
       name = 'イリーナ・ウラジーミロヴナ・プチナ'

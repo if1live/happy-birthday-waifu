@@ -33,9 +33,25 @@ module AnimeCharacterDB
       convert_slug @name_en
     end
 
+    def fullwidth_to_halfwidth(val)
+      char_table = [
+        ['（', '('],
+        ['）', ')'],
+        ['　', ' ']
+      ]
+      char_table.each do |before, after|
+        val = val.gsub before, after
+      end
+      val
+    end
+
     def parse_name_jp(val)
       # 春日野 穹 （かすがの そら）
-      regexp = /(?<kanji>.+)（(?<kana>.+)）/
+      # 如月千早 (きさらぎ　ちはや)
+      # 전각과 반각의 카오스를 어떻게든 반각 기준으로 맞춘다
+      val = fullwidth_to_halfwidth val
+
+      regexp = /(?<kanji>.+)\((?<kana>.+)\)/
       m = regexp.match val
 
       name_kanji = nil

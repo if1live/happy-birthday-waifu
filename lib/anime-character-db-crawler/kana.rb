@@ -146,6 +146,10 @@ module AnimeCharacterDB
         i += 1
       end
       retval_list.join('')
+
+    rescue
+      # 망해도 코드는 죽지 않도록
+      'ERROR'
     end
 
     def convert(kana)

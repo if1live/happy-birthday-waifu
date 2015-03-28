@@ -39,3 +39,11 @@ source_5:
   title_romaji: Mahou Shoujo Madoka ★ Magika
   title_furigana: "まほうしょうじょまどかマギカ"
   anime_db_id: 2552
+source_6:
+  id: 104289
+  slug: the-idolmaster
+  title_en: The Idolmaster
+  title_jp: THE iDOLM@STER
+  title_romaji: Aidoru Masutaa
+  title_furigana: "アイドルマスター"
+  anime_db_id: 104289

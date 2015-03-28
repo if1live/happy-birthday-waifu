@@ -44,8 +44,14 @@ module BirthdayBot
 
     def filter_message(msg)
       # 사용하지 않기로 한 텍스트 제거
-      msg = msg.gsub '（', '('
-      msg = msg.gsub '）', ')'
+      char_table = [
+        ['（', '('],
+        ['）', ')'],
+        ['　', ' ']
+      ]
+      char_table.each do |before, after|
+        msg = msg.gsub before, after
+      end
       msg
     end
 
