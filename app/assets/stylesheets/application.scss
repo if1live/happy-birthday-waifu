@@ -15,6 +15,7 @@
 /*
  *= require metro-ui-css
  *= require iconFont-content
+ *= require_tree .
  */
 
 @font-face {
@@ -72,23 +73,6 @@
     }
 }
 
-/*
 
- */
-
-//OpenSans-Bold.woff
-//OpenSans-Light.woff  
-//OpenSans.woff     
-//PTSerif-Caption.woff
-
-
-// base template
-// http://getbootstrap.com/examples/jumbotron-narrow/
-
-
-/* Make the masthead heading the same height as the navigation */
-//.header h3 {
-//  line-height: 40px;
-//}
 
 

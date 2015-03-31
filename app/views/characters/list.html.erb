@@ -1,8 +1,31 @@
-<h1>캐릭터</h1>
-<div class="row">
-  <% @all_list.each do |character| %>
-    <div class="col-sm-4">
-      <%= render 'simple_card', character: character, date: @today%>
+<div>
+  <% @month_table.each do |month, character_list| %>
+    <div class="panel">
+      <div class="panel-header">
+        <h2><%= month % 12 == 0 ? 12 : month % 12 %>월</h2>
+      </div>
+      <div class="panel-content">
+      <ul class="unstyled">
+      <% character_list.each do |character| %>
+        <li class="character-list-elem">
+          <span class="birthday-text">
+            <%= character.birthday_to_s %>
+          </span>
+
+          <%= link_to controller: 'characters', action: 'detail', character_id: character.id do %>
+
+            <span class="d-day-text">
+              <%= render 'characters/d_day', character: character, date: @today %>
+            </span>
+
+            <%= character.name_ko %>
+            <%= character.name_en %>
+            <%= character.name_jp %>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
+      </div>
     </div>
   <% end %>
 </div>

@@ -1,3 +1,18 @@
 // Place all the styles related to the characters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.character-list-elem {
+    .birthday-text {
+        display: inline-block;
+        width: 5em;
+    }
+    .d-day-text {
+        button {
+            width: 4em;
+        }
+        display: inline-block;
+        padding-right: 0.5em;
+    }
+}
