@@ -31,6 +31,8 @@ module HappyBirthdayWaifu
     # run tests with that configuration, its a huge security hole.
     config.web_console.whitelisted_ips = %w( 0.0.0.0/0 ::/0 ) if Rails.env.development?
 
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
     # https://github.com/heroku/rails_12factor#rails-4-serve-static-assets
     # heroku를 버리고 자체 서버 운영하면서 해당 필드가 필요없어졌다.
     # config.serve_static_assets = true

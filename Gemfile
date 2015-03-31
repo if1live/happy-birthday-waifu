@@ -40,10 +40,6 @@ gem 'rails_admin'
 # https://codeclimate.com/
 gem "codeclimate-test-reporter", group: :test, require: nil
 
-# bootstrap
-gem 'bootstrap-sass'
-gem 'font-awesome-rails'
-
 gem 'simple_form'
 
 # auth
@@ -104,5 +100,5 @@ end
 
 # rails-assets
 source 'https://rails-assets.org' do
-  gem 'rails-assets-bootcards'
+  gem 'rails-assets-metro-ui-css'
 end
