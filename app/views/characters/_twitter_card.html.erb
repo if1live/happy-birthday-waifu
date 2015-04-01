@@ -1,0 +1,8 @@
+<% unless character.nil? %>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@birth_bot_waifu">
+<meta name="twitter:creator" content="@birth_bot_waifu">
+<meta name="twitter:title" content="<%= character.name_ko %> 생일">
+<meta name="twitter:description" content="<%=character.birthday_to_s%>은 <%=character.name_ko%>(<%=character.name_jp%>, <%=character.name_en%>) 생일입니다. http://birthday.libsora.so/characters/<%=character.id %>">
+<meta name="twitter:image:src" content="<%=character.anime_db_img_url %>">
+<% end %>
