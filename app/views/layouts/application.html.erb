@@ -25,15 +25,15 @@
         <li><%= link_to "Help", controller: "welcome", action: "support" %></li>
 
         <% if user_signed_in? %>
-			    <li class="place-right">
+			    <li>
             <%= link_to current_user.name, controller: "users", action: "show" %>
           </li>
-          <li class="place-right">
+          <li>
             <%= link_to 'Logout', destroy_user_session_path, method: :delete,
 			      data: { confirm: "로그아웃하시겠습니까?" } %>
           </li>
 		    <% else %>
-			    <li class="place-right">
+			    <li>
             <%= link_to 'Login', user_omniauth_authorize_path(:twitter) %>
           </li>
 		    <% end %>
