@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery.widget.min.js
 //= require turbolinks
-//= require bootcards
+//= require metro.min.js
 //= require_tree .

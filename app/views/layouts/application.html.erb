@@ -7,122 +7,64 @@
   <meta name="description" content="">
   <meta name="author" content="if1live">
 
+  <%= render '/characters/twitter_card', character: @character %>
+
+
   <title>Happy Birthday, Waifu</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <!-- header -->
+<body class="metro">
   <div class="container">
-	<div class="header">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-          <% if request.path == '/' %>
-            <li role="presentation" class="active">
-              <a href="#">Home</a>
-            </li>
-          <% elsif %>
-            <li role="presentation">
-              <a href="/">Home</a>
-            </li>
-          <% end %>
+    <h1><a href="/">Happy Birthday, Waifu</a></h1>
 
-		  <% if false %>
-		  <% if /welcome/ =~ request.path and request.path != '/welcome/support' %>
-          <li role="presentation" class="active"><a href="#">About</a></li>
-		  <% else %>
-          <li role="presentation">
-			<%= link_to "About", controller: "/welcome", action: "about" %>
-		  </li>
-		  <% end %>
-		  <% end %>
+    <!-- menu -->
+    <nav class="horizontal-menu">
+      <ul>
+        <li><%= link_to "All", controller: "characters", action: "list" %></li>
+        <li><%= link_to "Help", controller: "welcome", action: "support" %></li>
 
-          <% if request.path == (url_for controller: "characters", action: "list") %>
-            <li role="presentation" class="active">
-              <a href="#">All</a>
-            </li>
-          <% elsif %>
-            <li role="presentation">
-              <%= link_to "All", controller: "characters", action: "list" %>
-            </li>
-          <% end %>
+        <% if user_signed_in? %>
+			    <li>
+            <%= link_to current_user.name, controller: "users", action: "show" %>
+          </li>
+          <li>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete,
+			      data: { confirm: "로그아웃하시겠습니까?" } %>
+          </li>
+		    <% else %>
+			    <li>
+            <%= link_to 'Login', user_omniauth_authorize_path(:twitter) %>
+          </li>
+		    <% end %>
+      </ul>
+    </nav>
+    <!-- // menu -->
 
-		  <% if user_signed_in? %>
-			<% if request.path == (url_for controller: "users", action: "show") %>
-			<li role="presentation" class="active">
-			<% else %>
-			<li role="presentation">
-			<% end %>
-			  <%= link_to controller: "users", action: "show" do %>
-			  <i class='fa fa-twitter'> </i> <%= current_user.name %>
-			  <% end %>
-			</li>
-			<li role="presentation">
-			  <%= link_to destroy_user_session_path, method: :delete,
-			  data: { confirm: "로그아웃하시겠습니까?" } do %>
-			    Logout
-		      <% end %>
-			</li>
-		  <% else %>
-			<li role="presentation">
-			  <%= link_to user_omniauth_authorize_path(:twitter) do %>
-				<i class='fa fa-twitter'></i> Login
-			  <% end %>
-			</li>
-		  <% end %>
+	  <!-- flash begin -->
+	  <% if notice %>
+	    <div class="notice fg-white">
+	      <div><%= notice %></div>
+	    </div>
+	  <% end %>
 
-          <% if request.path == (url_for controller: '/welcome', action: 'support') %>
-            <li role="presentation" class="active">
-              <a href="#">
-                <i class='fa fa-question'></i> Help!
-              </a>
-            </li>
-		  <% else %>
-          <li role="presentation">
-			<%= link_to controller: "/welcome", action: "support" do %>
-              <i class='fa fa-question'></i> Help!
-            <% end %>
-		  </li>
-		  <% end %>
+	  <% if alert %>
+	    <div class="notice bg-darkRed fg-white">
+	      <div><%= alert %></div>
+	    </div>
+	  <% end %>
+	  <!-- flash end -->
 
-        </ul>
-      </nav>
-      <h3 class="text-muted">
-		<a href="/">
-		Happy Birthday, Waifu
-		</a>
-	  </h3>
-    </div>
-	<hr/>
-  </div>
+	  <%= yield %>
 
-  <div class="container">
-	<!-- flash begin -->
-	<% if notice %>
-	<div class="alert alert-success alert-dismissible" role="alert">
-	  <%= notice %>
-	</div>
-	<% end %>
-
-	<% if alert %>
-	<div class="alert alert-danger alert-dismissible" role="alert">
-	  <%= alert %>
-	</div>
-	<% end %>
-	<!-- flash end -->
-
-	<%= yield %>
-  </div>
-
-  <!-- footer -->
-  <div class="container">
-	<hr/>
-	<footer class="footer">
-      <p>&copy;
-		<a href="https://twitter.com/waifu_birth_bot">@waifu_birth_bot</a>
-		| <a href="https://twitter.com/if1live">@if1live</a>
-		| <a href="https://github.com/if1live/happy-birthday-waifu">Repository</a>
-		2015</p>
+    <!-- footer -->
+	  <footer>
+      <ul class="horizontal-menu compact">
+        <li>&copy; 2015 Happy Birtday, Waifu</li>
+		    <li><a href="https://twitter.com/waifu_birth_bot">@waifu_birth_bot</a></li>
+		    <li><a href="https://twitter.com/if1live">@if1live</a></li>
+		    <li><a href="https://github.com/if1live/happy-birthday-waifu">Repository</a></li>
+      </ul>
     </footer>
   </div>
 

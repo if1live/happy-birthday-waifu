@@ -33,7 +33,24 @@ class CharactersController < ApplicationController
     curr_year_q = Character.where('date >= ?', today_str).order(date: :asc)
     # year start ~ today
     next_year_q = Character.where('date < ?', today_str).order(date: :asc)
-    @all_list = curr_year_q.to_a + next_year_q.to_a
+    curr_year_list = curr_year_q.to_a
+    next_year_list = next_year_q.to_a
+    @all_list = curr_year_list + next_year_list
+
+    # TODO 월별로 정렬하기. 남은것과 지난것을 따로 처리하기
+    @month_table = {}
+    (@month...(@month + 13)).each do |m|
+      @month_table[m] = []
+    end
+    curr_year_list.each do |character|
+      month = character.month
+      @month_table[month] << character
+    end
+    next_year_list.each do |character|
+      month = character.month + 12
+      @month_table[month] << character
+    end
+    @month_table = @month_table.select { |k, v| v.length > 0 }
   end
 
   def detail
