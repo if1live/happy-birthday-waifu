@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require jquery.widget.min.js
 //= require turbolinks
-//= require metro-ui-css
+//= require metro.min.js
 //= require_tree .

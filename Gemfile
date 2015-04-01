@@ -100,5 +100,4 @@ end
 
 # rails-assets
 source 'https://rails-assets.org' do
-  gem 'rails-assets-metro-ui-css'
 end
