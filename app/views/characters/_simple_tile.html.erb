@@ -2,7 +2,7 @@
   <%= link_to controller: 'characters', action: 'detail', character_id: character.id do %>
   <div class="tile-content email">
     <div class="email-image">
-      <img src="foo.png">
+      <img src="/static/thumb/<%= character.anime_db_id %>.jpg">
     </div>
     <div class="email-data">
       <span class="email-data-title"><%= character.name_ko %></span>

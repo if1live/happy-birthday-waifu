@@ -32,4 +32,18 @@ namespace :crawler do
     result = cmd.run character_id
     puts "Character[#{character_id.to_s}] #{result.data.create_slug} success"
   end
+
+  task :copy_thumbnail do
+    src_path = Rails.root.join 'anime-character-db', 'character'
+    dst_path = Rails.root.join 'public', 'static', 'thumb'
+
+    entries = Dir.entries(src_path)
+    entries = entries.reject { |x| ['.', '..'].include? x }
+    entries.each do |src_dir|
+      character_id = src_dir.split('-')[0]
+      src_filepath = File.join src_path, src_dir, 'thumb.jpg'
+      dst_filepath = File.join dst_path, "#{character_id}.jpg"
+      FileUtils.copy src_filepath, dst_filepath
+    end
+  end
 end
