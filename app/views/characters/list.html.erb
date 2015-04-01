@@ -2,7 +2,7 @@
   <% @month_table.each do |month, character_list| %>
     <div class="panel">
       <div class="panel-header">
-        <h2><%= month % 12 == 0 ? 12 : month % 12 %>월</h2>
+        <%= month % 12 == 0 ? 12 : month % 12 %>월
       </div>
       <div class="panel-content">
       <ul class="unstyled">
