@@ -16,7 +16,9 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'devise'
 require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
+if ENV.include? 'CODECLIMATE_REPO_TOKEN'
+  CodeClimate::TestReporter.start
+end
 
 # codeclimate 처리 없이 webmock를 활성화하면 code climate의 웹 요청이 막힌다
 require 'webmock/rspec'
