@@ -3,6 +3,7 @@
 {<img src="https://travis-ci.org/if1live/happy-birthday-waifu.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/if1live/happy-birthday-waifu]
 {<img src="https://codeclimate.com/github/if1live/happy-birthday-waifu/badges/gpa.svg" />}[https://codeclimate.com/github/if1live/happy-birthday-waifu]
 {<img src="https://codeclimate.com/github/if1live/happy-birthday-waifu/badges/coverage.svg" />}[https://codeclimate.com/github/if1live/happy-birthday-waifu]
+{<img src="https://gemnasium.com/if1live/happy-birthday-waifu.svg" alt="Dependency Status" />}[https://gemnasium.com/if1live/happy-birthday-waifu]
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
