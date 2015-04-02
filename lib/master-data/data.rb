@@ -69,6 +69,18 @@ module MasterData
         num_array.reverse[0]
       end
     end
+
+    def fullwidth_to_halfwidth(val)
+      char_table = [
+        ['（', '('],
+        ['）', ')'],
+        ['　', ' ']
+      ]
+      char_table.each do |before, after|
+        val = val.gsub before, after
+      end
+      val
+    end
   end
 
   class SourceMasterData
@@ -88,9 +100,9 @@ module MasterData
 
         'slug' => data.create_slug,
         'title_en' => data.title_en,
-        'title_jp' => data.title_jp,
+        'title_jp' => fullwidth_to_halfwidth(data.title_jp),
         'title_romaji' => data.title_romaji,
-        'title_furigana' => data.title_furigana,
+        'title_furigana' => fullwidth_to_halfwidth(data.title_furigana),
 
         'anime_db_id' => data.src_id,
       }
@@ -131,7 +143,7 @@ module MasterData
     end
 
     def skip_data?(data)
-      # 생일이 없는 캐릭터는 굳이 다룰 필요가 없다
+      # 생일이 없는 캐릭터는 굳이 다룰 필요가 없다...
       filtered_birthday(data) == nil
     end
 
@@ -161,7 +173,7 @@ module MasterData
 
         'slug' => data.create_slug,
         'name_en' => data.name_en,
-        'name_jp' => data.name_jp,
+        'name_jp' => fullwidth_to_halfwidth(data.name_jp),
         'name_ko' => filtered_name_ko(data),
         'date' => filtered_birthday(data),
 

@@ -3,7 +3,7 @@ character_1:
   id: 1
   slug: sora-kasugano
   name_en: Sora Kasugano
-  name_jp: "春日野 穹 （かすがの そら）"
+  name_jp: "春日野 穹 (かすがの そら)"
   name_ko: "카스가노 소라"
   date: 02/05
   anime_db_id: 13162
@@ -13,7 +13,7 @@ character_2:
   id: 2
   slug: akira-amatsume
   name_en: Akira Amatsume
-  name_jp: "天女目 瑛 （あまつめ あきら）"
+  name_jp: "天女目 瑛 (あまつめ あきら)"
   name_ko: "아마츠메 아키라"
   date: 08/03
   anime_db_id: 13155
@@ -23,7 +23,7 @@ character_3:
   id: 3
   slug: nao-yorihime
   name_en: Nao Yorihime
-  name_jp: "依媛 奈緒 （よりひめ なお）"
+  name_jp: "依媛 奈緒 (よりひめ なお)"
   name_ko: "요리히메 나오"
   date: 10/07
   anime_db_id: 13160
@@ -33,7 +33,7 @@ character_4:
   id: 4
   slug: kazuha-migiwa
   name_en: Kazuha Migiwa
-  name_jp: "渚 一葉 （みぎわ かずは）"
+  name_jp: "渚 一葉 (みぎわ かずは)"
   name_ko: "미기와 카즈하"
   date: 08/03
   anime_db_id: 13157
@@ -43,7 +43,7 @@ character_5:
   id: 5
   slug: motoka-nogisaka
   name_en: Motoka Nogisaka
-  name_jp: "乃木坂 初佳 （のぎさか もとか）"
+  name_jp: "乃木坂 初佳 (のぎさか もとか)"
   name_ko: "노기사카 모토카"
   date: 12/23
   anime_db_id: 13159
@@ -53,7 +53,7 @@ character_6:
   id: 6
   slug: kozue-kuranaga
   name_en: Kozue Kuranaga
-  name_jp: "倉永 梢 （くらなが こずえ）"
+  name_jp: "倉永 梢 (くらなが こずえ)"
   name_ko: "쿠라나가 코즈에"
   date: 06/01
   anime_db_id: 13158
@@ -63,7 +63,7 @@ character_7:
   id: 7
   slug: haruka-kasugano
   name_en: Haruka Kasugano
-  name_jp: "春日野 悠 （かすがの はるか）"
+  name_jp: "春日野 悠 (かすがの はるか)"
   name_ko: "카스가노 하루카"
   date: 02/05
   anime_db_id: 13156
@@ -73,7 +73,7 @@ character_8:
   id: 8
   slug: ryouhei-nakazato
   name_en: Ryouhei Nakazato
-  name_jp: "中里 亮平 （なかざと りょうへい）"
+  name_jp: "中里 亮平 (なかざと りょうへい)"
   name_ko: "나카자토 료헤이"
   date: 09/25
   anime_db_id: 13161
@@ -83,7 +83,7 @@ character_9:
   id: 9
   slug: yahiro-ifukube
   name_en: Yahiro Ifukube
-  name_jp: "伊福部 やひろ （いふくべ やひろ）"
+  name_jp: "伊福部 やひろ (いふくべ やひろ)"
   name_ko: "이후쿠베 야히로"
   date: 01/10
   anime_db_id: 13163
@@ -93,7 +93,7 @@ character_10:
   id: 10
   slug: honoka-kousaka
   name_en: Honoka Kousaka
-  name_jp: "高坂 穂乃果（こうさか ほのか）"
+  name_jp: "高坂 穂乃果(こうさか ほのか)"
   name_ko: "코우사카 호노카"
   date: 08/03
   anime_db_id: 56646
@@ -103,7 +103,7 @@ character_11:
   id: 11
   slug: eri-ayase
   name_en: Eri Ayase
-  name_jp: "絢瀬 絵里（あやせ えり）"
+  name_jp: "絢瀬 絵里(あやせ えり)"
   name_ko: "아야세 에리"
   date: 10/21
   anime_db_id: 56647
@@ -113,7 +113,7 @@ character_12:
   id: 12
   slug: kotori-minami
   name_en: Kotori Minami
-  name_jp: "南 ことり（みなみ ことり）"
+  name_jp: "南 ことり(みなみ ことり)"
   name_ko: "미나미 코토리"
   date: 09/12
   anime_db_id: 56648
@@ -123,7 +123,7 @@ character_13:
   id: 13
   slug: umi-sonoda
   name_en: Umi Sonoda
-  name_jp: "園田 海未（そのだ うみ）"
+  name_jp: "園田 海未(そのだ うみ)"
   name_ko: "소노다 우미"
   date: 03/15
   anime_db_id: 56649
@@ -133,7 +133,7 @@ character_14:
   id: 14
   slug: rin-hoshizora
   name_en: Rin Hoshizora
-  name_jp: "星空 凛（ほしぞら りん）"
+  name_jp: "星空 凛(ほしぞら りん)"
   name_ko: "호시조라 린"
   date: 11/01
   anime_db_id: 56650
@@ -143,7 +143,7 @@ character_15:
   id: 15
   slug: maki-nishikino
   name_en: Maki Nishikino
-  name_jp: "西木野 真姫（にしきの まき）"
+  name_jp: "西木野 真姫(にしきの まき)"
   name_ko: "니시키노 마키"
   date: 04/19
   anime_db_id: 56651
@@ -153,7 +153,7 @@ character_16:
   id: 16
   slug: nozomi-toujou
   name_en: Nozomi Toujou
-  name_jp: "東條 希（とうじょう のぞみ）"
+  name_jp: "東條 希(とうじょう のぞみ)"
   name_ko: "토죠 노조미"
   date: 06/09
   anime_db_id: 56652
@@ -163,7 +163,7 @@ character_17:
   id: 17
   slug: hanayo-koizumi
   name_en: Hanayo Koizumi
-  name_jp: "小泉 花陽（こいずみ はなよ）"
+  name_jp: "小泉 花陽(こいずみ はなよ)"
   name_ko: "코이즈미 하나요"
   date: 01/17
   anime_db_id: 56653
@@ -173,7 +173,7 @@ character_18:
   id: 18
   slug: nico-yazawa
   name_en: Nico Yazawa
-  name_jp: "矢澤 にこ（やざわ にこ）"
+  name_jp: "矢澤 にこ(やざわ にこ)"
   name_ko: "야자와 니코"
   date: 07/22
   anime_db_id: 56654
@@ -203,7 +203,7 @@ character_21:
   id: 21
   slug: mami-tomoe
   name_en: Mami Tomoe
-  name_jp: "巴 マミ (ともえ　まみ)"
+  name_jp: "巴 マミ (ともえ まみ)"
   name_ko: "토모에 마미"
   date: 06/05
   anime_db_id: 23249
@@ -223,7 +223,7 @@ character_23:
   id: 23
   slug: haruka-amami
   name_en: Haruka Amami
-  name_jp: "天海春香 （あまみ はるか）"
+  name_jp: "天海春香 (あまみ はるか)"
   name_ko: "아마미 하루카"
   date: 04/03
   anime_db_id: 70885
@@ -233,7 +233,7 @@ character_24:
   id: 24
   slug: chihaya-kisaragi
   name_en: Chihaya Kisaragi
-  name_jp: "如月千早 (きさらぎ　ちはや)"
+  name_jp: "如月千早 (きさらぎ ちはや)"
   name_ko: "키사라기 치하야"
   date: 02/25
   anime_db_id: 70886
@@ -243,7 +243,7 @@ character_25:
   id: 25
   slug: yukiho-hagiwara
   name_en: Yukiho Hagiwara
-  name_jp: "萩原雪歩 (はぎわら　ゆきほ)"
+  name_jp: "萩原雪歩 (はぎわら ゆきほ)"
   name_ko: "하기와라 유키호"
   date: 12/24
   anime_db_id: 70887
@@ -253,7 +253,7 @@ character_26:
   id: 26
   slug: yayoi-takatsuki
   name_en: Yayoi Takatsuki
-  name_jp: "高槻やよい (たかつき　やよい)"
+  name_jp: "高槻やよい (たかつき やよい)"
   name_ko: "타카츠키 야요이"
   date: 03/25
   anime_db_id: 70888
@@ -263,7 +263,7 @@ character_27:
   id: 27
   slug: makoto-kikuchi
   name_en: Makoto Kikuchi
-  name_jp: "菊地真 (きくち　まこと)"
+  name_jp: "菊地真 (きくち まこと)"
   name_ko: "키쿠치 마코토"
   date: 08/29
   anime_db_id: 70889
@@ -273,7 +273,7 @@ character_28:
   id: 28
   slug: mami-futami
   name_en: Mami Futami
-  name_jp: "双海真美 (ふたみ　まみ)"
+  name_jp: "双海真美 (ふたみ まみ)"
   name_ko: "후타미 마미"
   date: 05/22
   anime_db_id: 70890
@@ -283,7 +283,7 @@ character_29:
   id: 29
   slug: iori-minase
   name_en: Iori Minase
-  name_jp: "水瀬伊織 (みなせ　いおり)"
+  name_jp: "水瀬伊織 (みなせ いおり)"
   name_ko: "미나세 이오리"
   date: 05/05
   anime_db_id: 70891
@@ -293,7 +293,7 @@ character_30:
   id: 30
   slug: ami-futami
   name_en: Ami Futami
-  name_jp: "双海亜美 (ふたみ　あみ)"
+  name_jp: "双海亜美 (ふたみ あみ)"
   name_ko: "후타미 아미"
   date: 05/22
   anime_db_id: 70892
@@ -303,7 +303,7 @@ character_31:
   id: 31
   slug: azusa-miura
   name_en: Azusa Miura
-  name_jp: "三浦あずさ (みうら　あずさ)"
+  name_jp: "三浦あずさ (みうら あずさ)"
   name_ko: "미우라 아즈사"
   date: 07/19
   anime_db_id: 70893
@@ -313,7 +313,7 @@ character_32:
   id: 32
   slug: ritsuko-akizuki
   name_en: Ritsuko Akizuki
-  name_jp: "秋月律子 (あきずき　りつこ)"
+  name_jp: "秋月律子 (あきずき りつこ)"
   name_ko: "아키즈키 리츠코"
   date: 06/23
   anime_db_id: 70894
