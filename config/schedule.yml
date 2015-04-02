@@ -1,0 +1,7 @@
+birthday_bot:
+  cron: "5 0 * * *"
+  class: "BirthdayBotWorker"
+
+health_check:
+  cron: "1 1 1 1 1"
+  class: "HealthCheckWorker"
