@@ -1,9 +1,6 @@
-<h1>My Page</h1>
-<h2>생일 알림 (<%= @favorite_list.length %>명)</h2>
-<div class="row">
+<h2>생일 알림 <small><%= @favorite_list.length %>명</small></h2>
+<div class="clearfix">
 <% @favorite_list.each do |fav| %>
-  <div class="col-sm-4">
-	<%= render 'characters/simple_card', character: fav, date: @today %>
-  </div>
+  <%= render 'characters/simple_tile', character: fav, date: @today %>
 <% end %>
 </div>

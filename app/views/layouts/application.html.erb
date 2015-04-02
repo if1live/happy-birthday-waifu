@@ -25,45 +25,35 @@
         <li><%= link_to "Help", controller: "welcome", action: "support" %></li>
 
         <% if user_signed_in? %>
-			    <li>
-            <%= link_to current_user.name, controller: "users", action: "show" %>
+		  <li>
+            <%= link_to controller: "users", action: "show" do %>
+			  <i class="icon-twitter"> </i> <%= current_user.name %>
+			<% end %>
           </li>
           <li>
             <%= link_to 'Logout', destroy_user_session_path, method: :delete,
-			      data: { confirm: "로그아웃하시겠습니까?" } %>
+			data: { confirm: "로그아웃하시겠습니까?" } %>
           </li>
-		    <% else %>
-			    <li>
-            <%= link_to 'Login', user_omniauth_authorize_path(:twitter) %>
+		<% else %>
+		  <li>
+			<%= link_to user_omniauth_authorize_path(:twitter) do %>
+			  <i class="icon-twitter"> </i> Login
+			<% end %>
           </li>
-		    <% end %>
+		<% end %>
       </ul>
     </nav>
-    <!-- // menu -->
+	<!-- // menu -->
 
-	  <!-- flash begin -->
-	  <% if notice %>
-	    <div class="notice fg-white">
-	      <div><%= notice %></div>
-	    </div>
-	  <% end %>
-
-	  <% if alert %>
-	    <div class="notice bg-darkRed fg-white">
-	      <div><%= alert %></div>
-	    </div>
-	  <% end %>
-	  <!-- flash end -->
-
-	  <%= yield %>
+	<%= yield %>
 
     <!-- footer -->
-	  <footer>
+	<footer>
       <ul class="horizontal-menu compact">
         <li>&copy; 2015 Happy Birtday, Waifu</li>
-		    <li><a href="https://twitter.com/waifu_birth_bot">@waifu_birth_bot</a></li>
-		    <li><a href="https://twitter.com/if1live">@if1live</a></li>
-		    <li><a href="https://github.com/if1live/happy-birthday-waifu">Repository</a></li>
+		<li><a href="https://twitter.com/waifu_birth_bot">@waifu_birth_bot</a></li>
+		<li><a href="https://twitter.com/if1live">@if1live</a></li>
+		<li><a href="https://github.com/if1live/happy-birthday-waifu">Repository</a></li>
       </ul>
     </footer>
   </div>
@@ -81,5 +71,19 @@
 	ga('create', 'UA-43577716-5', 'auto');
 	ga('send', 'pageview');
   </script>
+
+  <!-- notify -->
+  <script>
+  <% if notice %>
+  (function(){
+	var not = $.Notify({
+	  caption: "Authorization",
+	  content: "<%= notice %>",
+	  timeout: 10000 // 10 seconds
+	});
+  })();
+  <% end %>
+  </script>
+  <!-- // notify -->
 </body>
 </html>

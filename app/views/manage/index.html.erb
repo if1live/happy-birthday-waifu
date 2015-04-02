@@ -1,16 +1,18 @@
-<% if @debug_mode %>
-<h1>Debug Mode : <%= @today_str %></h1>
-<% else %>
-<h1>Service Mode : <%= @today_str %></h1>
-<% end %>
+<h2>
+  <% if @debug_mode %>
+	Debug Mode
+  <% else %>
+	Service Mode
+  <% end %>
+  <small><%= @today_str %></small>
+</h2>
 
-<h2>Current State : </h2>
-<dl class="dl-horizontal">
+<dl class="horizontal">
   <dt>debug mode</dt>
   <dd>
 	<%= @debug_mode %>
-	<a href="./?debug=true&date=<%= @today_str %>">debug=true</a>
-	<a href="./?debug=false&date=<%= @today_str %>">debug=false</a>
+	<a href="/manage?debug=true&date=<%= @today_str %>">debug=true</a>
+	<a href="/manage?debug=false&date=<%= @today_str %>">debug=false</a>
   </dd>
   <dt>access token</dt>
   <dd><%= @access_token %></dd>
@@ -18,7 +20,7 @@
   <dd><%= @secret_token %></dd>
 </dl>
 
-<form action="." method="get">
+<form action="<%= url_for controller: "manage", action: "index" %>" method="get">
   <select name="debug">
 	<option value="true"
 		<% if @debug_mode %>selected<% end %>>debug</option>
@@ -30,13 +32,13 @@
 </form>
 
 <h3>Today Birthday Character List</h3>
-<table class="table table-hover">
+<table class="table hovered">
   <thead>
 	<tr>
-	  <th>id</th>
-	  <th>slug</th>
-	  <th>name_ko</th>
-	  <th>func</th>
+	  <th class="text-left">id</th>
+	  <th class="text-left">slug</th>
+	  <th class="text-left">name_ko</th>
+	  <th class="text-left">func</th>
 	</tr>
   </thead>
   <tbody>
