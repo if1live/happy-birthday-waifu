@@ -9,8 +9,6 @@ module BirthdayBot
     def initialize(access_token, secret_token)
       @client_key = ENV['TWITTER_APP_KEY']
       @secret_key = ENV['TWITTER_APP_SECRET']
-      raise ArgumentError.new "client key is empty" if @client_key.nil?
-      raise ArgumentError.new "secret key is empty" if @secret_key.nil?
 
       if access_token.nil? || access_token.length == 0
         raise ArgumentError.new "empty access token"
