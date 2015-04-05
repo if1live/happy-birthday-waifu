@@ -319,3 +319,63 @@ character_32:
   anime_db_id: 70894
   anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/3301-1762475734.png
   source_id: 104289
+character_33:
+  id: 33
+  slug: utaha-kasumigaoka
+  name_en: Utaha Kasumigaoka
+  name_jp: "霞ヶ丘 詩羽"
+  name_ko: "카스미가오카 우타하"
+  date: 01/31
+  anime_db_id: 70183
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/9180-795371726.png
+  source_id: 104217
+character_34:
+  id: 34
+  slug: eriri-spencer-sawamura
+  name_en: Eriri Spencer Sawamura
+  name_jp: "澤村・スペンサー・英梨々"
+  name_ko: "사와무라 스펜서 에리리"
+  date: 03/20
+  anime_db_id: 70184
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/19908-342888323.png
+  source_id: 104217
+character_35:
+  id: 35
+  slug: megumi-kato
+  name_en: Megumi Kato
+  name_jp: "加藤 恵"
+  name_ko: "카토 메구미"
+  date: 09/23
+  anime_db_id: 70295
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/19908-2123821998.png
+  source_id: 104217
+character_36:
+  id: 36
+  slug: michiru-hyodo
+  name_en: Michiru Hyodo
+  name_jp: "氷堂 美智留"
+  name_ko: "효도 미치루"
+  date: 12/18
+  anime_db_id: 70415
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/11498-441575784.png
+  source_id: 104217
+character_37:
+  id: 37
+  slug: izumi-hashima
+  name_en: Izumi Hashima
+  name_jp: "波島 出海"
+  name_ko: "하시마 이즈미"
+  date: 05/05
+  anime_db_id: 70416
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/11498-967867755.png
+  source_id: 104217
+character_38:
+  id: 38
+  slug: tomoya-aki
+  name_en: Tomoya Aki
+  name_jp: "安芸 倫也"
+  name_ko: "아키 토모야"
+  date: 12/18
+  anime_db_id: 71506
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/11498-1380792473.png
+  source_id: 104217

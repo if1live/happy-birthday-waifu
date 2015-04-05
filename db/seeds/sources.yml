@@ -47,3 +47,11 @@ source_6:
   title_romaji: Aidoru Masutaa
   title_furigana: "アイドルマスター"
   anime_db_id: 104289
+source_7:
+  id: 104217
+  slug: saekano-how-to-raise-a-boring-girlfriend
+  title_en: 'Saekano: How to Raise a Boring Girlfriend'
+  title_jp: "冴えない彼女(ヒロイン)の育てかた"
+  title_romaji: Saenai Heroine no Sodatekata
+  title_furigana: "さえないヒロインのそだてかた / 冴えカノ"
+  anime_db_id: 104217

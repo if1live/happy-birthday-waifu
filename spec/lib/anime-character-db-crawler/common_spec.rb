@@ -64,8 +64,15 @@ describe AnimeCharacterDB::BaseData do
       name = "Wezekieru 'Eru'"
       expect(subject.convert_slug name).to eq("wezekieru-eru")
     end
+
     it 'special character-3' do
       expect(subject.convert_slug 'Weremiya (Remi)').to eq('weremiya-remi')
+    end
+
+    it 'special character-4' do
+      name = 'Saekano: How to Raise a Boring Girlfriend'
+      expected = 'saekano-how-to-raise-a-boring-girlfriend'
+      expect(subject.convert_slug name).to eq(expected)
     end
 
     it 'remove group' do

@@ -69,7 +69,7 @@ module AnimeCharacterDB
         slug = slug.gsub x, ''
       end
 
-      invalid_char_list = ['!', '?', '/', '~', '.', '"', "'", '(', ')']
+      invalid_char_list = ['!', '?', '/', '~', '.', '"', "'", '(', ')', ':']
       invalid_char_list.each do |x|
         slug = slug.gsub x, ''
       end
