@@ -9,8 +9,7 @@ class BirthdayBotWorker
 
     bot = BirthdayBot::TwitterSender.create access_token, secret_token, false
 
-    #date = Date.today
-    date = Date.new 2015, 4, 3
+    date = Date.today
     today_str = Character.date_to_s date.month, date.day
     characters = Character.where(date: today_str)
     characters.each do |character|
