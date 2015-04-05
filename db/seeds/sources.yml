@@ -55,3 +55,19 @@ source_7:
   title_romaji: Saenai Heroine no Sodatekata
   title_furigana: "さえないヒロインのそだてかた / 冴えカノ"
   anime_db_id: 104217
+source_8:
+  id: 5
+  slug: air
+  title_en: Air
+  title_jp: Air
+  title_romaji: Eaa
+  title_furigana: "エアー"
+  anime_db_id: 5
+source_9:
+  id: 6
+  slug: clannad
+  title_en: Clannad
+  title_jp: CLANNAD−クラナド−
+  title_romaji: Kuranado
+  title_furigana: "クラナド"
+  anime_db_id: 6

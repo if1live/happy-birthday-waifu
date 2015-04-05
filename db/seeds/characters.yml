@@ -379,3 +379,193 @@ character_38:
   anime_db_id: 71506
   anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/11498-1380792473.png
   source_id: 104217
+character_39:
+  id: 39
+  slug: haruko-kamio
+  name_en: Haruko Kamio
+  name_jp: "神尾 晴子(かみお はるこ)"
+  name_ko: "카미오 하루코"
+  date: 11/03
+  anime_db_id: 45
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/4758-244071885.jpg
+  source_id: 5
+character_40:
+  id: 40
+  slug: hijiri-kirishima
+  name_en: Hijiri Kirishima
+  name_jp: "霧島 聖(きりしま ひじり)"
+  name_ko: "키리시마 히지리"
+  date: 01/03
+  anime_db_id: 46
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/4758-942746206.jpg
+  source_id: 5
+character_41:
+  id: 41
+  slug: kano-kirishima
+  name_en: Kano Kirishima
+  name_jp: "霧島 佳乃(きりしま かの)"
+  name_ko: "키리시마 카노"
+  date: 06/12
+  anime_db_id: 48
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/4758-656258831.jpg
+  source_id: 5
+character_42:
+  id: 42
+  slug: minagi-tohno
+  name_en: Minagi Tohno
+  name_jp: "遠野 美凪(とおの みなぎ)"
+  name_ko: "토노 미나기"
+  date: 12/22
+  anime_db_id: 50
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/4758-1875537282.jpg
+  source_id: 5
+character_43:
+  id: 43
+  slug: misuzu-kamio
+  name_en: Misuzu Kamio
+  name_jp: "神尾 観鈴(かみお みすず)"
+  name_ko: "카미오 미스즈"
+  date: 07/23
+  anime_db_id: 51
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/4758-1568593321.jpg
+  source_id: 5
+character_44:
+  id: 44
+  slug: tomoya-okazaki
+  name_en: Tomoya Okazaki
+  name_jp: "岡崎 朋也"
+  name_ko: "오카자키 토모야"
+  date: 10/30
+  anime_db_id: 20573
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/4758-1593388034.png
+  source_id: 6
+character_45:
+  id: 45
+  slug: youhei-sunohara
+  name_en: Youhei Sunohara
+  name_jp: "春原 陽平 (すのはら ようへい)"
+  name_ko: "스노하라 요헤이"
+  date: 02/17
+  anime_db_id: 27144
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/4758-2059842116.png
+  source_id: 6
+character_46:
+  id: 46
+  slug: kouko-ibuki
+  name_en: Kouko Ibuki
+  name_jp: "伊吹 公子(いぶき こうこ)"
+  name_ko: "이부키 코코"
+  date: 01/18
+  anime_db_id: 53
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/ibuki_kouko.jpg
+  source_id: 6
+character_47:
+  id: 47
+  slug: fuuko-ibuki
+  name_en: Fuuko Ibuki
+  name_jp: "伊吹 風子(いぶき ふうこ)"
+  name_ko: "이부키 후코"
+  date: 07/20
+  anime_db_id: 54
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/ibuki_fuuko.jpg
+  source_id: 6
+character_48:
+  id: 48
+  slug: kotomi-ichinose
+  name_en: Kotomi Ichinose
+  name_jp: "一ノ瀬 ことみ(いちのせ ことみ)"
+  name_ko: "이치노세 코토미"
+  date: 05/13
+  anime_db_id: 55
+  anime_db_img_url: http://ami.animecharactersdatabase.com/uploads/chars/4758-966283957.png
+  source_id: 6
+character_49:
+  id: 49
+  slug: yukine-miyazawa
+  name_en: Yukine Miyazawa
+  name_jp: "宮沢 有紀寧(みやざわ ゆきね)"
+  name_ko: "미야자와 유키네"
+  date: 08/07
+  anime_db_id: 56
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/miyazawa_yukine.jpg
+  source_id: 6
+character_50:
+  id: 50
+  slug: akio-furukawa
+  name_en: Akio Furukawa
+  name_jp: "古河 秋生(ふるかわ あきお)"
+  name_ko: "후루카와 아키오"
+  date: 07/20
+  anime_db_id: 57
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/furukawa_akio.jpg
+  source_id: 6
+character_51:
+  id: 51
+  slug: nagisa-furukawa
+  name_en: Nagisa Furukawa
+  name_jp: "古河 渚(ふるかわ なぎさ)"
+  name_ko: "후루카와 나기사"
+  date: 12/24
+  anime_db_id: 58
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/furukawa_nagisa.jpg
+  source_id: 6
+character_52:
+  id: 52
+  slug: sanae-furukawa
+  name_en: Sanae Furukawa
+  name_jp: "古河 早苗(ふるかわ さなえ)"
+  name_ko: "후루카와 사나에"
+  date: 10/05
+  anime_db_id: 59
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/furukawa_sanae.jpg
+  source_id: 6
+character_53:
+  id: 53
+  slug: tomoyo-sakagami
+  name_en: Tomoyo Sakagami
+  name_jp: "坂上 智代(さかがみ ともよ)"
+  name_ko: "사카가미 토모요"
+  date: 10/14
+  anime_db_id: 60
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/sakagami_tomoyo.jpg
+  source_id: 6
+character_54:
+  id: 54
+  slug: mei-sunohara
+  name_en: Mei Sunohara
+  name_jp: "春原 芽衣(すのはら めい)"
+  name_ko: "스노하라 메이"
+  date: 06/11
+  anime_db_id: 61
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/sunohara_mei.jpg
+  source_id: 6
+character_55:
+  id: 55
+  slug: misae-sagara
+  name_en: Misae Sagara
+  name_jp: "相楽 美佐枝(さがら みさえ)"
+  name_ko: "사가라 미사에"
+  date: 04/03
+  anime_db_id: 62
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/sagara_misae.jpg
+  source_id: 6
+character_56:
+  id: 56
+  slug: kyou-fujibayashi
+  name_en: Kyou Fujibayashi
+  name_jp: "藤林 杏(ふじばやし きょう)"
+  name_ko: "후지바야시 쿄"
+  date: 09/09
+  anime_db_id: 63
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/fujibayashi_kyou.jpg
+  source_id: 6
+character_57:
+  id: 57
+  slug: ryou-fujibayashi
+  name_en: Ryou Fujibayashi
+  name_jp: "藤林 椋(ふじばやし りょう)"
+  name_ko: "후지바야시 료"
+  date: 09/09
+  anime_db_id: 64
+  anime_db_img_url: http://ami.animecharactersdatabase.com/./images/Clannad/fujibayashi_ryou.jpg
+  source_id: 6
