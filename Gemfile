@@ -86,6 +86,8 @@ group :development, :test do
   gem 'factory_girl'
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
+
+  gem 'annotate', '~> 2.6.6'
 end
 
 group :test do

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: favorites
+#
+#  id           :integer          not null, primary key
+#  user_id      :integer          not null
+#  character_id :integer          not null
+#  noti_year    :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 require 'rails_helper'
 
 require 'factories/user'

@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: characters
+#
+#  id               :integer          not null, primary key
+#  slug             :string
+#  name_en          :string
+#  name_ko          :string
+#  name_jp          :string
+#  year             :integer
+#  date             :string(5)
+#  external_url     :string           default("")
+#  anime_db_id      :integer
+#  anime_db_img_url :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  source_id        :integer
+#
+
 require 'rails_helper'
 require 'factories/character'
 require 'date'
