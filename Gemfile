@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
-ruby "2.1.5"
+ruby "2.2.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.2'
 # Use postgresql as the database for Active Record
-#gem 'pg'
+# sudo apt-get install libpq-dev
+gem 'pg'
+# sudo apt-get install libmysqlclient-dev
 gem 'mysql2'
+
 gem 'rb-readline'
 
 # Use SCSS for stylesheets
@@ -70,7 +73,7 @@ gem 'webmock'
 gem 'nokogiri'
 gem 'gimchi'
 
-gem 'sentry-raven'
+gem 'sentry-raven', :git => 'https://github.com/if1live/raven-ruby'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
