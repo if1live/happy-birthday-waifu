@@ -43,6 +43,7 @@ test:
   #database: ":memory:"
 
 production:
-  <<: *mysql
+  #<<: *mysql
+  <<: *heroku
 
 
