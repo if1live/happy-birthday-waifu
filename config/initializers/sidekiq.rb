@@ -7,6 +7,12 @@ Sidekiq::Web.use(Rack::Auth::Basic) do |user, password|
 end
 
 Sidekiq.configure_server do |config|
+  Rails.logger = Sidekiq::Logging.logger
+  uri = URI.parse(ENV["REDISTOGO_URL"] || "redis://localhost:6379/" )
+  config.redis = { url: uri }
+end
+
+Sidekiq.configure_client do |config|
   uri = URI.parse(ENV["REDISTOGO_URL"] || "redis://localhost:6379/" )
   config.redis = { url: uri }
 end
