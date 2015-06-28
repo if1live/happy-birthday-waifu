@@ -1,8 +1,8 @@
 <h2>
   <% if @debug_mode %>
-	Debug Mode
+	  Debug Mode
   <% else %>
-	Service Mode
+	  Service Mode
   <% end %>
   <small><%= @today_str %></small>
 </h2>
@@ -10,9 +10,9 @@
 <dl class="horizontal">
   <dt>debug mode</dt>
   <dd>
-	<%= @debug_mode %>
-	<a href="/manage?debug=true&date=<%= @today_str %>">debug=true</a>
-	<a href="/manage?debug=false&date=<%= @today_str %>">debug=false</a>
+	  <%= @debug_mode %>
+	  <a href="/manage?debug=true&date=<%= @today_str %>">debug=true</a>
+	  <a href="/manage?debug=false&date=<%= @today_str %>">debug=false</a>
   </dd>
   <dt>access token</dt>
   <dd><%= @access_token %></dd>
@@ -22,10 +22,10 @@
 
 <form action="<%= url_for controller: "manage", action: "index" %>" method="get">
   <select name="debug">
-	<option value="true"
-		<% if @debug_mode %>selected<% end %>>debug</option>
-	<option value="false"
-		<% unless @debug_mode %>selected<% end %>>service</option>
+	  <option value="true"
+		  <% if @debug_mode %>selected<% end %>>debug</option>
+	  <option value="false"
+		  <% unless @debug_mode %>selected<% end %>>service</option>
   </select>
   <input type="text" name="date" value="<%= @today_str %>" placeholder="02/05"/>
   <button class="btn btn-default">GoTo</button>
@@ -34,27 +34,27 @@
 <h3>Today Birthday Character List</h3>
 <table class="table hovered">
   <thead>
-	<tr>
-	  <th class="text-left">id</th>
-	  <th class="text-left">slug</th>
-	  <th class="text-left">name_ko</th>
-	  <th class="text-left">func</th>
-	</tr>
+	  <tr>
+	    <th class="text-left">id</th>
+	    <th class="text-left">slug</th>
+	    <th class="text-left">name_ko</th>
+	    <th class="text-left">func</th>
+	  </tr>
   </thead>
   <tbody>
-	<% @character_list.each do |character| %>
-	  <tr>
-		<td><%= character.id %></td>
-		<td><%= character.slug %></td>
-		<td><%= character.name_ko %></td>
-		<td>
-		  <form action="<%= url_for controller: "manage", action: "tweet_character_birthday" %>" method="post">
-			<%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
-			<input type="hidden" name="character_id" value="<%= character.id %>"/>
-			<button class="btn btn-default">Tweet</button>
-		  </form>
-		</td>
-	  </tr>
-	<% end %>
+	  <% @character_list.each do |character| %>
+	    <tr>
+		    <td><%= character.id %></td>
+		    <td><%= character.slug %></td>
+		    <td><%= character.name_ko %></td>
+		    <td>
+		      <form action="<%= url_for controller: "manage", action: "tweet_character_birthday" %>" method="post">
+			      <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+			      <input type="hidden" name="character_id" value="<%= character.id %>"/>
+			      <button class="btn btn-default">Tweet</button>
+		      </form>
+		    </td>
+	    </tr>
+	  <% end %>
   </tbody>
 </table>

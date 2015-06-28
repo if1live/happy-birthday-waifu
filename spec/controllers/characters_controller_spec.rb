@@ -40,38 +40,38 @@ RSpec.describe CharactersController, :type => :controller do
     end
   end
 
-  describe "GET list" do
+  describe "GET index" do
     let!(:character) { FactoryGirl.create(:character) }
 
     it "returns http success" do
-      get :list
+      get :index
       expect(response).to have_http_status(:success)
       expect(assigns(:all_list)).to eq([character])
     end
   end
 
-  describe "GET detail" do
+  describe "GET show" do
     let!(:character) { FactoryGirl.create(:character) }
 
     it "returns http success" do
-      get :detail, character_id: character.id
+      get :show, id: character.id
       expect(response).to have_http_status(:success)
       expect(assigns(:character)).to eq(character)
     end
 
     it "access not exist" do
-      get :detail, character_id: -1
+      get :show, id: -1
       expect(response).to have_http_status(404)
     end
   end
 
-  describe "GET index" do
+  describe "GET root_index" do
     let!(:today_character) { FactoryGirl.create(:character) }
     let!(:tomorrow_character) { FactoryGirl.create(:tomorrow_character) }
     let!(:yesterday_character) { FactoryGirl.create(:yesterday_character) }
 
     it "returns http success" do
-      get :index, month: 2, day: 5
+      get :root_index, month: 2, day: 5
       expect(response).to have_http_status(:success)
       expect(assigns(:today_list)).to eq([today_character])
       expect(assigns(:tomorrow_list)).to eq([tomorrow_character])

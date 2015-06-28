@@ -1,50 +1,35 @@
-<h2>
-  <small>
-  <% waifu_url ="http://rigvedawiki.net/r1/wiki.php/%EB%8A%94%20%EB%82%98%EC%9D%98%20%EC%8B%A0%EB%B6%80" %>
-	<a href="<%= waifu_url %>">신부</a>의 생일을 잊어서 이벤트를 준비하지 못하셨나요?
-    기념일을 까먹어서 nice boat가 일어날거 같다구요?
-    걱정 마세요.
-    Happy Birthday, Waifu 를 이용해서 신부의 생일을 기억하세요.
-    그리고 가족, 친구와 같이 신부의 생일을 축하해주세요.
-  </small>
-</h2>
-<a class="button bg-darkRed bg-hover-red fg-white large"
-	 href="<%= url_for controller: "/welcome", action: 'about' %>" role="button">
-	자세히 &raquo;
-</a>
+<!-- calendar -->
+<div id="birthday-calendar" data-role="calendar"
+  data-day-click="dayClick" data-date="<%= @today_str %>"></div>
 
-<% if @today_list.length > 0 %>
-  <section class="clearfix">
-	  <h2>오늘(<time><%= @month %>월 <%= @day %>일</time>)</h2>
-	  <% @today_list.each do |character| %>
-      <%= render 'simple_tile', character: character, date: @today %>
-	  <% end %>
-  </section>
-<% end %>
+<div>
+  <% @month_table.each do |month, character_list| %>
+    <div class="panel">
+      <div class="heading">
+        <span class="title"><%= month % 12 == 0 ? 12 : month % 12 %>월</span>
+      </div>
+      <div class="content">
+        <ul class="unstyled">
+          <% character_list.each do |character| %>
+            <li class="character-list-elem">
+              <span class="birthday-text">
+                <%= character.birthday_to_s %>
+              </span>
 
-<% if @tomorrow_list.length > 0 %>
-  <section class="clearfix">
-	  <h2>내일(<time><%= @tomorrow_month %>월 <%= @tomorrow_day %>일</time>)</h2>
-	  <% @tomorrow_list.each do |character| %>
-      <%= render 'simple_tile', character: character, date: @today %>
-	  <% end %>
-  </section>
-<% end %>
+              <%= link_to character_path(character.id) do %>
 
-<% if @approach_list %>
-  <section class="clearfix">
-	  <h2>Coming soon</h2>
-	  <% @approach_list.each do |character| %>
-      <%= render 'simple_tile', character: character, date: @today %>
-	  <% end %>
-  </section>
-<% end %>
+                <span class="d-day-text">
+                  <%= render 'characters/d_day', character: character, date: @today %>
+                </span>
 
-
-<section>
-<%= render_shareable :turbolinks => true,
-:buttons => ['twitter', 'google_plus', 'tumblr', 'facebook'],
-:facebook => {:turbolinks => false} %>
-</section>
-
-<br/>
+                <%= character.name_ko %> |
+                <%= character.name_en %> |
+                <%= character.name_jp %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>

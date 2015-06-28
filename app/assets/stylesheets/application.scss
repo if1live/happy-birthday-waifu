@@ -13,65 +13,36 @@
  */
 
 /*
- *= require metro-bootstrap.min.css
- *= require metro-bootstrap-responsive.min.css
- *= require iconFont-content
+ *= require metro.css
+ *= require metro-icons.css
  *= require_tree .
  */
+.tile-content.tile-content-character {
+  img {
+    width: 50%;
+    float: left;
+    height: 150px;
 
-@font-face {
-    font-family: 'iconFont';
-    src:url(font-path('iconFont.eot'));
-    src:url(font-path('iconFont.eot') + '?#iefix') format('embedded-opentype'),
-    url(font-path('iconFont.woff')) format('woff'),
-    url(font-path('iconFont.ttf')) format('truetype'),
-    url(font-path('iconFont.svg') + '#iconFont') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+    margin: 0;
+    padding: 0;
+    border: 1px #1e1e1e solid;
+  }
 
-@font-face {
-    font-family: 'metroSysIcons';
-    src: url(font-path('metroSysIcons.woff')) format('woff'),
-    url(font-path('metroSysIcons.ttf')) format('truetype'),
-    url(font-path('metroSysIcons.svg') + '#metroSysIcons') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+  .data-wrapper {
+    width: 50%;
+    float: right;
+    padding: 5px;
 
-[data-icon]:before {
-    font-family: 'iconFont';
-    content: attr(data-icon);
-    speak: none;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-
-[class*="icon-"] {
-    font-family: 'iconFont' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal !important;
-    font-variant: normal;
-    text-transform: none;
-    text-decoration: inherit;
-    line-height: 1;
-    display: inline-block;
-    vertical-align: -8%;
-    -webkit-font-smoothing: antialiased;
-    font-size: inherit;
-
-    &.smaller {
-        font-size: .7em;
-        vertical-align: 6%;
+    span {
+      display: block;
+      padding-bottom: 5px;
     }
-    &.large {
-        font-size: 1.2em;
-        vertical-align: -10%;
-    }
+  }
+  .data-title {
+    font-size: 1.2em;
+  }
+  .data-text {
+  }
+  .data-subtitle {
+  }
 }
-
-

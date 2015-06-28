@@ -1,32 +1,11 @@
 require 'date'
 
 class CharactersController < ApplicationController
-  before_action :assign_month_day
-
-  def assign_month_day
-    today = Date.today
-    @month = (params.has_key? :month) ? params[:month].to_i : today.month
-    @day = (params.has_key? :day) ? params[:day].to_i : today.day
-
-    return render :status => 403 if @month < 1
-    return render :status => 403 if @month > 12
-    return render :status => 403 if @day < 1
-    return render :status => 403 if @day > 31
-
-    today_date = Date.new today.year, @month, @day
-    tomorrow_date = today_date + 1
-    @tomorrow_month = tomorrow_date.month
-    @tomorrow_day = tomorrow_date.day
-
-    @today = today_date
-    @tomorrow = tomorrow_date
-  end
-
   def date
     @character_list = get_today_character_list @month, @day
   end
 
-  def list
+  def index
     today_str = Character.date_to_s @month, @day
 
     # today ~ year end
@@ -53,8 +32,8 @@ class CharactersController < ApplicationController
     @month_table = @month_table.select { |k, v| v.length > 0 }
   end
 
-  def detail
-    @character = Character.find_by(id: params[:character_id])
+  def show
+    @character = Character.find_by(id: params[:id])
     return render :status => 404 if @character.nil?
 
     favorite_user_q = @character.user_list_q
@@ -67,7 +46,7 @@ class CharactersController < ApplicationController
     end
   end
 
-  def index
+  def root_index
     @today_list = get_today_character_list @month, @day
     @tomorrow_list = get_today_character_list @tomorrow_month, @tomorrow_day
 

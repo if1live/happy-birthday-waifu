@@ -2,9 +2,6 @@ require 'sidekiq/web'
 require 'sidekiq-cron'
 
 Rails.application.routes.draw do
-  get 'welcome/about'
-  get 'welcome/support'
-
   get 'users/show'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
@@ -12,16 +9,32 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Sidekiq::Web => '/sidekiq'
 
-  root 'characters#index'
-  get 'characters/:character_id' => 'characters#detail'
-  get 'characters/date/:month/:day' => 'characters#date'
-  get 'characters/' => 'characters#list'
+  root 'characters#root_index'
+
+  resources :characters do
+    member do
+    end
+    collection do
+      get 'date/:month/:day' => 'characters#date'
+    end
+  end
+
+  resources :welcome do
+    collection do
+      get :about
+      get :support
+    end
+  end
 
   post 'favorites/:character_id/' => 'favorites#toggle'
 
   # manage
-  get 'manage/' => 'manage#index'
-  post 'manage/tweet_character_birthday'
+  resources :manage do
+    collection do
+      post :tweet_character_birthday
+    end
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

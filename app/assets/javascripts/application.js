@@ -12,7 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.widget.min.js
 //= require turbolinks
-//= require metro.min.js
+//= require metro.js
 //= require_tree .
+
+if(document.querySelector('#birthday-calendar')) {
+  setTimeout(function() {
+    $("#birthday-calendar").calendar('setDate', TODAY);
+  }, 10);
+}
+
+function dayClick(short, full) {
+  var month = full.getMonth() + 1;
+  var day = full.getDate();
+  var url = "/characters/date/" + month + "/" + day;
+  window.location = url;
+}

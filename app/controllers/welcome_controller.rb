@@ -5,10 +5,6 @@ class WelcomeController < ApplicationController
     render_markdown 'about.md'
   end
 
-  def dev_history
-    render_markdown 'dev_history.md'
-  end
-
   def support
     render_markdown 'support.md'
   end

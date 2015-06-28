@@ -1,18 +1,14 @@
-<div class="tile double bg-cyan" data-click="transform">
-  <%= link_to controller: 'characters', action: 'detail', character_id: character.id do %>
-  <div class="tile-content email">
-    <div class="email-image">
+<div class="tile tile-wide-x bg-cyan" data-click="transform" data-role="tile">
+  <%= link_to character_path(character.id) do %>
+    <div class="tile-content tile-content-character fg-white">
       <img src="/static/thumb/<%= character.anime_db_id %>.jpg">
+      <div class="data-wrapper">
+        <span class="data-title"><%= character.name_ko %></span>
+        <span class="data-text"><%= character.name_jp %></span>
+        <span class="data-text"><%= character.name_en %></span>
+        <span class="data-subtitle"><%= character.birthday_to_s %></span>
+      </div>
+      <span class="tile-badge bg-darkRed"><%= character.d_day date %></span>
     </div>
-    <div class="email-data">
-      <span class="email-data-title"><%= character.name_ko %></span>
-      <span class="email-data-text"><%= character.name_jp %></span>
-      <span class="email-data-text"><%= character.name_en %></span>
-      <span class="email-data-subtitle"><%= character.birthday_to_s %></span>
-    </div>
-  </div>
-  <div class="tile-status">
-    <span class="name"><%= character.d_day date %></span>
-  </div>
   <% end %>
 </div>

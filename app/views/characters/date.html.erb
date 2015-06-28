@@ -1,1 +1,10 @@
-<%= @character_list %>
+<div id="birthday-calendar" data-role="calendar"
+  data-day-click="dayClick" data-date="<%= @today_str %>"></div>
+
+
+<h2><time><%= @month %>월 <%= @day %>일</time></h2>
+<section class="clearfix">
+  <% @character_list.each do |character| %>
+    <%= render 'simple_tile', character: character, date: @today %>
+	<% end %>
+</section>
